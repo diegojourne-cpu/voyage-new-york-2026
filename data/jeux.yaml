@@ -1,0 +1,99 @@
+# ============================================================================
+#  JEUX — pour rendre le voyage ludique (affichés dans le mini-site)
+# ============================================================================
+
+bingo:
+  titre: "Bingo de Noël new-yorkais"
+  regle: "Cochez une case quand l'un de vous la repère. Ligne = un chocolat chaud offert par les deux autres. Carton plein = le perdant… n'existe pas, c'est Noël."
+  cases:
+    - "Un Père Noël qui fait la manche"
+    - "Un chien en pull de Noël"
+    - "Un écureuil de Central Park"
+    - "De la vapeur qui sort d'une bouche d'égout"
+    - "Un taxi jaune décoré"
+    - "Quelqu'un qui patine (vraiment) bien"
+    - "Un bretzel géant"
+    - "Une limousine blanche"
+    - "Un pompier new-yorkais"
+    - "Un sapin vendu sur le trottoir"
+    - "Le mot « Happy Holidays » sur un camion"
+    - "Une vitrine animée"
+    - "Un musicien dans le métro"
+    - "Un cheval de calèche à Central Park"
+    - "Un pull « ugly Christmas sweater »"
+    - "Un bonhomme de neige gonflable"
+    - "La silhouette du Chrysler Building"
+    - "Un bagel au saumon"
+    - "Un rat (photo non obligatoire)"
+    - "Une couronne sur une porte de brownstone"
+    - "Un hot-dog avec choucroute"
+    - "Un drapeau américain géant"
+    - "Une pancarte « Don't Walk » qui clignote"
+    - "Un Mariachi dans la ligne 7"
+    - "Une file d'attente de plus de 50 personnes"
+
+defis_photo:
+  2026-12-28:
+    - "Les trois reflétés dans une boule rouge géante de la 6e Avenue"
+    - "L'Empire State pile au centre, depuis le Top of the Rock"
+    - "Une photo de patin où personne n'est flou (bonne chance)"
+  2026-12-29:
+    - "Une locomotive en mouvement devant une réplique végétale"
+    - "Selfie devant « La Nuit étoilée » (sans personne derrière)"
+    - "La photo la plus « Miracle sur la 34e Rue » devant Macy's"
+  2026-12-30:
+    - "La meilleure trouvaille de fripe pour moins de 20 $ (preuve à l'appui)"
+    - "Le Manhattan Bridge encadrant l'Empire State à DUMBO"
+    - "La maison la plus kitsch de Dyker Heights"
+  2026-12-31:
+    - "Le reflet du One WTC dans l'eau des bassins (avec respect)"
+    - "La Statue de la Liberté en contre-jour depuis le ferry"
+    - "Le premier selfie de 2027"
+  2027-01-01:
+    - "Sous la baleine bleue, allongés (ou presque)"
+    - "La maison la plus étroite de New York"
+    - "Le Vessel illuminé depuis le bas de la High Line"
+
+quiz:
+  - q: "Depuis quelle année le MET installe-t-il son sapin aux anges et sa crèche napolitaine ?"
+    choix: ["1907", "1957", "1987"]
+    r: 1
+  - q: "Qui a terminé en 4 mois la rénovation de la patinoire Wollman en 1986 ?"
+    choix: ["Michael Bloomberg", "Donald Trump", "Robert De Niro"]
+    r: 1
+  - q: "Que signifie DUMBO ?"
+    choix: ["Down Under the Manhattan Bridge Overpass", "Downtown Upper Manhattan Brooklyn Office", "Un éléphant de Disney"]
+    r: 0
+  - q: "Combien de répliques de monuments compte le Holiday Train Show du Botanical Garden ?"
+    choix: ["environ 50", "environ 190", "plus de 1 000"]
+    r: 1
+  - q: "En quoi sont fabriquées ces répliques ?"
+    choix: ["Lego", "Matériaux végétaux (écorce, glands, graines…)", "Pain d'épices"]
+    r: 1
+  - q: "Combien de jours a-t-il fallu pour construire l'Empire State Building ?"
+    choix: ["410", "1 200", "2 500"]
+    r: 0
+  - q: "Les constellations du plafond de Grand Central sont…"
+    choix: ["exactement comme dans le ciel", "inversées, vues de l'extérieur de la sphère céleste", "inventées"]
+    r: 1
+  - q: "Quelle largeur fait la maison la plus étroite de New York (75½ Bedford St) ?"
+    choix: ["2,9 m", "4,5 m", "1,8 m"]
+    r: 0
+  - q: "Où sont mesurées toutes les distances officielles vers New York ?"
+    choix: ["Times Square", "Columbus Circle", "City Hall"]
+    r: 1
+  - q: "Combien pèse l'étoile du sapin du Rockefeller Center ?"
+    choix: ["40 kg", "400 kg", "4 tonnes"]
+    r: 1
+  - q: "Qui a lancé les décorations de Dyker Heights en 1986 ?"
+    choix: ["Lucy Spata", "Le maire de Brooklyn", "Macy's"]
+    r: 0
+  - q: "Depuis quand le ferry de Staten Island est-il gratuit ?"
+    choix: ["1897", "1997", "2017"]
+    r: 1
+  - q: "Quelle est la plus ancienne entreprise de New York encore en activité sous son nom ?"
+    choix: ["Macy's", "Bowne & Co.", "Tiffany & Co."]
+    r: 1
+  - q: "Pendant quelles années la boule de Times Square n'est-elle pas descendue ?"
+    choix: ["1942 et 1943", "1918 et 1919", "2020 et 2021"]
+    r: 0

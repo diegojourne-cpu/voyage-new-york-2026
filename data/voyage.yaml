@@ -1,0 +1,74 @@
+# ============================================================================
+#  PARAMÈTRES GÉNÉRAUX DU VOYAGE — New York, Noël 2026
+#  Source de vérité n°1 (avec lieux.yaml et programme.yaml).
+#  Toute modification ici se répercute dans le PDF, la carte, l'agenda et le site.
+# ============================================================================
+
+titre: "New York — Noël 2026"
+sous_titre: "Tour de contrôle familiale · 27 décembre 2026 → 1er janvier 2027"
+fuseau: America/New_York
+devise_locale: USD
+taux_eur_usd: 1.075        # 1 € = 1,075 $ (déduit des prix CityPASS relevés : 149 $ ≈ 138,59 €). À ajuster.
+
+voyageurs:
+  - { role: "Maman", age: adulte }
+  - { role: "Fils aîné", age: 22 }
+  - { role: "Fils cadet", age: 18 }
+notes_voyageurs:
+  - "Les 3 comptent comme adultes pour les billets."
+  - "Le cadet a 18 ans : interdit d'alcool aux USA (21 ans) et exclu des événements « 21+ » (bars, certaines croisières du réveillon)."
+  - "Aucune contrainte physique, on aime marcher."
+  - "Chacun a sa propre carte bancaire sans contact → plafond OMNY individuel."
+  - "Déjà venus à New York : on privilégie l'inédit et la magie de Noël."
+
+hotel:
+  nom: "Hôtel — 330 West 40th Street"
+  adresse: "330 W 40th St, New York, NY 10018 (Hell's Kitchen, face au Port Authority Bus Terminal)"
+  coord: [40.7564, -73.9915]
+  stations:
+    - "42 St–Port Authority (A C E) : 3 min à pied (entrée 8e Av. / 40e Rue)"
+    - "Times Sq–42 St (1 2 3 7 N Q R W S) : 7 min à pied"
+    - "42 St–Bryant Park (B D F M) : 12 min à pied"
+
+vols:
+  arrivee:
+    date: 2026-12-27
+    heure: "20:00"
+    aeroport: JFK
+    note: "Terminal à confirmer (il change le temps de sortie)."
+  depart:
+    date: 2027-01-01
+    heure: "23:59"
+    aeroport: JFK
+    note: "Vol international « fin de journée / minuit » le 1er janvier. Heure exacte et terminal à confirmer → ajuster ici, tout se recalcule."
+    avance_aeroport_min: 180    # arriver 3 h avant un vol international
+    trajet_hotel_jfk_min: 60    # taxi un soir de 1er janvier (trafic léger) : 45-60 min
+    marge_valises_min: 15
+
+rythme:
+  depart_matin: "09:00"
+  retour_hotel_cible: ["22:30", "23:00"]
+  exception: "Le 31 décembre : soirée libre jusqu'après minuit."
+  repas: "Créneaux flexibles, les visites passent avant. Pas d'adresses : quartier + créneau seulement."
+
+regles_calcul:
+  marge_trajet: 0.15          # +15 % sur chaque trajet (affluence des fêtes, froid, escaliers du métro)
+  marge_trajet_min: 3         # au moins +3 min
+  marche_kmh: 4.5             # pas de promenade urbaine (feux, foule)
+  facteur_grille: 1.3         # distance réelle ≈ vol d'oiseau × 1,3 (quadrillage des rues)
+  arrondi_min: 5              # horaires affichés arrondis à 5 min
+  ecart_marche_tolere: 0.45   # alerte si une durée de marche saisie s'écarte de >45 % du calcul
+
+meteo_normale_fin_decembre:
+  temperature: "Max ≈ 5 °C, min ≈ -1 °C (ressenti souvent -5 °C avec le vent des avenues)"
+  nuit: "Coucher du soleil ≈ 16 h 35, nuit noire ≈ 17 h 10 → les illuminations sont superbes dès 17 h."
+  conseils:
+    - "Couches : t-shirt thermique + pull + doudoune coupe-vent, bonnet, gants tactiles."
+    - "Chaussures de marche imperméables (neige fondue, flaques aux passages piétons)."
+    - "Batterie externe : le froid vide les téléphones (OMNY + photos + Maps)."
+
+urgences:
+  - "Urgences (police, pompiers, ambulance) : 911"
+  - "Infos ville / objets perdus : 311"
+  - "Consulat de France à New York : 934 5th Ave — +1 212 606 3600"
+  - "Assistance carte bancaire : numéro au dos de chaque carte (le noter à part)"

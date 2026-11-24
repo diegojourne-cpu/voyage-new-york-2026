@@ -1,0 +1,33 @@
+# ============================================================================
+#  INFOS PRATIQUES — affichées dans le PDF et le mini-site
+# ============================================================================
+
+sections:
+  - titre: "Métro : OMNY, plafond hebdomadaire et ferry"
+    points:
+      - "Ticket à 3,00 $ (depuis le 4 janvier 2026), correspondances gratuites pendant 2 h."
+      - "OMNY = on tape sa carte bancaire sans contact (ou son téléphone) sur le lecteur du tourniquet. Pas d'appli ni de carte à acheter."
+      - "Plafond automatique : sur 7 jours glissants, on ne paie jamais plus de 35 $ (12 trajets) avec LE MÊME moyen de paiement. Ensuite, tous les trajets sont gratuits."
+      - "Chacun doit utiliser SA carte (ou son téléphone), toujours la même : une carte tapée 3 fois pour 3 personnes ne profite pas du plafond pour chacun."
+      - "Notre programme compte 13 trajets en métro par personne : le plafond (35 $) sera atteint le 1er janvier, il protège aussi les trajets imprévus (pluie, fatigue)."
+      - "La carte « 7 jours illimités à 34 $ » de votre note n'existe plus : les forfaits MetroCard sont remplacés par ce plafond OMNY. Rien à acheter."
+      - "Cartes françaises : Visa et Mastercard sans contact fonctionnent. Prévoir des frais de change éventuels selon la banque."
+      - "Metro-North (mardi, jardin botanique) : billet CityTicket 5,25 $ dans l'appli TrainTime (hors OMNY)."
+      - "NYC Ferry : 5 $ le trajet dans l'appli. Le pass 2 jours à 15 $ ne vaut pas le coup (un seul trajet au programme). Le ferry de Staten Island est gratuit."
+      - "Express (losange) contre local (rond) : sur le quai, vérifier l'indication « Uptown / Downtown & Brooklyn » AVANT de passer le tourniquet (certaines entrées ne desservent qu'un sens)."
+  - titre: "Arrivée et départ à JFK"
+    points:
+      - "Arrivée dimanche 27 à 20h : contrôle des passeports + bagages ≈ 45-90 min. Taxi jaune au forfait : 70 $ + péages et suppléments (~10 $) + pourboire 15-20 % ≈ 95-100 $ pour 3."
+      - "Alternative : AirTrain (tarif de groupe 17,75 $ pour 3) + métro E jusqu'à 42 St–Port Authority (3 $ chacun) ≈ 27 $, mais 75-90 min avec les valises."
+      - "Départ vendredi 1er : valises à la bagagerie le matin, récupération vers 19h25, taxi à 19h45, arrivée à JFK vers 20h45, soit 3 h avant un vol de 23h59. À recalculer avec l'heure exacte du vol (data/voyage.yaml)."
+  - titre: "Argent, pourboires, achats"
+    points:
+      - "Pourboire attendu : 18-22 % au restaurant, 15-20 % en taxi, 1-2 $ par boisson au bar ou au comptoir."
+      - "Les prix affichés sont HORS taxe : ajouter 8,875 % à la caisse (sauf vêtements à moins de 110 $ par article à New York)."
+      - "18 ans : pas d'alcool, et entrée refusée dans les bars et les événements « 21+ ». Pièce d'identité (passeport) demandée partout le soir."
+  - titre: "Froid, fatigue, sécurité"
+    points:
+      - "Fin décembre : -1 à 5 °C, vent fort sur les avenues et au bord de l'eau. Bonnet + gants + couches."
+      - "Musées et grands magasins = refuges chauffés. Les toilettes publiques sont rares : penser aux musées, à Bryant Park (toilettes réputées), aux grands magasins."
+      - "Dans le métro tard le soir : rester dans la voiture du conducteur ou au milieu du quai (« Off-Hours Waiting Area »)."
+      - "Points de rendez-vous si on se perd : devant l'hôtel, ou sous l'horloge du hall de Grand Central."

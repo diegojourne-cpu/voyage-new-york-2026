@@ -1,0 +1,143 @@
+# ============================================================================
+#  RÉSERVATIONS — triées par urgence. statut : a_faire | fait | inutile
+#  Mettre statut: fait + reference: "..." quand c'est réservé → tout se met à jour.
+# ============================================================================
+
+reservations:
+  - id: pass
+    titre: "CityPASS New York (5 attractions) × 3"
+    urgence: 1
+    quand: "Maintenant (il faut le pass pour réserver le Top of the Rock et l'Empire State)"
+    creneau: "Activation automatique à la première attraction (valable 9 jours)"
+    prix: "138,59 € + 1,86 € de frais par adulte ≈ 421 € pour 3"
+    lien: "https://www.citypass.com/new-york"
+    detail: "Choisir dans l'appli : Top of the Rock, Empire State, AMNH, 9/11 Memorial & Museum + une 5e (Statue de la Liberté si l'option est retenue, sinon Edge)."
+    statut: a_faire
+
+  - id: nybg
+    titre: "NYBG Holiday Train Show"
+    urgence: 1
+    quand: "Maintenant : les créneaux de la semaine des fêtes partent en premier"
+    creneau: "Mardi 29 décembre — 10h00 (All-Garden Pass)"
+    prix: "≈ 35-45 $ par personne"
+    lien: "https://www.nybg.org/event/holiday-train-show/"
+    statut: a_faire
+
+  - id: top_of_the_rock
+    titre: "Top of the Rock — créneau coucher du soleil"
+    urgence: 1
+    quand: "Juste après l'achat du CityPASS"
+    creneau: "Lundi 28 décembre — 16h15 (coucher du soleil à 16h35)"
+    prix: "Inclus dans le CityPASS (un supplément « sunset » peut être demandé)"
+    lien: "https://www.rockefellercenter.com/attractions/top-of-the-rock-observation-deck/"
+    statut: a_faire
+
+  - id: greeter
+    titre: "Big Apple Greeter (facultatif)"
+    urgence: 1
+    quand: "Cette semaine, sinon trop tard"
+    creneau: "Jeudi 31 décembre 12h-15h (secours : 30 déc. matin ou 1er janv. 14h)"
+    prix: "Gratuit (don bienvenu)"
+    lien: "https://bigapplegreeter.org/visitors"
+    statut: a_faire
+
+  - id: reveillon
+    titre: "Soirée du 31 (selon le choix de la famille)"
+    urgence: 2
+    quand: "Avant le 5 décembre : restaurants et croisières du 31 complets en décembre"
+    creneau: "Jeudi 31 décembre — dîner 20h30, ou croisière à 21h"
+    prix: "Dîner 90-200 $/pers. · croisière 200-450 $/pers. · Prospect Park gratuit (inscription)"
+    lien: "https://www.prospectpark.org/event/new-years-eve-fireworks-in-prospect-park-2/"
+    statut: a_faire
+
+  - id: esta
+    titre: "ESTA (autorisation de voyage) × 3"
+    urgence: 2
+    quand: "Au moins 72 h avant le départ — vérifier qu'elles sont valides (2 ans)"
+    creneau: "—"
+    prix: "Site officiel uniquement"
+    lien: "https://esta.cbp.dhs.gov"
+    statut: a_faire
+
+  - id: empire_state
+    titre: "Empire State Building — créneau de nuit"
+    urgence: 2
+    quand: "Après l'achat du pass, avant mi-décembre"
+    creneau: "Mardi 29 décembre — 20h00"
+    prix: "Inclus dans le CityPASS"
+    lien: "https://www.esbnyc.com/buy-tickets"
+    statut: a_faire
+
+  - id: memorial_911
+    titre: "9/11 Memorial & Museum"
+    urgence: 2
+    quand: "Après l'achat du pass"
+    creneau: "Jeudi 31 décembre — 9h45"
+    prix: "Inclus dans le CityPASS"
+    lien: "https://www.911memorial.org/visit"
+    statut: a_faire
+
+  - id: wollman
+    titre: "Patinoire Wollman (entrée + location de patins)"
+    urgence: 2
+    quand: "Dès l'ouverture des réservations pour la semaine des fêtes"
+    creneau: "Lundi 28 décembre — 13h30"
+    prix: "≈ 28-40 $ l'entrée + 12 $ de patins, par personne"
+    lien: "https://wollmanrinknyc.com"
+    statut: a_faire
+
+  - id: met
+    titre: "MET — billets datés"
+    urgence: 3
+    quand: "La semaine précédente (aucune pénurie, on évite juste la file aux caisses)"
+    creneau: "Lundi 28 décembre — 10h00"
+    prix: "30 $ par personne"
+    lien: "https://www.metmuseum.org/plan-your-visit"
+    statut: a_faire
+
+  - id: moma
+    titre: "MoMA — billets"
+    urgence: 3
+    quand: "La semaine précédente"
+    creneau: "Mardi 29 décembre — 15h30"
+    prix: "30 $ par personne"
+    lien: "https://www.moma.org/visit/"
+    statut: a_faire
+
+  - id: mad
+    titre: "Museum of Arts and Design"
+    urgence: 3
+    quand: "La veille (ou sur place)"
+    creneau: "Mardi 29 décembre — 14h00"
+    prix: "≈ 20 $ par personne"
+    lien: "https://www.madmuseum.org/visit"
+    statut: a_faire
+
+  - id: amnh
+    titre: "AMNH — réservation du créneau avec le pass"
+    urgence: 3
+    quand: "La semaine précédente"
+    creneau: "Vendredi 1er janvier — 10h45"
+    prix: "Inclus dans le CityPASS (suppléments : planétarium, papillons)"
+    lien: "https://www.amnh.org/plan-your-visit"
+    statut: a_faire
+
+  - id: applis
+    titre: "Applications à installer avant le départ"
+    urgence: 3
+    quand: "Avant le départ"
+    creneau: "—"
+    prix: "Gratuit"
+    lien: "https://omny.info"
+    detail: "Citymapper (trajets), TrainTime (Metro-North), NYC Ferry, CityPASS. Activer le sans-contact (Apple Pay / Google Pay) sur chaque téléphone ou carte."
+    statut: a_faire
+
+  - id: verif_j7
+    titre: "Vérification des horaires des fêtes à J-7"
+    urgence: 3
+    quand: "Vers le 20 décembre"
+    creneau: "—"
+    prix: "—"
+    lien: "https://wollmanrinknyc.com/plan/"
+    detail: "Demander à Claude : « vérifie les points ⚠️ » (patinoire Wollman, Museum at FIT le 31, Bowne & Co le 31, MAD, ferry d'hiver, Empire State) puis régénérer."
+    statut: a_faire

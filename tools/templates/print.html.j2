@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<title>New York Noël 2026 — programme heure par heure</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+:root{--ink:#15191d;--muted:#59626b;--line:#d6dbd5;--bg:#ffffff;--soft:#f3f4f0;--sign:#121417;--red:#c8102e;--gold:#9a6b12;--green:#0f6b45;--warn:#a15c07;--warn-bg:#fdf3e1;--err:#b91c1c;--err-bg:#fde8e8;--info-bg:#eef2f7;
+  --map-eau:#cddfe9;--map-terre:#fbfbf8;--map-terre2:#e9ece6;--map-cote:#b5c3c9;--map-parc:#cfe4cc;--map-marche:#59636c;--map-hotel:#15191d;--map-lbl:#7d8a92;
+  --f-display:"Archivo","Arial Narrow",Arial,sans-serif;--f-body:"Instrument Sans",Arial,sans-serif;--f-mono:"JetBrains Mono",Menlo,monospace}
+@page{size:A4;margin:12mm 12mm 14mm}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:9.6pt/1.42 var(--f-body);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+h1,h2,h3{font-family:var(--f-display);margin:0;line-height:1.05}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.page{page-break-after:always;break-after:page}
+.band{background:var(--sign);color:#f4f4f0;border-radius:6px;padding:10px 14px;display:flex;align-items:center;gap:12px}
+.band .rond{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:#fff;font:800 14pt/1 var(--f-display);flex:none}
+.band h2{font-size:19pt;font-weight:800;font-stretch:75%}
+.band .meta{margin-left:auto;text-align:right;font:8.5pt/1.5 var(--f-mono);color:#b6bcc1}
+.band .meta b{color:#ffd34d}
+.eyebrow{font:700 7.5pt/1 var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.cover{display:grid;gap:14px}
+.cover .titre{background:var(--sign);color:#f4f4f0;border-radius:8px;padding:28px 24px}
+.cover h1{font-size:46pt;font-weight:800;font-stretch:68%;letter-spacing:-.01em}
+.cover h1 span{color:#8f969c}
+.cover .sous{color:#b6bcc1;margin-top:8px;font-size:11pt}
+.kv{display:grid;grid-template-columns:28mm 1fr;gap:3px 10px}
+.kv dt{color:var(--muted);font-weight:600}.kv dd{margin:0}
+table{border-collapse:collapse;width:100%}
+th,td{text-align:left;padding:5px 7px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:700 7pt/1.2 var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--soft)}
+td.num,th.num{text-align:right;font-family:var(--f-mono);white-space:nowrap}
+tr{break-inside:avoid}
+.carte{display:block;width:100%;height:auto;aspect-ratio:1.25;max-height:92mm;border:1px solid var(--line);border-radius:6px;background:var(--map-eau)}
+.map-lbl text{font-family:var(--f-display);font-weight:800;letter-spacing:.2em;fill:var(--map-lbl);font-size:48px}
+.carte-ensemble{aspect-ratio:.95;max-height:150mm;width:auto;margin:0 auto}
+.map-lbl text.eau{font-style:italic;font-weight:600;font-size:34px}
+.step{display:grid;grid-template-columns:22mm 1fr;gap:0 9px;border-left:5px solid var(--c);padding:5px 0 7px 8px;break-inside:avoid}
+.step .h{font:700 12pt/1 var(--f-mono)}
+.step .h small{display:block;font-size:8pt;color:var(--muted);font-weight:500;margin-top:3px}
+.step h3{font-size:12.5pt;font-weight:800;font-stretch:85%}
+.step .q{color:var(--muted);font-size:8.5pt}
+.step .l{display:grid;grid-template-columns:23mm 1fr;gap:1px 8px;margin-top:4px;font-size:8.8pt}
+.step .l b{color:var(--muted);font-weight:600}
+.tr{margin-left:8px;padding:3px 0 3px 30mm;font-size:8.5pt;color:var(--muted);display:flex;gap:5px;align-items:center;flex-wrap:wrap;border-left:5px dotted var(--c)}
+.tr .du{font-family:var(--f-mono);color:var(--ink);font-weight:700}
+.bullet{display:inline-grid;place-items:center;min-width:15px;height:15px;padding:0 3px;border-radius:8px;font:800 8pt/1 var(--f-body);color:#fff}
+.bullet.noir{color:#111}
+.chip{display:inline-block;font:700 7pt/1 var(--f-body);padding:3px 5px;border-radius:8px;border:1px solid var(--line);color:var(--muted);margin-right:3px}
+.chip.abs{background:var(--red);border-color:var(--red);color:#fff}.chip.plus{border-color:var(--gold);color:var(--gold)}.chip.pass{border-color:var(--green);color:var(--green)}.chip.verif{background:var(--warn-bg);border-color:transparent;color:var(--warn)}.chip.resa{border-color:var(--ink);color:var(--ink)}
+.repas{background:var(--soft)}
+.al{padding:4px 7px;border-radius:5px;margin:2px 0;font-size:8.5pt}
+.al.erreur{background:var(--err-bg);color:var(--err)}.al.attention{background:var(--warn-bg);color:var(--warn)}.al.info{background:var(--info-bg);color:var(--muted)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.box{border:1px solid var(--line);border-radius:6px;padding:9px 11px;break-inside:avoid}
+ul{margin:4px 0 0;padding-left:14px}
+.sec{display:grid;gap:8px;margin-bottom:10px}
+.sec>h2{font-size:17pt;font-weight:800;font-stretch:78%}
+.src{font-size:7.5pt;color:var(--muted);word-break:break-all}
+</style></head><body>
+{{ fond|safe }}
+
+<!-- ===================================================== COUVERTURE -->
+<section class="page cover">
+  <div class="titre"><div class="eyebrow" style="color:#8f969c">Programme heure par heure</div><h1>New York <span>·</span> Noël 2026</h1><div class="sous">{{ ctx.voyage.sous_titre }}</div></div>
+  <div class="cols">
+    <div class="box"><div class="eyebrow">Le voyage</div><dl class="kv" style="margin-top:6px">
+      <dt>Voyageurs</dt><dd>Maman, fils de 22 ans, fils de 18 ans (3 adultes)</dd>
+      <dt>Hôtel</dt><dd>{{ ctx.voyage.hotel.adresse }}</dd>
+      <dt>Arrivée</dt><dd>Dim. 27 déc., JFK {{ ctx.voyage.vols.arrivee.heure }}</dd>
+      <dt>Départ</dt><dd>Ven. 1er janv., JFK {{ ctx.voyage.vols.depart.heure }} (heure à confirmer)</dd>
+      <dt>Rythme</dt><dd>Départ ~9h, retour 22h30-23h, repas flexibles</dd></dl></div>
+    <div class="box"><div class="eyebrow">Vérification automatique</div><p style="margin:6px 0 0;font-size:11pt"><b>{{ ctx.nb.erreur }} erreur · {{ ctx.nb.attention }} points à confirmer</b></p><p style="margin:4px 0 0">Chaque étape est contrôlée : ouverture à la date prévue, dernière entrée, créneaux réservés, trajets réels avec 15 % de marge, coucher du soleil, retour à l'hôtel, arrivée à JFK. Détail en fin de document.</p><p class="src" style="margin-top:6px">Généré le {{ ctx.genere_le }}</p></div>
+  </div>
+  <div class="sec"><h2>La semaine en un coup d'œil</h2>
+  <table><thead><tr><th>Jour</th><th>Thème</th><th>Temps forts</th><th class="num">Coucher</th></tr></thead><tbody>
+  {% for j in ctx.jours %}<tr><td style="border-left:5px solid {{ j.couleur }}"><b>{{ j.label|capitalize }}</b></td><td><b>{{ j.titre }}</b></td><td>{% for e in j.etapes if e.priorite in ('absolument','plus') or e.noel %}{{ e.titre.split(' (')[0].split(' —')[0] }}{% if not loop.last %} · {% endif %}{% endfor %}</td><td class="num">{{ j.soleil.coucher }}</td></tr>{% endfor %}
+  </tbody></table></div>
+</section>
+<section class="page sec">
+  <h2>Les cinq parcours</h2>
+  <p style="margin:0">Une couleur par jour, l'hôtel est le carré noir « H ». Chaque journée a ensuite sa carte détaillée.{% for j in ctx.jours if j.iso != '2026-12-27' %} <span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:{{ j.couleur }}"></span> {{ j.label_court }}{% endfor %}</p>
+  {{ ensemble|safe }}
+</section>
+
+<!-- ===================================================== RÉSERVATIONS -->
+<section class="page sec">
+  <h2>Réservations à faire, par urgence</h2>
+  <table><thead><tr><th>!</th><th>Quoi</th><th>Quand réserver</th><th>Créneau conseillé</th><th>Prix</th></tr></thead><tbody>
+  {% for r in ctx.reservations %}<tr><td class="mono"><b style="color:{{ 'var(--red)' if r.urgence==1 else ('var(--warn)' if r.urgence==2 else 'var(--muted)') }}">{{ r.urgence }}</b></td><td><b>{{ r.titre }}</b><br><span class="src">{{ r.lien }}</span>{% if r.detail %}<br>{{ r.detail }}{% endif %}</td><td>{{ r.quand }}</td><td>{{ r.creneau }}</td><td>{{ r.prix }}</td></tr>{% endfor %}
+  </tbody></table>
+</section>
+
+<!-- ===================================================== JOURS -->
+{% for j in ctx.jours %}
+<section class="page" style="--c:{{ j.couleur }}">
+  <div class="band"><div class="rond" style="background:{{ j.couleur }}">{{ j.iso[8:]|int }}</div><div><div class="eyebrow" style="color:#9aa1a7">{{ j.label }}</div><h2>{{ j.titre }}</h2></div>
+    <div class="meta">Départ <b>{{ j.depart }}</b> · coucher <b>{{ j.soleil.coucher }}</b><br>nuit noire <b>{{ j.soleil.nuit }}</b>{% if j.etapes %} · fin <b>{{ j.etapes[-1].debut }}</b>{% endif %}</div></div>
+  <p style="margin:6px 0">{{ j.theme }}{% if j.note %} — <b>{{ j.note }}</b>{% endif %}</p>
+  {{ j.svg|safe }}
+  {% for a in j.alertes if a.niveau != 'info' %}<div class="al {{ a.niveau }}"><b>{{ a.etape }}</b> — {{ a.message }}</div>{% endfor %}
+  <div style="margin-top:8px">
+  {% for e in j.etapes %}
+    {% if e.trajet %}<div class="tr">{% for l in e.trajet.lignes %}<span class="bullet{{ ' noir' if l in NOIR }}" style="background:{{ COULEURS.get(l,'#808183') }}">{{ 'MN' if l=='MNR' else ('⛴' if l=='FERRY' else l) }}</span>{% endfor %}<span>{{ e.trajet.icone }} {% if e.trajet.de %}{{ e.trajet.de }} → {{ e.trajet.a }}{% elif e.trajet.mode=='marche' %}à pied{% if e.trajet.km %} · {{ e.trajet.km }} km{% endif %}{% else %}{{ e.trajet.mode }}{% endif %}</span><span class="du">{{ e.trajet.duree_totale }} min</span>{% if e.trajet.prix %}<span>· {{ e.trajet.prix|usd }}/pers.</span>{% endif %}</div>{% endif %}
+    <div class="step{{ ' repas' if e.repas }}">
+      <div class="h">{{ e.debut }}{% if e.duree %}<small>→ {{ e.fin }} · {{ e.duree }} min</small>{% endif %}</div>
+      <div>
+        <h3>{{ e.n ~ '. ' if e.n }}{{ e.titre }}</h3>
+        <div class="q">{{ e.quartier }}{% if e.adresse %} · {{ e.adresse }}{% endif %}</div>
+        <div style="margin-top:3px">{% if e.priorite == 'absolument' %}<span class="chip abs">ABSOLUMENT</span>{% elif e.priorite == 'plus' %}<span class="chip plus">＋</span>{% endif %}{% if e.creneau %}<span class="chip resa">créneau {{ e.creneau }}</span>{% endif %}{% if 'citypass' in e.pass %}<span class="chip pass">CityPASS</span>{% endif %}{% if e.fiabilite == 'a_verifier' %}<span class="chip verif">horaires à confirmer</span>{% endif %}</div>
+        {% if e.quoi %}<div style="margin-top:3px">{{ e.quoi }}</div>{% endif %}
+        <div class="l">
+          {% if e.trajet and e.trajet.detail %}<b>Trajet</b><span>{{ e.trajet.detail }}</span>{% endif %}
+          {% if e.id_lieu not in ('hotel','jfk') %}<b>Horaires</b><span>{{ e.horaires_jour }}</span>{% endif %}
+          {% if e.prix or e.prix_note %}<b>Prix</b><span>{{ e.prix|usd if e.prix else 'Gratuit' }}{% if e.prix_note %} — {{ e.prix_note }}{% endif %}</span>{% endif %}
+          {% if e.conseil %}<b>Conseil</b><span>{{ e.conseil }}</span>{% endif %}
+          {% if e.heure_creuse %}<b>Éviter la foule</b><span>{{ e.heure_creuse }}</span>{% endif %}
+          {% if e.astuce_photo %}<b>Photo</b><span>{{ e.astuce_photo }}</span>{% endif %}
+          {% if e.anecdote %}<b>Anecdote</b><span>{{ e.anecdote }}</span>{% endif %}
+          {% if e.boutiques %}<b>Adresses</b><span>{{ e.boutiques|join(' · ') }}</span>{% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</section>
+{% endfor %}
+
+<!-- ===================================================== RÉVEILLON -->
+<section class="page sec">
+  <h2>Soirée du 31 : toutes les possibilités</h2>
+  <p style="margin:0">{{ ctx.reveillon.intro }}</p>
+  <div class="box" style="border-color:var(--gold)"><b>Notre conseil.</b> {{ ctx.reveillon.recommandation }}</div>
+  <table><thead><tr><th>Option</th><th>Arrivée / attente</th><th>Foule / froid</th><th>Coût</th><th>Accès et retour</th><th>Pour / contre</th></tr></thead><tbody>
+  {% for c in ctx.reveillon.choix %}<tr><td><b>{{ c.titre }}</b><br><span style="color:var(--gold)">{{ '★' * c.note }}{{ '☆' * (5-c.note) }}</span></td><td>{{ c.arrivee }}<br><i>{{ c.attente }}</i></td><td>{{ c.foule }}<br><i>{{ c.froid }}</i></td><td>{{ c.cout }}</td><td>{{ c.acces_retour }}</td><td>＋ {{ c.plus|join(' · ') }}<br>－ {{ c.moins|join(' · ') }}</td></tr>{% endfor %}
+  </tbody></table>
+</section>
+
+<!-- ===================================================== OPTIONS -->
+<section class="page sec">
+  <h2>Options hors programme</h2>
+  <div class="box"><h3 style="font-size:13pt">Statue de la Liberté + Ellis Island (demi-journée)</h3><dl class="kv" style="margin-top:5px"><dt>Incluse ?</dt><dd>{{ ctx.statue.incluse_dans }}</dd><dt>Meilleur moment</dt><dd>{{ ctx.statue.meilleur_moment }}</dd><dt>Remplace</dt><dd>{{ ctx.statue.creneau_remplace }}</dd><dt>Déroulé</dt><dd>{{ ctx.statue.deroule|join(' · ') }}</dd><dt>On perd</dt><dd>{{ ctx.statue.ce_qu_on_perd }}</dd><dt>Verdict</dt><dd>{{ ctx.statue.verdict }}</dd></dl></div>
+  <div class="cols">
+    <div class="box"><h3 style="font-size:12pt">Match : {{ ctx.match.verdict }}</h3><ul>{% for d in ctx.match.details %}<li>{{ d }}</li>{% endfor %}</ul></div>
+    <div class="box"><h3 style="font-size:12pt">Big Apple Greeter : {{ ctx.greeter.verdict }}</h3><ul>{% for d in ctx.greeter.details %}<li>{{ d }}</li>{% endfor %}<li><b>Créneau conseillé :</b> {{ ctx.greeter.creneau_conseille }}</li></ul></div>
+  </div>
+  <table><thead><tr><th>Idée</th><th>Pourquoi</th><th>Où la placer</th><th>Prix</th></tr></thead><tbody>{% for a in ctx.autres %}<tr><td><b>{{ a.titre }}</b></td><td>{{ a.pourquoi }}</td><td>{{ a.ou_le_placer }}</td><td>{{ a.prix }}</td></tr>{% endfor %}</tbody></table>
+  <div class="box"><b>Plan pluie / neige.</b> {{ ctx.plan_pluie.principe }}<ul>{% for q, l in ctx.plan_pluie.par_quartier.items() %}<li><b>{{ q }}</b> : {{ l|join(' · ') }}</li>{% endfor %}</ul></div>
+</section>
+
+<!-- ===================================================== PASS -->
+<section class="page sec">
+  {% set best = ctx.pass.scenarios|selectattr('code','equalto',ctx.pass.meilleur)|first %}
+  <h2>Pass : le {{ best.nom }} est le plus rentable</h2>
+  <table><thead><tr><th>Option</th><th class="num">Pass/pers.</th><th>Couvre dans le programme</th><th>Reste à payer</th><th class="num">Total/pers.</th><th class="num">× 3</th></tr></thead><tbody>
+  {% for s in ctx.pass.scenarios %}<tr style="{{ 'background:#e5f5ea' if s.code==ctx.pass.meilleur }}"><td><b>{{ s.nom }}</b></td><td class="num">{{ s.cout_pass_eur|eur2 }}</td><td>{% for c in s.couvre %}{{ c.nom.split(' (')[0].split(' —')[0] }} ({{ c.prix|usd }}){% if not loop.last %}, {% endif %}{% else %}—{% endfor %}{% if s.bonus %}<br><i>+ {% for b in s.bonus %}{{ b.nom.split(' (')[0] }}{% if not loop.last %}, {% endif %}{% endfor %} (inclus, hors programme)</i>{% endif %}</td><td>{% for c in s.hors %}{{ c.nom.split(' (')[0].split(' —')[0] }}{% if not loop.last %}, {% endif %}{% endfor %}</td><td class="num">{{ s.total_eur_pp|eur2 }}</td><td class="num"><b>{{ s.total_eur_3|eur }}</b></td></tr>{% endfor %}
+  </tbody></table>
+  <div class="cols">{% for code, o in ctx.pass.offres.items() %}<div class="box"><b>{{ o.nom }}</b> — {{ o.prix_eur|eur2 }} + {{ o.frais_eur|eur2 }}<ul>{% for c in o.conditions %}<li>{{ c }}</li>{% endfor %}</ul></div>{% endfor %}</div>
+  <div class="box"><b>Logistique.</b> Remplir les 11 attractions du C-All en 5 jours voudrait dire 2 attractions payantes par jour en plus du MET, du MoMA, du MAD et du Botanical Garden : plus de balades, plus de soirées de lumières. Le CityPASS colle au programme : 4 attractions déjà prévues + 1 au choix (Statue de la Liberté si l'option est retenue, sinon Edge le 1er janvier). Taux utilisé : 1 € = {{ ctx.budget.taux }} $.</div>
+  <h2 style="font-size:15pt;margin-top:6px">Budget estimé par personne</h2>
+  <table><tbody>
+    <tr><td>Métro (plafond OMNY)</td><td class="num">{{ ctx.budget.metro|usd }}</td></tr>
+    <tr><td>Metro-North + NYC Ferry</td><td class="num">{{ ctx.budget.autres_transports|usd }}</td></tr>
+    <tr><td>Taxis JFK aller + retour (part de chacun)</td><td class="num">{{ ctx.budget.taxis|usd }}</td></tr>
+    {% for l in ctx.pass.lignes %}<tr><td>{{ l.nom.split(' (')[0] }}{% if 'citypass' in l.pass %} <span class="chip pass">CityPASS</span>{% endif %}</td><td class="num">{{ l.prix|usd }}</td></tr>{% endfor %}
+    <tr><td>Repas (5 jours, taxe et pourboire compris, hors réveillon)</td><td class="num">{{ ctx.budget.repas_estimation.bas }}–{{ ctx.budget.repas_estimation.haut }} $</td></tr>
+  </tbody></table>
+</section>
+
+<!-- ===================================================== INFOS -->
+<section class="page sec">
+  <h2>Infos pratiques</h2>
+  <div class="cols">{% for s in ctx.infos %}<div class="box"><b>{{ s.titre }}</b><ul>{% for p in s.points %}<li>{{ p }}</li>{% endfor %}</ul></div>{% endfor %}
+  <div class="box"><b>Urgences et hôtel</b><ul>{% for u in ctx.voyage.urgences %}<li>{{ u }}</li>{% endfor %}{% for s in ctx.voyage.hotel.stations %}<li>{{ s }}</li>{% endfor %}</ul></div></div>
+</section>
+
+<!-- ===================================================== VÉRIFICATION -->
+<section class="sec">
+  <h2>Vérification finale de faisabilité</h2>
+  <p style="margin:0">{{ ctx.nb.erreur }} erreur, {{ ctx.nb.attention }} points à confirmer, {{ ctx.nb.info }} informations. Les points « à confirmer » viennent d'horaires des fêtes 2026 pas encore publiés : à revérifier vers le 20 décembre.</p>
+  {% for a in ctx.alertes %}<div class="al {{ a.niveau }}"><span class="mono">{{ a.jour[5:] }}</span> · <b>{{ a.etape }}</b> — {{ a.message }}</div>{% endfor %}
+  <h2 style="font-size:14pt;margin-top:8px">Sources</h2>
+  <div class="src">{% for s in ctx.sources %}{{ s.titre }} : {{ s.url }}<br>{% endfor %}</div>
+</section>
+</body></html>

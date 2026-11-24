@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Carte interactive — New York Noël 2026</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+html,body{height:100%;margin:0;font:14px/1.4 system-ui,sans-serif}
+#map{position:absolute;inset:0}
+.pin{width:24px;height:24px;border-radius:50%;color:#fff;font:700 12px/24px system-ui;text-align:center;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.4)}
+.leaflet-popup-content{max-width:260px}
+.leaflet-popup-content b{font-size:15px}
+</style></head><body>
+<div id="map"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+const D = {{ data_json|safe }};
+const map = L.map("map").setView([40.74, -73.98], 12);
+L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
+  maxZoom: 19, attribution: "&copy; OpenStreetMap &copy; CARTO" }).addTo(map);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const couches = {};
+const H = D.hotel;
+L.marker(H).addTo(map).bindPopup("<b>Hôtel</b><br>330 W 40th St");
+D.jours.forEach(j => {
+  const g = L.layerGroup();
+  const trace = [H];
+  j.etapes.forEach(e => {
+    trace.push(e.coord_debut); (e.waypoints || []).forEach(w => trace.push(w));
+    if (e.id_lieu === "hotel") return;
+    const ic = L.divIcon({ className: "", html: `<div class="pin" style="background:${j.couleur}">${e.n}</div>`, iconSize: [24, 24] });
+    L.marker(e.coord, { icon: ic }).addTo(g).bindPopup(
+      `<b>${esc(e.debut)} · ${esc(e.titre)}</b><br>${esc(e.quartier)}<br><br>${esc(e.quoi)}<br><br><a href="${esc(e.gmaps)}" target="_blank" rel="noopener">Itinéraire ↗</a>`);
+  });
+  L.polyline(trace.filter(p => !(j.iso === "2026-12-27" || j.iso === "2027-01-01") || Math.abs(p[1] + 73.78) > 0.02), { color: j.couleur, weight: 4, opacity: .8 }).addTo(g);
+  couches[`${j.label} — ${j.titre}`] = g;
+  if (j.iso !== "2026-12-27") g.addTo(map);
+});
+L.control.layers(null, couches, { collapsed: innerWidth < 700 }).addTo(map);
+</script>
+</body></html>

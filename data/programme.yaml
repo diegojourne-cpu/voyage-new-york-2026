@@ -1,0 +1,353 @@
+# ============================================================================
+#  PROGRAMME — LA source de vérité du planning
+#
+#  Les HEURES NE SONT PAS SAISIES : elles sont calculées en cascade par tools/
+#  à partir de l'heure de départ du jour, des durées de trajet (+15 % de marge
+#  automatique) et des durées sur place.
+#
+#  Champs d'une étape :
+#    lieu        identifiant dans lieux.yaml
+#    titre       (facultatif) remplace le nom du lieu
+#    trajet      depuis l'étape précédente :
+#                  mode: marche | metro | train | ferry | taxi
+#                  lignes: [A, C]  de: "station"  a: "station"
+#                  duree: minutes porte-à-porte (marche incluse), SANS la marge
+#                  (pour la marche, durée calculée automatiquement si absente)
+#    creneau     "HH:MM" : réservation à heure fixe → on attend si on est en avance,
+#                ALERTE si on arrive en retard
+#    pas_avant   "HH:MM" : ne pas commencer avant (ouverture, lumière…)
+#    duree       minutes sur place (file, vestiaire, sécurité compris)
+#    quoi        ce qu'on y fait concrètement
+#    conseil     (facultatif) astuce logistique
+#    nuit: true  l'étape doit se dérouler après le coucher du soleil (vérifié)
+#    coucher: true  l'étape doit englober le coucher du soleil (vérifié)
+#
+#  Pour modifier : changer une durée, déplacer un bloc, remplacer un lieu,
+#  puis lancer `make` (ou demander à Claude). Tout se recalcule et se vérifie.
+# ============================================================================
+
+jours:
+
+# --------------------------------------------------------------------------
+- date: 2026-12-27
+  titre: "Arrivée à New York"
+  theme: "Atterrissage, taxi jaune, premières lumières de Manhattan"
+  couleur: "#8a8f98"
+  depart: "20:00"
+  etapes:
+    - lieu: jfk
+      titre: "Atterrissage à JFK"
+      duree: 80
+      quoi: "Débarquement, contrôle des passeports (ESTA), récupération des bagages. Un dimanche soir des fêtes : prévoir 45 à 90 min."
+      conseil: "Pendant l'attente, télécharger les applis : OMNY (facultatif), NYC Ferry, TrainTime (Metro-North), Citymapper. Passer les cartes bancaires en mode sans contact."
+    - lieu: hotel
+      titre: "Taxi jaune → hôtel"
+      trajet: { mode: taxi, duree: 50, detail: "File officielle « Taxi » à la sortie du terminal. Forfait JFK ↔ Manhattan 70 $ + suppléments (~10 $) + pourboire 15-20 % ≈ 95-100 $ pour 3 (≈ 32 $/pers.). Refuser tout chauffeur qui vous aborde dans le hall.", prix: 33 }
+      duree: 15
+      quoi: "Check-in. Si l'énergie le permet : 5 min à pied jusqu'à Times Square pour le premier choc lumineux, puis dodo."
+      conseil: "Alternative économique : AirTrain jusqu'à Jamaica (tarif de groupe 8,75 $ + 4,50 $ par personne en plus = 17,75 $ pour 3) puis métro E direct jusqu'à 42 St–Port Authority (3 $ chacun) : ≈ 27 $ pour 3, mais 75-90 min avec les valises."
+
+# --------------------------------------------------------------------------
+- date: 2026-12-28
+  titre: "Le Noël de Midtown"
+  theme: "MET et son sapin, Central Park, patinoire, 5e Avenue, coucher du soleil au Top of the Rock, sapin, Saks, Bryant Park"
+  couleur: "#c8102e"
+  depart: "09:00"
+  etapes:
+    - lieu: met
+      trajet: { mode: metro, lignes: [C], de: "42 St–Port Authority", a: "81 St–Museum of Natural History", duree: 35, detail: "C (local) 7 arrêts, ~14 min. Puis traversée de Central Park à pied (79th St transverse → Belvedere Castle → Great Lawn), 15 min : la première balade du jour." }
+      pas_avant: "10:00"
+      duree: 140
+      quoi: "Ouverture à 10h. 1) Le sapin aux anges et la crèche napolitaine (salle 305, à gauche du grand hall) avant la foule. 2) Costume Institute (Anna Wintour Costume Center, rez-de-chaussée). 3) Arts décoratifs : salons d'époque de l'American Wing et galeries européennes (Wrightsman Rooms)."
+      conseil: "Billets en ligne la veille pour passer directement. Vestiaire gratuit (manteaux et sacs)."
+    - lieu: central_park_sud
+      trajet: { mode: marche, detail: "Sortie 5th Ave, entrée dans le parc à la 79e Rue, descente vers le lac." }
+      duree: 30
+      quoi: "Cedar Hill → Bethesda Terrace et sa fontaine → vue sur le Bow Bridge → The Mall (allée des ormes et Literary Walk)."
+    - lieu: wollman
+      trajet: { mode: marche, detail: "Bas du Mall → The Dairy → Wollman Rink." }
+      creneau: "13:30"
+      duree: 60
+      quoi: "Une heure de patin au pied des gratte-ciel de Central Park South."
+      conseil: "Réserver le créneau de 13h30 en ligne (entrée + location). Si les horaires des fêtes 2026 sont étendus (probable), on peut glisser plus longtemps. Petite faim : bretzel ou hot-dog aux chariots du parc avant d'entrer."
+    - lieu: dejeuner_57e
+      titre: "Déjeuner tardif — Central Park South / 57e Rue"
+      trajet: { mode: marche, detail: "Sortie du parc par la 6e Avenue (Artists' Gate)." }
+      duree: 45
+      quoi: "Déjeuner rapide (délis, food halls) entre la 6e et la 7e Avenue, puis quelques pas sur la 57e Rue : Carnegie Hall, Steinway Hall (itinéraire Midtown du Routard p. 271)."
+      repas: "Déjeuner — Midtown, 57e Rue / 6e Av."
+    - lieu: bergdorf_5e
+      trajet: { mode: marche, detail: "La 57e Rue vers l'est jusqu'à la 5e Avenue." }
+      duree: 20
+      quoi: "Les vitrines de Bergdorf Goodman (58e Rue), l'hôtel Plaza, Tiffany « The Landmark » (57e Rue), la façade de Louis Vuitton, puis on descend la 5e jusqu'à Cartier, enrubanné comme un paquet cadeau (52e Rue)."
+    - lieu: top_of_the_rock
+      trajet: { mode: marche, detail: "5e Avenue jusqu'à la 50e Rue, entrée côté 50e Rue (entre 5e et 6e Av.)." }
+      creneau: "16:15"
+      duree: 65
+      coucher: true
+      quoi: "Coucher du soleil à 16h35 sur l'Empire State et Lower Manhattan, puis Central Park côté nord. On reste pour l'heure bleue (17h05) : la ville s'allume sous nos yeux."
+      conseil: "Créneau de 16h15 à réserver dès l'achat du pass : c'est le plus demandé de l'année."
+    - lieu: sapin_rockefeller
+      trajet: { mode: marche }
+      duree: 20
+      nuit: true
+      quoi: "Le sapin, les anges trompettistes des Channel Gardens, la patinoire en contrebas, les drapeaux."
+    - lieu: saks_light_show
+      trajet: { mode: marche, detail: "On traverse la 5e Avenue." }
+      duree: 10
+      nuit: true
+      quoi: "Le spectacle de lumières de la façade (toutes les ~10 min) et les vitrines de Saks."
+    - lieu: st_patrick
+      trajet: { mode: marche }
+      duree: 15
+      nuit: true
+      quoi: "La nef gothique illuminée, la crèche, un moment de calme. En ressortant, le sapin du Lotte New York Palace (Madison Ave, juste derrière)."
+    - lieu: radio_city_boules
+      trajet: { mode: marche, detail: "On retraverse le Rockefeller Center vers l'ouest jusqu'à la 6e Avenue." }
+      duree: 10
+      nuit: true
+      quoi: "Les boules rouges géantes, la fontaine décorée, la façade néon de Radio City."
+    - lieu: bryant_park
+      trajet: { mode: marche, detail: "On descend la 6e Avenue de la 50e à la 42e Rue (les vitrines du Rockefeller Center défilent)." }
+      duree: 50
+      nuit: true
+      quoi: "Le marché de Noël (les stands ferment à 20h), le grand sapin, les patineurs, la terrasse de la bibliothèque."
+      conseil: "Le marché est LE coup de cœur de la note : les stands ferment à 20h, la patinoire et le sapin restent illuminés jusqu'à minuit."
+    - lieu: grand_central
+      titre: "Dîner à Midtown East, puis Grand Central de nuit"
+      trajet: { mode: marche, detail: "42e Rue vers l'est (0,6 km)." }
+      duree: 95
+      nuit: true
+      quoi: "Dîner (~1 h 05) dans le quartier de Grand Central / Murray Hill, puis le hall principal presque vide, le plafond étoilé, la Whispering Gallery."
+      repas: "Dîner — Midtown East (autour de Grand Central)"
+    - lieu: times_square
+      trajet: { mode: marche, detail: "42e Rue vers l'ouest." }
+      duree: 15
+      nuit: true
+      quoi: "Bain de foule et d'écrans, l'escalier rouge (47e Rue)."
+    - lieu: hotel
+      trajet: { mode: marche }
+      duree: 0
+      quoi: "Retour à l'hôtel."
+
+# --------------------------------------------------------------------------
+- date: 2026-12-29
+  titre: "Petits trains, Columbus Circle et MoMA"
+  theme: "Holiday Train Show dans le Bronx, MAD, MoMA, vitrines de Macy's, Empire State de nuit"
+  couleur: "#1f6f4a"
+  depart: "08:45"
+  etapes:
+    - lieu: nybg
+      trajet: { mode: train, lignes: [S, MNR], de: "Times Sq–42 St → Grand Central", a: "Botanical Garden (Metro-North, ligne Harlem)", duree: 50, detail: "7 min à pied jusqu'à Times Square, navette S (ou ligne 7) jusqu'à Grand Central, train Metro-North de la ligne Harlem (~20 min, départ après 9h = tarif creux). Billet CityTicket 5,25 $ dans l'appli TrainTime. La gare débouche face à l'entrée Mosholu du jardin.", prix: 5.25 }
+      creneau: "10:00"
+      duree: 135
+      quoi: "Le Holiday Train Show dans la serre Enid A. Haupt (190 répliques de New York en matériaux naturels, trains à toute vitesse), puis un tour dans le jardin d'hiver et la boutique."
+      conseil: "Prendre le train qui arrive avant 9h50 (horaires dans TrainTime). Billet à heure fixe de 10h, à réserver dès maintenant."
+    - lieu: columbus_market
+      titre: "Déjeuner à Columbus Circle + marché de Noël"
+      trajet: { mode: metro, lignes: [B, D], de: "Bedford Park Blvd", a: "59 St–Columbus Circle", duree: 47, detail: "12 min à pied jusqu'à la station (sortie Mosholu, Bedford Park Blvd), puis B ou D direct, ~30 min." }
+      duree: 45
+      quoi: "Déjeuner, puis le marché de Noël de Columbus Circle (vu rapidement lundi, on prend le temps)."
+      repas: "Déjeuner — Columbus Circle"
+    - lieu: mad
+      trajet: { mode: marche }
+      duree: 75
+      quoi: "Les expositions d'artisanat et de design contemporain (céramique, verre, bijoux), les ateliers d'artistes du 6e étage, puis la vue sur Columbus Circle depuis le 9e."
+    - lieu: moma
+      trajet: { mode: marche, detail: "Broadway puis la 53e Rue, ~1 km." }
+      duree: 115
+      quoi: "Le 5e étage (1880-1940) : La Nuit étoilée, Les Demoiselles d'Avignon, les Nymphéas, Matisse ; puis le 4e (1940-1970 : Warhol, Pollock) et le jardin de sculptures."
+      conseil: "Fermeture à 17h30 : on fait le 5e en premier."
+    - lieu: macys
+      trajet: { mode: metro, lignes: [F, M], de: "47-50 Sts–Rockefeller Ctr", a: "34 St–Herald Sq", duree: 18, detail: "6 min à pied jusqu'à la station (6e Av.), F ou M 2 arrêts." }
+      duree: 40
+      nuit: true
+      quoi: "Les vitrines de Noël de la 34e Rue et de Broadway, Herald Square illuminé, les escalators en bois d'origine à l'intérieur."
+    - lieu: koreatown
+      titre: "Dîner à Koreatown"
+      trajet: { mode: marche }
+      duree: 70
+      nuit: true
+      quoi: "Dîner dans l'ambiance électrique de la 32e Rue (barbecue coréen, ragoûts, desserts)."
+      repas: "Dîner — Koreatown (32e Rue)"
+    - lieu: empire_state
+      trajet: { mode: marche }
+      creneau: "20:00"
+      duree: 75
+      nuit: true
+      quoi: "La ville de nuit à 360° depuis la terrasse en plein air du 86e étage, plus l'exposition sur la construction du gratte-ciel au 2e."
+      conseil: "Réservation obligatoire avec le pass (créneau de 20h)."
+    - lieu: times_square
+      titre: "Broadway de nuit → Times Square"
+      trajet: { mode: marche, detail: "On remonte Broadway (Herald Sq → Times Sq)." }
+      duree: 20
+      nuit: true
+      quoi: "Deuxième passage pour les photos, les théâtres de Broadway qui se vident."
+    - lieu: hotel
+      trajet: { mode: marche }
+      duree: 0
+      quoi: "Retour à l'hôtel."
+
+# --------------------------------------------------------------------------
+- date: 2026-12-30
+  titre: "Brooklyn, des fripes aux lumières"
+  theme: "Street art de Bushwick, fripes et concept stores, ferry, DUMBO, coucher du soleil à Brooklyn Heights, Dyker Heights"
+  couleur: "#d97706"
+  depart: "09:00"
+  etapes:
+    - lieu: bushwick
+      trajet: { mode: metro, lignes: [A, L], de: "42 St–Port Authority", a: "Jefferson St", duree: 47, detail: "A (express) jusqu'à 14 St, correspondance couloir vers la L (8 Av), L jusqu'à Jefferson St (~22 min), 7 min à pied." }
+      duree: 50
+      quoi: "Les fresques du Bushwick Collective : Troutman St, St Nicholas Ave, Wyckoff Ave. Café chaud dans le quartier."
+    - lieu: fripes_bushwick
+      trajet: { mode: marche, detail: "Vers Bogart St / Knickerbocker Ave (station Morgan Av)." }
+      pas_avant: "11:00"
+      duree: 65
+      quoi: "Première chine : grands dépôts-ventes, vintage pas cher, friperies au kilo."
+    - lieu: fripes_williamsburg
+      titre: "Déjeuner à Williamsburg + fripes et concept stores"
+      trajet: { mode: metro, lignes: [L], de: "Morgan Av", a: "Bedford Av", duree: 15, detail: "L, 4 arrêts." }
+      duree: 120
+      quoi: "Déjeuner (~45 min) près de Bedford Ave, puis friperies sélectionnées, concept stores de North 6th St, créateurs indépendants. Les marchés aux puces sont fermés en semaine : on chine en boutiques."
+      repas: "Déjeuner — Williamsburg (Bedford Ave)"
+    - lieu: ferry_williamsburg
+      trajet: { mode: marche, detail: "N 6th St jusqu'au bord de l'East River." }
+      duree: 10
+      quoi: "Attente du NYC Ferry, ligne East River, vers le sud."
+      conseil: "Horaires en direct dans l'appli NYC Ferry. Billet 5 $ dans l'appli (le pass 2 jours à 15 $ ne vaut pas le coup pour un seul trajet)."
+    - lieu: dumbo
+      trajet: { mode: ferry, lignes: [FERRY], de: "North Williamsburg", a: "DUMBO / Fulton Ferry", duree: 15, detail: "NYC Ferry East River : passage sous le Williamsburg Bridge et le Manhattan Bridge, skyline à droite.", prix: 5 }
+      duree: 25
+      quoi: "Washington St et la vue culte sous le Manhattan Bridge, le Jane's Carousel dans sa boîte de verre, Pebble Beach."
+      conseil: "Goûter : chocolat chaud à DUMBO, le dîner sera tardif."
+    - lieu: brooklyn_heights_promenade
+      trajet: { mode: marche, detail: "Old Fulton St → Pier 1 → passerelle Squibb Park → Columbia Heights → Promenade." }
+      duree: 40
+      coucher: true
+      quoi: "Coucher du soleil (16h37) derrière la Statue de la Liberté, Lower Manhattan qui s'illumine."
+    - lieu: brooklyn_heights_landmarks
+      trajet: { mode: marche }
+      duree: 30
+      nuit: true
+      quoi: "Les brownstones décorées de Willow St, Pierrepont St et Montague St à la tombée de la nuit : couronnes, guirlandes, fenêtres éclairées."
+    - lieu: dyker_heights
+      trajet: { mode: metro, lignes: [4, D], de: "Borough Hall", a: "79 St", duree: 62, detail: "4 ou 5 jusqu'à Atlantic Av–Barclays Ctr (1 arrêt), correspondance vers la D, D jusqu'à 79 St (~22 min), puis 20 min à pied jusqu'à la 84e Rue et la 12e Av. Option plus rapide : VTC depuis Brooklyn Heights, ~25 min, 25-35 $." }
+      duree: 75
+      nuit: true
+      quoi: "Flânerie entre la 83e et la 86e Rue, de la 11e à la 13e Avenue : soldats de bois géants, rennes, crèches, musique. Les maisons sont presque toutes allumées avant 21h."
+    - lieu: dyker_heights
+      titre: "Dîner à Dyker Heights / Bensonhurst"
+      trajet: { mode: marche, detail: "Vers la 13e Avenue ou la 86e Rue (pâtisseries et trattorias italo-américaines)." }
+      duree: 65
+      nuit: true
+      quoi: "Dîner tardif dans le quartier italo-américain : on finit avec un cannolo."
+      repas: "Dîner — Dyker Heights / Bensonhurst (13e Av. ou 86e Rue)"
+    - lieu: hotel
+      trajet: { mode: metro, lignes: [D], de: "79 St", a: "42 St–Bryant Park", duree: 60, detail: "D direct (~45 min), puis 12 min à pied jusqu'à l'hôtel par la 40e Rue." }
+      duree: 0
+      quoi: "Retour à l'hôtel."
+
+# --------------------------------------------------------------------------
+- date: 2026-12-31
+  titre: "Downtown, puis le réveillon"
+  theme: "9/11 Memorial, SoHo, Little Italy, Chinatown, Seaport et l'imprimerie Bowne, Wall Street, ferry au coucher du soleil, réveillon"
+  couleur: "#1d4ed8"
+  depart: "09:00"
+  etapes:
+    - lieu: memorial_911
+      trajet: { mode: metro, lignes: [E], de: "42 St–Port Authority", a: "World Trade Center", duree: 28, detail: "E direct jusqu'au terminus, ~15 min." }
+      creneau: "09:45"
+      duree: 105
+      quoi: "Arrivée 9h35 : 10 min autour des deux bassins du mémorial dans la lumière du matin. Puis le musée (1 h 45) : exposition historique, Foundation Hall, la « Last Column »."
+      conseil: "Créneau de 9h45 réservé avec le pass."
+    - lieu: oculus
+      trajet: { mode: marche }
+      duree: 10
+      quoi: "La nef blanche de Calatrava. En sortant côté est : St. Paul's Chapel (1766), où priait George Washington."
+    - lieu: soho_routard
+      trajet: { mode: marche, detail: "Church St puis West Broadway jusqu'à Canal St & Greene St (départ du Routard)." }
+      duree: 60
+      quoi: "Itinéraire Routard p. 175 : Greene St et ses façades en fonte (Queen et King of Greene Street), Broome St, Prince St, Broadway (Little Singer Building), Lafayette, Puck Building, arrivée à Nolita."
+    - lieu: little_italy_chinatown
+      titre: "Déjeuner à Nolita / Little Italy, puis Chinatown"
+      trajet: { mode: marche }
+      duree: 75
+      quoi: "Déjeuner (~45 min) sur Mulberry St ou à Nolita, puis Mott St, Pell St, la rue coudée de Doyers St et Columbus Park."
+      repas: "Déjeuner — Nolita / Little Italy"
+    - lieu: seaport_bowne
+      trajet: { mode: marche, detail: "Par Park Row et Fulton St (~1,3 km)." }
+      duree: 25
+      quoi: "Bowne & Co. : imprimerie du XIXe siècle encore en activité, acheter une carte de vœux imprimée à la main. Les pavés de Schermerhorn Row."
+      conseil: "Fermeture à 17h (horaires du 31 à confirmer) : on arrive avant 16h."
+    - lieu: wall_street
+      trajet: { mode: marche }
+      duree: 10
+      quoi: "Wall Street, le sapin de la Bourse, la statue de Washington sur les marches de Federal Hall, puis Broad St vers le sud."
+    - lieu: staten_island_ferry
+      trajet: { mode: marche, detail: "Broad St → Whitehall Terminal." }
+      duree: 70
+      coucher: true
+      quoi: "Aller-retour gratuit : la Statue de la Liberté au coucher du soleil (16h37) à l'aller, Lower Manhattan qui s'illumine au retour."
+      conseil: "Viser le bateau de ~16h15-16h30. À St George, descendre puis reprendre le bateau suivant."
+    - lieu: museum_fit
+      trajet: { mode: metro, lignes: ["1"], de: "South Ferry", a: "28 St", duree: 29, detail: "1 direct (~18 min)." }
+      duree: 40
+      nuit: true
+      quoi: "« Doll Dressing », l'exposition sur les poupées et la mode, avant sa fermeture le 3 janvier."
+      conseil: "À confirmer le 30 : si le musée ferme tôt le 31, on file directement à l'hôtel."
+    - lieu: hotel
+      titre: "Pause à l'hôtel avant le réveillon"
+      trajet: { mode: metro, lignes: ["1"], de: "28 St", a: "Times Sq–42 St", duree: 14, detail: "1, 2 arrêts, puis 7 min à pied." }
+      duree: 0
+      quoi: "Douche, couches chaudes, et c'est parti pour la soirée choisie (voir l'onglet Réveillon : 6 possibilités comparées)."
+
+# --------------------------------------------------------------------------
+- date: 2027-01-01
+  titre: "Bonne année ! Upper West Side, Village, High Line, puis JFK"
+  theme: "Natural History (ouvert le 1er), balade Greenwich Village, High Line au coucher du soleil, Hudson Yards illuminé, départ"
+  couleur: "#7c3aed"
+  depart: "10:15"
+  note: "Check-out avant 10h15, valises laissées à la bagagerie de l'hôtel. Grasse matinée méritée après la nuit du 31."
+  etapes:
+    - lieu: amnh
+      trajet: { mode: metro, lignes: [C], de: "42 St–Port Authority", a: "81 St–Museum of Natural History", duree: 24, detail: "C (local), ~14 min ; la station donne directement dans le musée." }
+      duree: 150
+      quoi: "La baleine bleue, les dinosaures du 4e étage (T. rex, Titanosaure), le Gilder Center (vivarium des papillons et insectarium, en supplément), les dioramas des mammifères d'Amérique du Nord."
+    - lieu: amnh
+      titre: "Déjeuner — Upper West Side"
+      trajet: { mode: marche }
+      duree: 40
+      quoi: "Déjeuner sur Columbus Ave ou Amsterdam Ave (beaucoup d'adresses ouvertes le 1er pour le brunch)."
+      repas: "Déjeuner — Upper West Side (Columbus Ave)"
+    - lieu: greenwich_routard
+      trajet: { mode: metro, lignes: [C], de: "81 St–Museum of Natural History", a: "W 4 St–Washington Sq", duree: 31, detail: "C direct (~20 min)." }
+      duree: 85
+      quoi: "Itinéraire Routard p. 191, raccourci : Washington Square et son arche, Washington Mews, 5e Avenue, W 11th St, Jefferson Market, Gay St, Sheridan Square et Stonewall, Bleecker St, Grove Court, les jardins de St Luke in the Fields, la maison la plus étroite de New York."
+    - lieu: high_line
+      trajet: { mode: marche, detail: "Hudson St → Gansevoort St (entrée sud, au pied du Whitney)." }
+      duree: 60
+      coucher: true
+      quoi: "Les 2,3 km de la High Line vers le nord au coucher du soleil (16h38) : l'Hudson à gauche, Chelsea et Midtown qui s'allument à droite."
+    - lieu: hudson_yards
+      trajet: { mode: marche }
+      duree: 25
+      nuit: true
+      quoi: "Les illuminations « Shine Bright » et le spectacle de lumière sur le Vessel."
+      conseil: "Si Edge est la 5e attraction de votre CityPASS : 35 min au 100e étage, juste à côté."
+    - lieu: hudson_yards
+      titre: "Dîner — Hudson Yards / Hell's Kitchen"
+      trajet: { mode: marche }
+      duree: 65
+      nuit: true
+      quoi: "Dernier dîner new-yorkais, entre Hudson Yards et la 9e Avenue (Hell's Kitchen)."
+      repas: "Dîner — Hudson Yards / Hell's Kitchen (9e Av.)"
+    - lieu: hotel
+      titre: "Récupérer les valises"
+      trajet: { mode: marche, detail: "10e Av. → 40e Rue (~1 km)." }
+      duree: 15
+      quoi: "Bagagerie de l'hôtel, on se change pour l'avion."
+    - lieu: jfk
+      titre: "Taxi → JFK (vol de 23h59)"
+      trajet: { mode: taxi, duree: 55, detail: "Taxi jaune au forfait (70 $ + suppléments + pourboire ≈ 95-100 $ pour 3), ~45-55 min un soir de 1er janvier. Le portier de l'hôtel peut le héler.", prix: 33 }
+      duree: 0
+      quoi: "Arrivée à JFK ≈ 3 h avant le vol. Bon retour !"

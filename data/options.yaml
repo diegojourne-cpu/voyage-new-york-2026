@@ -1,0 +1,202 @@
+# ============================================================================
+#  OPTIONS HORS PLANNING DE BASE — à choisir en famille
+# ============================================================================
+
+# ---------------------------------------------------------------- RÉVEILLON DU 31
+reveillon:
+  intro: >-
+    Jeudi 31 décembre : la journée Downtown se termine à l'hôtel vers 19h30. Voici toutes
+    les façons de passer minuit, comparées. Le cadet a 18 ans : pas d'alcool, et les
+    événements « 21+ » (bars, rooftops, certaines croisières) lui sont fermés.
+    Feux d'artifice : la météo peut les annuler (plusieurs annulations au réveillon 2025).
+  recommandation: >-
+    Notre conseil : « Dîner de réveillon puis feux de Central Park ». Toute la magie
+    (dîner de fête, puis la foule joyeuse des coureurs déguisés et des feux au-dessus du lac),
+    sans les 9 h d'attente debout de Times Square, avec retour à pied ou en 2 stations de métro.
+    Variante si le budget le permet : la croisière du Pier 83, à 12 min à pied de l'hôtel.
+  choix:
+    - id: central_park
+      lieu: nye_central_park
+      titre: "Dîner de réveillon puis feux d'artifice de Central Park"
+      note: 5
+      arrivee: "Dîner 20h30-23h (Upper West Side ou Midtown). Dans le parc à 23h20 (entrée 72nd St / CPW), Bethesda Terrace ou Cherry Hill."
+      foule: "Forte mais bon enfant : course de 4 miles (NYRR Midnight Run), coureurs déguisés, DJ."
+      attente: "≈ 40 min debout."
+      froid: "Modéré : on arrive tard, on bouge."
+      cout: "Dîner de réveillon : 90-200 $/pers. (menu fixe). Feux gratuits."
+      acces_retour: "Retour à pied (35 min, 2,5 km) ou métro C/B de 72 St jusqu'à 42 St–Port Authority. Hôtel vers 1h15."
+      plus: ["Feux au-dessus des arbres et du lac", "Ambiance festive et familiale", "Retour simple et court"]
+      moins: ["Feux plus modestes que la boule de Times Square en symbole", "Restaurants à réserver tôt (menus du 31)"]
+    - id: croisiere
+      lieu: nye_croisiere
+      titre: "Croisière dîner du réveillon (Pier 83)"
+      note: 4
+      arrivee: "Embarquement ~21h, croisière 22h-1h."
+      foule: "Aucune : places assises, à l'abri."
+      attente: "Aucune."
+      froid: "Au chaud, pont extérieur pour minuit."
+      cout: "≈ 200-450 $/pers. selon le bateau (dîner-buffet ou dîner servi). ATTENTION : les croisières « party / open bar » sont souvent 21+ → vérifier « all ages »."
+      acces_retour: "Pier 83 (42e Rue & 12e Av.) : 12 min à pied de l'hôtel, aller comme retour. Hôtel vers 1h20."
+      plus: ["Skyline + Statue de la Liberté à minuit", "Au chaud, dîner inclus", "Logistique parfaite depuis l'hôtel"]
+      moins: ["Le plus cher", "Feux vus de loin selon l'itinéraire", "À réserver très vite"]
+    - id: prospect_park
+      lieu: nye_prospect_park
+      titre: "Feux d'artifice de Prospect Park (Grand Army Plaza)"
+      note: 4
+      arrivee: "Musique live dès 22h, arriver vers 22h30-23h. Dîner avant à Park Slope (19h30-21h30)."
+      foule: "Grande mais très locale et familiale."
+      attente: "1 h debout."
+      froid: "Fort (Plaza très exposée)."
+      cout: "Gratuit (inscription en ligne demandée : prospectpark.org/nye)."
+      acces_retour: "Métro 2/3 Grand Army Plaza → Times Sq–42 St, ~30 min, mais quais bondés après minuit. Hôtel vers 1h45."
+      plus: ["Le vrai grand feu d'artifice officiel de Brooklyn (46e édition)", "Ambiance de quartier", "Gratuit"]
+      moins: ["Loin de l'hôtel", "Retour long et bondé"]
+    - id: brooklyn_promenade
+      lieu: nye_brooklyn_promenade
+      titre: "Brooklyn Heights Promenade / Brooklyn Bridge Park"
+      note: 3
+      arrivee: "22h30 au plus tard pour une place à la rambarde."
+      foule: "Très forte (en 2025 la foule était massive)."
+      attente: "1 h 30 debout."
+      froid: "Fort (vent de l'East River)."
+      cout: "Gratuit."
+      acces_retour: "Métro 2/3 (Clark St) ou A/C (High St) → Times Square, ~25 min + files. Hôtel vers 1h45."
+      plus: ["La skyline de Manhattan à minuit", "Feux de la baie visibles au loin"]
+      moins: ["PAS de feu d'artifice officiel sur place : on regarde ceux de la baie, lointains et incertains", "Très exposé au froid"]
+    - id: battery
+      lieu: nye_battery
+      titre: "Battery Park / Wagner Park"
+      note: 2
+      arrivee: "23h."
+      foule: "Moyenne."
+      attente: "1 h."
+      froid: "Fort (bord de baie)."
+      cout: "Gratuit."
+      acces_retour: "Métro 1 (South Ferry) → Times Sq–42 St, 20 min. Hôtel vers 1h."
+      plus: ["Calme", "Statue de la Liberté dans l'axe"]
+      moins: ["Pas de feu officiel garanti", "Peu d'ambiance"]
+    - id: times_square
+      lieu: nye_times_square
+      titre: "Times Square — la descente de la boule"
+      note: 2
+      arrivee: "Zones ouvertes vers 15h, pleines en début d'après-midi. Il faudrait être dans les enclos vers 14h-15h → la journée Downtown s'arrête à midi."
+      foule: "Un million de personnes, enclos fermés."
+      attente: "9 à 10 h debout. Si on sort de l'enclos, on ne peut plus y revenir."
+      froid: "Très fort, immobile pendant des heures."
+      cout: "Gratuit (aucune place officielle n'est vendue : méfiance)."
+      acces_retour: "L'hôtel est à 5 min… mais la dispersion prend 45-60 min. Hôtel vers 1h."
+      plus: ["Le mythe absolu, les confettis, Sinatra à minuit"]
+      moins: ["Pas de toilettes, ni de nourriture, ni de grand sac", "On sacrifie l'après-midi du 31", "Épuisant avant un 1er janvier chargé"]
+    - id: restaurant_hotel
+      lieu: nye_times_square
+      titre: "Dîner de réveillon près de l'hôtel + minuit à la télé / dans la rue"
+      note: 3
+      arrivee: "Dîner 20h30-23h30 à Hell's Kitchen (9e Av.), minuit en chemin ou à l'hôtel."
+      foule: "Faible."
+      attente: "Aucune."
+      froid: "Aucun."
+      cout: "Dîner 90-200 $/pers."
+      acces_retour: "À pied, 5 min."
+      plus: ["Zéro stress, on garde des forces pour le 1er"]
+      moins: ["Pas de feu d'artifice en direct"]
+
+# ---------------------------------------------------------------- STATUE DE LA LIBERTÉ
+statue:
+  lieu: statue_liberte
+  incluse_dans: "CityPASS (comme l'une des 5 attractions au choix) et C-All. Ferry et accès aux îles inclus ; piédestal et couronne non inclus."
+  meilleur_moment: "Premier bateau (9h00) depuis Battery Park, contrôle de sécurité à 8h30. Le matin, la lumière éclaire le visage de la statue (tournée vers le sud-est)."
+  creneau_remplace: "Jeudi 31 décembre, de 8h15 à 14h"
+  deroule:
+    - "08:15 Départ de l'hôtel — métro 1 jusqu'à South Ferry (25 min)"
+    - "08:40 Contrôle de sécurité à Castle Clinton"
+    - "09:00 Premier ferry → Liberty Island (1 h 15 sur l'île)"
+    - "10:30 Ferry → Ellis Island (musée de l'Immigration, 1 h 30)"
+    - "12:30 Ferry retour → Battery Park (13h)"
+    - "13:00 Déjeuner Financial District, puis 9/11 Memorial & Museum (créneau 14h, 1 h 45)"
+    - "16:00 Wall Street, Seaport et Bowne & Co (fermeture 17h)"
+    - "17:00 Coucher du soleil depuis Battery Park (le ferry de Staten Island devient inutile)"
+  ce_qu_on_perd: "La balade SoHo, Little Italy et Chinatown, ainsi que le ferry de Staten Island (doublon). La balade SoHo peut remplacer Greenwich Village le 1er janvier."
+  verdict: "Ça vaut le coup si vous n'êtes jamais montés sur l'île. Si vous l'avez déjà vue de près, le ferry de Staten Island (gratuit, au coucher du soleil) donne 80 % de l'émotion en 1 h 10."
+
+# ---------------------------------------------------------------- MATCH
+match:
+  verdict: "Pas de match qui s'intègre bien. On ne le programme pas."
+  details:
+    - "Knicks (NBA, Madison Square Garden à 10 min de l'hôtel) : dernier match à domicile le 27 déc. à 18h contre les Nets, avant votre atterrissage. Puis à l'extérieur (Utah le 30, Phoenix le 31). Prochain match à domicile le 11 janvier."
+    - "Rangers (NHL, MSG) : aucun match du 27 au 31 décembre."
+    - "Nets (NBA, Barclays Center) : à domicile le 26 déc., puis à l'extérieur (Portland le 29, Sacramento le 31)."
+    - "Devils (NHL, Newark) : pas de match à domicile sur la période."
+    - "Islanders (NHL, UBS Arena à Elmont, Long Island) : contre Washington le mercredi 30 décembre à 16h. 40 min de train (LIRR) depuis Penn Station ; billets ≈ 60-200 $. C'est la seule possibilité, mais elle tombe sur la journée Brooklyn / Dyker Heights et nous ferait perdre le coucher du soleil et les lumières."
+  alternative: "Si un match vous tient à cœur : le 30, Islanders à 16h, avec Brooklyn le matin (Bushwick + Williamsburg) et Dyker Heights à reporter… mais nous le déconseillons."
+  sources:
+    - "https://www.cbssports.com/nba/teams/NY/new-york-knicks/schedule/"
+    - "https://www.cbssports.com/nhl/teams/NYI/new-york-islanders/schedule/regular/"
+    - "https://en.wikipedia.org/wiki/2026%E2%80%9327_Brooklyn_Nets_season"
+
+# ---------------------------------------------------------------- BIG APPLE GREETER
+greeter:
+  verdict: "Possible, mais il faut demander CETTE SEMAINE, sans garantie."
+  details:
+    - "Service gratuit de bénévoles new-yorkais : 2 à 4 h de balade dans un quartier de votre choix (dons bienvenus)."
+    - "Confirmation au plus tôt 90 jours avant ; les créneaux sont souvent pris 4 à 6 semaines à l'avance. Nous sommes à 4,5 semaines."
+    - "Le site demande une date principale et deux dates de secours."
+  creneau_conseille: "Jeudi 31 décembre, 12h-15h (Chinatown, Little Italy et Lower East Side, à la place de notre balade). Dates de secours : 30 déc. matin (Brooklyn) ou 1er janv. 14h (Greenwich Village)."
+  lien: "https://bigapplegreeter.org/visitors"
+
+# ---------------------------------------------------------------- AUTRES IDÉES (non programmées)
+autres:
+  - lieu: radio_city_spectacular
+    titre: "Christmas Spectacular des Rockettes"
+    pourquoi: "LE spectacle de Noël new-yorkais (1 h 30, danse et parade des soldats de bois)."
+    ou_le_placer: "Mardi 29 à 19h30 à la place du dîner à Koreatown + Empire State (l'Empire State passerait au 1er janvier avant le dîner) ; ou lundi 28 à 20h00 à la place de Grand Central."
+    prix: "≈ 65-200 $/pers."
+  - lieu: bronx_zoo_lights
+    titre: "Bronx Zoo Holiday Lights"
+    pourquoi: "Lanternes et animaux lumineux géants, juste à côté du Botanical Garden."
+    ou_le_placer: "Mardi 29 : jardin botanique l'après-midi (créneau 14h), zoo à la nuit (16h30-19h), dîner dans le Bronx. Le MoMA et le MAD passeraient… nulle part : déconseillé."
+    prix: "≈ 35-45 $/pers."
+  - lieu: momi
+    titre: "Museum of the Moving Image (+)"
+    pourquoi: "Musée du cinéma et du jeu vidéo, en accès ludique (Jim Henson, effets spéciaux)."
+    ou_le_placer: "Vendredi 1er janvier 13h45-16h15 à la place du Village : AMNH → métro N/W jusqu'à 36 Av (30 min) → MoMI → retour par la N/W jusqu'à Times Square (25 min) → Hudson Yards le soir. À confirmer : ouverture le 1er janvier (vendredi 14h-20h en temps normal)."
+    prix: "20 $/pers."
+  - lieu: transit_museum_gc
+    titre: "Holiday Train Show du Transit Museum (Grand Central)"
+    pourquoi: "Gratuit, trains miniatures de New York, 15 min."
+    ou_le_placer: "Lundi 28 vers 19h si l'on passe par Grand Central avant Bryant Park (fermeture 19h30)."
+    prix: "Gratuit"
+  - lieu: roosevelt_tram
+    titre: "Téléphérique de Roosevelt Island"
+    pourquoi: "4 min au-dessus de l'East River pour le prix d'un ticket de métro."
+    ou_le_placer: "Jeudi 31 au petit matin (8h-9h30) en partant plus tôt, ou en plan pluie."
+    prix: "3 $ (OMNY)"
+  - lieu: harlem
+    titre: "Harlem"
+    pourquoi: "Brownstones, Apollo, gospel (messes du dimanche : pas de dimanche dans notre séjour)."
+    ou_le_placer: "Vendredi 1er après l'AMNH (métro B/C jusqu'à 125 St) à la place du Village."
+    prix: "Gratuit"
+  - lieu: noho_ev_routard
+    titre: "Itinéraire Routard NoHo et East Village (p. 211)"
+    pourquoi: "Architecture (Bond St, Astor Place, St Mark's Church)."
+    ou_le_placer: "Jeudi 31 à la place de Chinatown (13h-15h), ou en plan pluie partiel."
+    prix: "Gratuit"
+  - lieu: les_routard
+    titre: "Itinéraire Routard Lower East Side (p. 217)"
+    pourquoi: "Immigration, synagogue d'Eldridge St, Orchard St."
+    ou_le_placer: "Jeudi 31 après Chinatown (le départ du Routard est à Chatham Square, à 2 pas) si l'on renonce au Seaport."
+    prix: "Gratuit"
+  - lieu: whitney
+    titre: "Whitney Museum (inclus dans les pass)"
+    pourquoi: "Art américain, terrasses face à l'Hudson, au pied de la High Line."
+    ou_le_placer: "Plan pluie du 1er janvier (si ouvert), à la place du Village."
+    prix: "30 $ (ou 5e attraction du CityPASS)"
+
+# ---------------------------------------------------------------- PLAN PLUIE / NEIGE
+plan_pluie:
+  principe: "Pas de plan B figé : dites « il pleut » et le programme est réorganisé avec les mêmes règles. Voici la réserve d'activités couvertes, par quartier."
+  par_quartier:
+    Midtown: ["Grand Central et sa galerie de trains miniatures", "New York Public Library (salle de lecture Rose)", "Intrepid (porte-avions, inclus dans le CityPASS)", "Radio City Christmas Spectacular"]
+    Downtown: ["Oculus et Brookfield Place (Winter Garden)", "Musée d'Ellis Island", "Tenement Museum (Lower East Side, visites guidées)"]
+    Brooklyn: ["Transit Museum (lun-ven 10h-16h, gratuit)", "Friperies couvertes de Bushwick et Williamsburg"]
+    Uptown: ["Guggenheim (fermé mar-mer)", "Neue Galerie", "Frick Collection"]
+    Chelsea: ["Chelsea Market", "Whitney (fermé le mardi)", "Museum at FIT"]

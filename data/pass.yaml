@@ -1,0 +1,42 @@
+# ============================================================================
+#  PASS — comparatif calculé automatiquement à partir du programme
+#  (une étape dont le lieu a `pass: [citypass]` est couverte par ce pass)
+# ============================================================================
+
+offres:
+  citypass:
+    nom: "New York CityPASS"
+    prix_eur: 138.59
+    frais_eur: 1.86
+    prix_usd_ref: 149
+    nb_attractions: 5
+    mode: choix          # on choisit 5 attractions dans la liste
+    validite_jours: 9
+    liste: [empire_state, amnh, top_of_the_rock, memorial_911, statue_liberte, circle_line, intrepid, guggenheim, edge, whitney]
+    conditions:
+      - "Depuis septembre 2026 : 5 attractions AU CHOIX parmi 10 (avant, l'Empire State et l'AMNH étaient imposés)."
+      - "Réservation obligatoire (créneau) : Empire State, Top of the Rock, 9/11 Museum, Statue de la Liberté, Edge. Recommandée : AMNH, Guggenheim."
+      - "Statue de la Liberté : ferry + accès aux îles (ni piédestal ni couronne)."
+      - "Valable 9 jours consécutifs à partir de la 1re attraction ; billets dans l'appli CityPASS."
+    source: "https://www.newsworthy.ai/curated/new-york-citypass-adds-edge-and-whitney-lowers-price-increases-f/202638588"
+  call:
+    nom: "New York C-All"
+    prix_eur: 240.91
+    frais_eur: 1.86
+    prix_usd_ref: 259
+    nb_attractions: 11
+    mode: tout
+    validite_jours: 9
+    liste: [empire_state, amnh, top_of_the_rock, memorial_911, statue_liberte, circle_line, intrepid, guggenheim, edge, whitney, moma]
+    conditions:
+      - "Une entrée dans chacune des 11 attractions : les 10 du CityPASS + le MoMA (liste reconstituée d'après la presse, page officielle illisible depuis nos outils : à confirmer au moment de l'achat)."
+      - "Surclassement « coucher de soleil » possible à l'Empire State."
+      - "Mêmes réservations obligatoires que le CityPASS."
+    source: "https://www.findingtheuniverse.com/new-york-attraction-passes/"
+
+# Prix individuels (USD, adulte) des attractions des pass qui ne sont pas dans lieux.yaml
+prix_hors_programme:
+  circle_line: { nom: "Circle Line (croisière)", montant: 47 }
+
+# Attraction choisie en 5e position du CityPASS dans notre scénario (modifiable)
+cinquieme_choix_citypass: edge
