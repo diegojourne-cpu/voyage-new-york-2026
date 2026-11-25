@@ -27,7 +27,7 @@ const usd = v => v ? (Number.isInteger(v) ? `${v} $` : `${String(v.toFixed(2)).r
 const eur = v => `${Math.round(v).toLocaleString("fr-FR")} €`;
 const lget = (k, d) => { try { const v = localStorage.getItem("nyc26:" + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } };
 const lset = (k, v) => { try { localStorage.setItem("nyc26:" + k, JSON.stringify(v)); } catch (e) {} };
-const sombre = () => matchMedia("(prefers-color-scheme: dark)").matches;
+const sombre = () => { const t = document.documentElement.dataset.theme; return t ? t === "sombre" : matchMedia("(prefers-color-scheme: dark)").matches; };
 const themeCarte = () => (sombre() ? "sombre" : "clair");
 
 const ICONES = {
@@ -218,7 +218,8 @@ function suivreTheme(map, features, jour) {
   const mq = matchMedia("(prefers-color-scheme: dark)");
   const f = () => { map.setStyle(Carte.style(themeCarte())); map.once("style.load", () => { Carte.couches(map, themeCarte()); Carte.tracer(map, features, jour); }); };
   mq.addEventListener("change", f);
-  map.on("remove", () => mq.removeEventListener("change", f));
+  addEventListener("nyc26-theme", f);
+  map.on("remove", () => { mq.removeEventListener("change", f); removeEventListener("nyc26-theme", f); });
 }
 
 /* ================================================================ vues */
@@ -443,8 +444,14 @@ V.plus = () => {
     ["infos", "Infos pratiques", "Métro, JFK, pourboires, urgences", "#8e8e93", "i"], ["fichiers", "PDF, agenda, Google Maps", "À télécharger ou importer", "#5e5ce6", "↓"],
     ["verif", "Vérification du planning", `${D.nb.erreur} erreur · ${D.nb.attention} points à confirmer`, "var(--gold)", "!"],
   ];
+  const actuel = lget("theme", "auto");
+  const seg = el("div", { class: "seg", role: "group", "aria-label": "Apparence" }, [["auto", "Automatique"], ["clair", "Clair"], ["sombre", "Sombre"]].map(([v, t]) =>
+    el("button", { type: "button", "aria-pressed": String(actuel === v), text: t, onclick: ev => {
+      appliquerTheme(v); seg.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b === ev.currentTarget))); } })));
   return el("div", { class: "page" },
     el("header", { class: "bloc apparait" }, el("h1", { class: "titre-l", text: "Plus." })),
+    el("section", { class: "bloc", style: { gap: "8px" } }, el("div", { class: "liste-titre", text: "Apparence" }), seg,
+      el("p", { class: "liste-note", text: "« Automatique » suit le réglage du téléphone. Le choix est mémorisé sur ce téléphone." })),
     el("section", { class: "bloc" }, el("nav", { class: "liste" }, items.map(([id, t, s, c, ic]) =>
       el("a", { href: "#" + id }, el("span", { class: "ic", style: { background: c }, text: ic }), el("div", {}, el("div", { class: "t", text: t }), el("div", { class: "s", text: s })), el("span", { class: "chev", text: "›" }))))),
     el("p", { class: "pied bloc", text: `Programme généré le ${D.genere_le}. Pour toute modification, écrivez à Claude dans la conversation du voyage.` }));
@@ -555,6 +562,15 @@ V.fichiers = () => {
       el("div", { class: "carte-bloc" }, el("h3", { class: "titre-s", text: "Installer l'appli" }),
         el("p", { class: "pied", text: ios ? "Dans Safari : bouton Partager, puis « Sur l'écran d'accueil ». L'appli s'ouvre alors en plein écran, même sans réseau." : "Dans le menu du navigateur : « Installer l'application » ou « Ajouter à l'écran d'accueil »." }), etatT)));
 };
+
+/* ================================================================ apparence */
+function appliquerTheme(v) {
+  lset("theme", v);
+  if (v === "clair" || v === "sombre") document.documentElement.dataset.theme = v; else delete document.documentElement.dataset.theme;
+  const meta = document.querySelector('meta[name="theme-color"]:not([media])');
+  if (meta) meta.content = sombre() ? "#000000" : "#f5f5f7";
+  dispatchEvent(new Event("nyc26-theme"));
+}
 
 /* ================================================================ service worker (hors connexion) */
 const etatTuiles = { pret: false, pct: null, octets: 0 };
