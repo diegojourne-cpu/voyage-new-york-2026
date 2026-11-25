@@ -1,0 +1,3 @@
+source=https://build.protomaps.com/20261124.pmtiles
+maxzoom=15
+octets=17932448
