@@ -112,7 +112,6 @@ Matchs : aucun Knicks/Rangers/Devils à domicile du 28 au 31 ; Nets à l'extéri
 
 - Dépôt : https://github.com/diegojourne-cpu/voyage-new-york-2026
 - Appli (Cloudflare Pages, projet « voyage-new-york-2026 ») : https://voyage-new-york-2026.pages.dev (le conteneur Claude ne peut pas y accéder : vérification par captures de la famille)
-- Ancien mini-site claude.ai (remplacé par l'appli, à supprimer quand l'appli est en ligne) : https://claude.ai/artifact/JWyWEGNX5sAJz6Le2mXh19
 
 ## 6. Journal des décisions
 
@@ -130,3 +129,4 @@ Matchs : aucun Knicks/Rangers/Devils à domicile du 28 au 31 ; Nets à l'extéri
   installable hébergée sur Cloudflare Pages (gratuit, dépôt privé, accès protégé, synchro KV). Cartes OpenStreetMap
   vectorielles (Protomaps) stockées avec le site → fonctionnent hors connexion. PDF conservé, avec les vraies cartes.
   Trajets en métro tracés station par station (data/stations.yaml). Points d'intérêt allégés (style Apple Plans).
+- 25/11 — Appli en ligne sur https://voyage-new-york-2026.pages.dev (Cloudflare Pages + KV « ETAT » : synchro vérifiée, point vert). Ancien mini-site claude.ai supprimé. Reste à faire par la famille : protection Zero Trust (e-mails), installation sur les 3 téléphones.
