@@ -141,3 +141,13 @@ reservations:
     lien: "https://wollmanrinknyc.com/plan/"
     detail: "Demander à Claude : « vérifie les points ⚠️ » (patinoire Wollman, Museum at FIT le 31, Bowne & Co le 31, MAD, ferry d'hiver, Empire State) puis régénérer."
     statut: a_faire
+
+  - id: connexion_appli
+    titre: "Se reconnecter à l'appli (code par e-mail) × 3"
+    urgence: 3
+    quand: "Le 26 décembre, la veille du départ"
+    creneau: "Chacun ouvre https://voyage-new-york-2026.pages.dev et saisit le code reçu par e-mail"
+    prix: "Gratuit"
+    lien: "https://voyage-new-york-2026.pages.dev"
+    detail: "La connexion dure 1 mois : en se reconnectant le 26, elle couvre tout le voyage. Ouvrir l'appli en Wi-Fi pour mettre à jour les cartes hors connexion."
+    statut: a_faire
