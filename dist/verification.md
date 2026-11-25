@@ -1,6 +1,6 @@
-# Vérification de faisabilité — générée le 25/11/2026 à 10:22
+# Vérification de faisabilité — générée le 25/11/2026 à 10:24
 
-**1 erreur(s) · 6 point(s) d'attention · 6 info(s)**
+**0 erreur(s) · 6 point(s) d'attention · 6 info(s)**
 
 ```text
 
@@ -30,10 +30,10 @@
   14:00–15:15  Museum of Arts and Design (MAD)                             ← 🚶 marche  5′
   15:35–17:30  MoMA — Museum of Modern Art                                 ← 🚶 marche  16′
   17:55–18:35  Macy's Herald Square : vitrines de Noël                     ← 🚇 metro F/M 21′
-  18:45–19:55  Dîner à Koreatown                                           ← 🚶 marche  10′
-  20:05–21:20  Empire State Building — observatoire du 86e (de nuit)       ← 🚶 marche  7′
-  21:45–22:05  Broadway de nuit → Times Square                             ← 🚶 marche  21′
-  22:20–22:20  Hôtel (330 W 40th St)                                       ← 🚶 marche  14′
+  18:45–19:50  Dîner à Koreatown                                           ← 🚶 marche  10′
+  20:00–21:15  Empire State Building — observatoire du 86e (de nuit)       ← 🚶 marche  7′
+  21:40–22:00  Broadway de nuit → Times Square                             ← 🚶 marche  21′
+  22:15–22:15  Hôtel (330 W 40th St)                                       ← 🚶 marche  14′
 
 === MERCREDI 30 DÉCEMBRE — Brooklyn, des fripes aux lumières  (coucher 16:37, nuit 17:09)
   09:55–10:45  Bushwick Collective (street art)                            ← 🚇 metro A/L 55′
@@ -69,7 +69,6 @@
   20:45–20:45  Taxi → JFK (vol de 23h59)                                   ← 🚕 taxi  64′
 
 === ALERTES
-❌ [2026-12-29] Empire State Building — observatoire du 86e (de nuit) — Arrivée estimée 20:05 après le créneau réservé 20:00.
 ⚠️  [2026-12-28] Patinoire Wollman (Central Park) — Horaires à confirmer : Horaires des fêtes 2026 non publiés. Horaires hebdo officiels : lun-mar 10h-14h30. L'an dernier, horaires étendus 9h-22h du 19 déc. au 1er janv. Le programme place la patinoire avant 14h30 pour être bon dans les deux cas.
 ⚠️  [2026-12-29] Macy's Herald Square : vitrines de Noël — Horaires à confirmer : Horaires du magasin pendant la semaine des fêtes non communiqués (souvent 10h-22h). Les vitrines restent visibles depuis la rue en soirée.
 ⚠️  [2026-12-29] Empire State Building — observatoire du 86e (de nuit) — Horaires à confirmer : Les horaires varient selon la date (site officiel). Couramment jusqu'à minuit en période de fêtes, dernier ascenseur 23h15. À vérifier lors de la réservation.

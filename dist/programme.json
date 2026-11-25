@@ -1,5 +1,5 @@
 {
- "genere_le": "25/11/2026 à 10:22",
+ "genere_le": "25/11/2026 à 10:24",
  "jours": [
   {
    "iso": "2026-12-27",
@@ -2601,11 +2601,11 @@
      "priorite": "",
      "arrivee": "18:45",
      "debut": "18:45",
-     "fin": "19:55",
+     "fin": "19:50",
      "debut_min": 1125,
-     "fin_min": 1195,
+     "fin_min": 1190,
      "attente": 0,
-     "duree": 70,
+     "duree": 65,
      "trajet": {
       "mode": "marche",
       "duree_totale": 10,
@@ -2659,11 +2659,11 @@
      "waypoints": null,
      "categorie": "observatoire",
      "priorite": "",
-     "arrivee": "20:05",
-     "debut": "20:05",
-     "fin": "21:20",
-     "debut_min": 1205,
-     "fin_min": 1280,
+     "arrivee": "20:00",
+     "debut": "20:00",
+     "fin": "21:15",
+     "debut_min": 1200,
+     "fin_min": 1275,
      "attente": 0,
      "duree": 75,
      "trajet": {
@@ -2722,11 +2722,11 @@
      "waypoints": null,
      "categorie": "quartier",
      "priorite": "",
-     "arrivee": "21:45",
-     "debut": "21:45",
-     "fin": "22:05",
-     "debut_min": 1305,
-     "fin_min": 1325,
+     "arrivee": "21:40",
+     "debut": "21:40",
+     "fin": "22:00",
+     "debut_min": 1300,
+     "fin_min": 1320,
      "attente": 0,
      "duree": 20,
      "trajet": {
@@ -2783,11 +2783,11 @@
      "waypoints": null,
      "categorie": "hotel",
      "priorite": "",
-     "arrivee": "22:20",
-     "debut": "22:20",
-     "fin": "22:20",
-     "debut_min": 1340,
-     "fin_min": 1340,
+     "arrivee": "22:15",
+     "debut": "22:15",
+     "fin": "22:15",
+     "debut_min": 1335,
+     "fin_min": 1335,
      "attente": 0,
      "duree": 0,
      "trajet": {
@@ -2822,12 +2822,6 @@
     }
    ],
    "alertes": [
-    {
-     "niveau": "erreur",
-     "jour": "2026-12-29",
-     "etape": "Empire State Building — observatoire du 86e (de nuit)",
-     "message": "Arrivée estimée 20:05 après le créneau réservé 20:00."
-    },
     {
      "niveau": "info",
      "jour": "2026-12-29",
@@ -9016,12 +9010,6 @@
  ],
  "alertes": [
   {
-   "niveau": "erreur",
-   "jour": "2026-12-29",
-   "etape": "Empire State Building — observatoire du 86e (de nuit)",
-   "message": "Arrivée estimée 20:05 après le créneau réservé 20:00."
-  },
-  {
    "niveau": "attention",
    "jour": "2026-12-28",
    "etape": "Patinoire Wollman (Central Park)",
@@ -9095,7 +9083,7 @@
   }
  ],
  "nb": {
-  "erreur": 1,
+  "erreur": 0,
   "attention": 6,
   "info": 6
  },
