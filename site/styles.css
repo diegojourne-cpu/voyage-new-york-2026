@@ -267,3 +267,11 @@ tr:last-child td{border-bottom:0}
 .apparait{animation:apparait .5s cubic-bezier(.2,.8,.2,1) both}
 @keyframes apparait{from{opacity:.001;transform:translateY(14px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.apparait{animation:none}.feuille,.voile{transition:none}}
+
+/* ---------- « Ma position » */
+.localiser{position:absolute;left:12px;bottom:12px;z-index:3;gap:6px;color:var(--accent)}
+.vue-carte .localiser{bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+.localiser:disabled{opacity:.7}
+.moi{width:18px;height:18px;border-radius:50%;background:#0a84ff;border:3px solid #fff;box-shadow:0 0 0 0 rgba(10,132,255,.45),0 1px 4px rgba(0,0,0,.35);animation:moi 2s infinite}
+@keyframes moi{0%{box-shadow:0 0 0 0 rgba(10,132,255,.45),0 1px 4px rgba(0,0,0,.35)}80%{box-shadow:0 0 0 18px rgba(10,132,255,0),0 1px 4px rgba(0,0,0,.35)}100%{box-shadow:0 0 0 0 rgba(10,132,255,0),0 1px 4px rgba(0,0,0,.35)}}
+@media (prefers-reduced-motion:reduce){.moi{animation:none}}
