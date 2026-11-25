@@ -25,15 +25,16 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          cd "$RUNNER_TEMP"
           gh release download -R protomaps/go-pmtiles --pattern '*Linux_x86_64.tar.gz' -O pmtiles.tgz
           tar xzf pmtiles.tgz
           sudo install pmtiles /usr/local/bin/pmtiles
           pmtiles version || true
       - name: Extraire les zones du voyage
         run: |
-          curl -fsSL https://build-metadata.protomaps.dev/builds.json -o builds.json
-          head -c 400 builds.json; echo
-          KEY=$(jq -r '[.. | objects | select(has("key")) | .key | select(endswith(".pmtiles"))] | sort | last' builds.json)
+          B="$RUNNER_TEMP/builds.json"
+          curl -fsSL https://build-metadata.protomaps.dev/builds.json -o "$B"
+          KEY=$(jq -r '[.. | objects | select(has("key")) | .key | select(endswith(".pmtiles"))] | sort | last' "$B")
           echo "Build Protomaps : $KEY"
           for Z in 15 14 13; do
             rm -f site/tiles/nyc.pmtiles
