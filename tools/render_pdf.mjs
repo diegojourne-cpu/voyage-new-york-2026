@@ -21,7 +21,7 @@ fs.mkdirSync(path.join(dist, "cartes"), { recursive: true });
 const { srv, port } = await demarrer(path.join(dist, "site"));
 const browser = await chromium.launch({ args: ["--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"] });
 try {
-  const page = await browser.newPage({ viewport: { width: 1400, height: 1000 }, deviceScaleFactor: 1.5 });
+  const page = await browser.newPage({ viewport: { width: 1720, height: 1000 }, deviceScaleFactor: 1.25 });
   page.on("pageerror", e => console.error("carte :", e.message));
   const cibles = [...data.jours.map(j => j.iso), "ensemble"];
   for (const c of cibles) {

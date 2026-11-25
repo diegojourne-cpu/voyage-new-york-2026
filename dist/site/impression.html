@@ -5,7 +5,8 @@
 <style>
 @font-face{font-family:"InterVar";src:url("vendor/fonts/inter-latin-wght-normal.woff2") format("woff2");font-weight:100 900}
 html,body{margin:0;background:#fff}
-#m{width:1400px;height:1000px}
+#m{width:1720px;height:925px}
+#m.ensemble{width:1400px;height:1000px}
 .pin{width:34px;height:34px;border-radius:50%;background:var(--c);color:#fff;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.35);font:700 15px/1 "InterVar",Arial,sans-serif;display:grid;place-items:center;padding:0}
 .pin.hotel{background:#1d1d1f;border-radius:10px}
 .maplibregl-ctrl-attrib{font:11px Arial,sans-serif}
@@ -16,6 +17,7 @@ html,body{margin:0;background:#fff}
 (async () => {
   const D = await (await fetch("data.json")).json();
   const q = new URLSearchParams(location.search), iso = q.get("jour");
+  if (!iso) document.getElementById("m").className = "ensemble";
   const jours = iso ? D.jours.filter(j => j.iso === iso) : D.jours.filter(j => j.iso !== "2026-12-27");
   const b = jours.map(j => j.bounds);
   const bounds = [[Math.min(...b.map(x => x[0][0])), Math.min(...b.map(x => x[0][1]))], [Math.max(...b.map(x => x[1][0])), Math.max(...b.map(x => x[1][1]))]];
