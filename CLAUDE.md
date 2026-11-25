@@ -136,8 +136,9 @@ Matchs : aucun Knicks/Rangers/Devils à domicile du 28 au 31 ; Nets à l'extéri
 
 ## 7. Rôles et file d'attente
 
-- **Chef d'orchestre** (conversation principale) : architecture, design, outils, automatisation, audits.
-- **Guide NY, le « numéro 10 »** (conversation dédiée, règles dans GUIDE.md) : conseils sur place et modifications du programme.
+- **Chef d'orchestre** (conversation principale) : AVANT le voyage et maintenance — préparation, vérifications, améliorations de l'appli, automatisation, audits.
+- **Guide NY, le « numéro 10 »** (conversation « 🗽 Guide NY — le numéro 10 (sur place) », règles dans GUIDE.md) : PENDANT le voyage, le concret — conseils sur place et modifications.
+- **Mêmes droits** : les deux peuvent modifier le programme ET l'appli (site/, tools/) quand la famille le demande.
 - Les deux travaillent sur `main` : toujours `git pull --rebase` avant de modifier, push juste après.
 - Demandes du guide pour le chef d'orchestre (à traiter puis rayer) :
   - _(vide)_
