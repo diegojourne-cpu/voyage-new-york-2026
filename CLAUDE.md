@@ -97,6 +97,7 @@ dist/                   GÉNÉRÉ, ne jamais éditer à la main (dist/site = ce 
 - Projet relié au dépôt GitHub, branche `main`, commande de build : `exit 0`, dossier de sortie : `dist/site`.
 - Liaison KV : nom de variable `ETAT` (namespace « nyc26-etat »).
 - Cloudflare Access (Zero Trust) : application auto-hébergée sur le domaine `*.pages.dev` du projet, politique « e-mails autorisés », session 1 mois.
+- Guide pas à pas pour la famille : `docs/CLOUDFLARE.md`.
 
 ## 4. Vérifications faites le 24/11/2026 (sources dans dist/programme.pdf, dernière page)
 

@@ -8,7 +8,7 @@ Tout est généré automatiquement à partir des fichiers de `data/`.
 
 | Quoi | Où |
 |---|---|
-| **L'appli** (à installer sur l'écran d'accueil) | l'adresse Cloudflare Pages du projet (voir `CLAUDE.md` §5) |
+| **L'appli** (à installer sur l'écran d'accueil) | l'adresse Cloudflare Pages du projet (mise en ligne : [`docs/CLOUDFLARE.md`](docs/CLOUDFLARE.md)) |
 | Le programme heure par heure, avec les cartes | [`dist/programme.pdf`](dist/programme.pdf) (aussi dans l'appli : Plus → PDF) |
 | L'agenda du téléphone | [`dist/voyage.ics`](dist/voyage.ics) |
 | La carte dans Google Maps (via Google My Maps) | [`dist/voyage.kml`](dist/voyage.kml) |
