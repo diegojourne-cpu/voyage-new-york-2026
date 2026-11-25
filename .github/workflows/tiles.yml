@@ -1,0 +1,55 @@
+name: Fond de carte (tuiles OpenStreetMap)
+
+# Extrait les tuiles vectorielles Protomaps (données OpenStreetMap) uniquement dans les
+# zones du voyage (site/tiles/zones.geojson) → site/tiles/nyc.pmtiles, servi par le site
+# et mis en cache par le téléphone pour fonctionner hors connexion.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["site/tiles/zones.geojson"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tuiles
+  cancel-in-progress: true
+
+jobs:
+  tiles:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Installer l'outil pmtiles
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download -R protomaps/go-pmtiles --pattern '*Linux_x86_64.tar.gz' -O pmtiles.tgz
+          tar xzf pmtiles.tgz
+          sudo install pmtiles /usr/local/bin/pmtiles
+          pmtiles version || true
+      - name: Extraire les zones du voyage
+        run: |
+          curl -fsSL https://build-metadata.protomaps.dev/builds.json -o builds.json
+          head -c 400 builds.json; echo
+          KEY=$(jq -r '[.. | objects | select(has("key")) | .key | select(endswith(".pmtiles"))] | sort | last' builds.json)
+          echo "Build Protomaps : $KEY"
+          for Z in 15 14 13; do
+            rm -f site/tiles/nyc.pmtiles
+            pmtiles extract "https://build.protomaps.com/$KEY" site/tiles/nyc.pmtiles \
+              --region=site/tiles/zones.geojson --maxzoom=$Z --download-threads=8
+            S=$(stat -c%s site/tiles/nyc.pmtiles)
+            echo "maxzoom $Z : $S octets"
+            if [ "$S" -lt 24000000 ]; then break; fi
+          done
+          pmtiles show site/tiles/nyc.pmtiles | head -20
+          printf 'source=https://build.protomaps.com/%s\nmaxzoom=%s\noctets=%s\n' "$KEY" "$Z" "$S" > site/tiles/SOURCE.txt
+      - name: Enregistrer
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/tiles
+          git diff --cached --quiet || git commit -m "Fond de carte : tuiles OpenStreetMap des zones du voyage"
+          git pull --rebase
+          git push
