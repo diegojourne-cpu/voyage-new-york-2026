@@ -209,8 +209,10 @@ h1,h2,h3{text-wrap:balance}
 .vue-carte .flottant{position:absolute;left:50%;transform:translateX(-50%);top:12px;z-index:3;width:min(560px,calc(100% - 24px));border-radius:14px;padding:3px}
 .vue-carte .flottant .seg{background:none}
 .pin{width:30px;height:30px;border-radius:50%;background:var(--c);color:#fff;border:2.5px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.3);font:700 13px/1 var(--font);display:grid;place-items:center;cursor:pointer;padding:0}
-.pin.hotel{background:#1d1d1f;border-radius:9px}
+.pin.hotel{background:#1d1d1f;border-radius:9px;z-index:3}
 .pin.estompe{opacity:.25;transform:scale(.8)}
+.pin.groupe{width:auto;min-width:34px;height:34px;padding:0 9px;border-radius:17px;font-size:13.5px;letter-spacing:-.2px;text-shadow:0 1px 2px rgba(0,0,0,.35);box-shadow:0 2px 8px rgba(0,0,0,.3),3px -3px 0 -1px #fff,3px -3px 0 1px rgba(0,0,0,.12)}
+.pin.groupe.mixte{--fond-pin:#fff;color:#1d1d1f;border:4px solid transparent;text-shadow:none;font-weight:800}
 .maplibregl-ctrl-attrib{font-size:10px}
 .maplibregl-ctrl-group{border-radius:12px!important;overflow:hidden}
 

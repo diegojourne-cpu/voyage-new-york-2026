@@ -157,31 +157,84 @@
     return out;
   }
 
-  // Écartement selon le zoom : les pastilles qui se touchent À L'ÉCRAN (< 28 px) sont
-  // disposées côte à côte autour de leur position ; recalculé à chaque fin de zoom.
+  // Regroupement selon le zoom (façon Plans) : les pastilles qui se chevauchent À L'ÉCRAN
+  // fusionnent en une seule pastille « 4–5 » (même jour) ou « 3 » multicolore (plusieurs jours) ;
+  // on touche → la carte zoome dessus et elles se séparent. Au zoom de rue (≥ 15), celles qui
+  // se touchent encore (même adresse) se mettent côte à côte au lieu de fusionner.
+  // liste : [{lat, lon, marker, hotel?, e?, j?, estompe?}] ; l'hôtel n'est jamais regroupé.
   function repartir(map, liste, ecart) {
     ecart = ecart || 30;
-    const maj = () => {
-      const px = liste.map(x => map.project([x.lon, x.lat]));
-      const groupes = [];
-      px.forEach((p, i) => {
-        const g = groupes.find(g => Math.hypot(g.x - p.x, g.y - p.y) < ecart * 0.95);
-        if (g) { g.idx.push(i); g.x = (g.x * (g.idx.length - 1) + p.x) / g.idx.length; g.y = (g.y * (g.idx.length - 1) + p.y) / g.idx.length; }
-        else groupes.push({ x: p.x, y: p.y, idx: [i] });
+    let bulles = [], prevu = 0;
+    const etiquette = membres => {
+      const jours = [...new Set(membres.map(x => x.j.iso))];
+      if (jours.length > 1) return String(membres.length);
+      const n = membres.map(x => +x.e.n).sort((a, b) => a - b);
+      const suite = n.every((v, i) => !i || v === n[i - 1] + 1);
+      return suite ? (n.length > 2 ? `${n[0]}–${n[n.length - 1]}` : n.join("·")) : n.join("·");
+    };
+    const bulle = (g, membres) => {
+      const couleurs = [...new Set(membres.map(x => x.j.couleur))];
+      const el = document.createElement("button");
+      el.type = "button";
+      el.className = "pin groupe" + (membres[0].estompe ? " estompe" : "");
+      if (couleurs.length > 1) {
+        const pas = 360 / couleurs.length;
+        el.classList.add("mixte");
+        el.style.background = `linear-gradient(var(--fond-pin), var(--fond-pin)) padding-box, conic-gradient(${couleurs.map((c, i) => `${c} ${i * pas}deg ${(i + 1) * pas}deg`).join(",")}) border-box`;
+      } else el.style.setProperty("--c", couleurs[0]);
+      el.textContent = membres[0].marker.getElement().textContent ? etiquette(membres) : membres.length;
+      el.setAttribute("aria-label", `${membres.length} étapes regroupées : toucher pour zoomer`);
+      el.addEventListener("click", ev => {
+        ev.stopPropagation();
+        const lo = membres.map(x => x.lon), la = membres.map(x => x.lat);
+        const z = map.getZoom();
+        map.fitBounds([[Math.min(...lo), Math.min(...la)], [Math.max(...lo), Math.max(...la)]],
+          { padding: 90, maxZoom: Math.max(z + 2, 15.5), duration: 600 });
       });
+      return new maplibregl.Marker({ element: el }).setLngLat(map.unproject([g.x, g.y])).addTo(map);
+    };
+    const maj = () => {
+      prevu = 0;
+      bulles.forEach(b => b.remove()); bulles = [];
+      const px = liste.map(x => map.project([x.lon, x.lat]));
+      const rue = map.getZoom() >= 15;
+      // groupes par proximité à l'écran, fusionnés jusqu'à stabilité (pas de bulles qui se chevauchent)
+      let groupes = [];
+      liste.forEach((x, i) => {
+        if (x.hotel) { x.marker.setOffset([0, 0]); x.marker.getElement().style.visibility = ""; return; }
+        groupes.push({ x: px[i].x, y: px[i].y, idx: [i], cle: !!x.estompe });
+      });
+      for (let fusion = true; fusion;) {
+        fusion = false;
+        for (let a = 0; a < groupes.length && !fusion; a++) for (let b = a + 1; b < groupes.length; b++) {
+          const A = groupes[a], B = groupes[b];
+          if (A.cle !== B.cle || Math.hypot(A.x - B.x, A.y - B.y) >= ecart * 0.95) continue;
+          const n = A.idx.length + B.idx.length;
+          A.x = (A.x * A.idx.length + B.x * B.idx.length) / n; A.y = (A.y * A.idx.length + B.y * B.idx.length) / n;
+          A.idx.push(...B.idx); groupes.splice(b, 1); fusion = true; break;
+        }
+      }
       for (const g of groupes) {
         const n = g.idx.length;
+        if (n > 1 && !rue) {
+          g.idx.forEach(i => { liste[i].marker.getElement().style.visibility = "hidden"; });
+          bulles.push(bulle(g, g.idx.map(i => liste[i])));
+          continue;
+        }
+        g.idx.sort((a, b) => (liste[a].j.iso + String(liste[a].e.n).padStart(2, "0")).localeCompare(liste[b].j.iso + String(liste[b].e.n).padStart(2, "0")));
         g.idx.forEach((i, k) => {
           let dx = 0, dy = 0;
           if (n > 1 && n <= 4) dx = (k - (n - 1) / 2) * ecart;
           else if (n > 4) { const a = (2 * Math.PI * k) / n - Math.PI / 2, r = ecart * 0.8 * n / Math.PI; dx = r * Math.cos(a); dy = r * Math.sin(a); }
-          // décalage = position du groupe + écart − position propre
-          liste[i].marker.setOffset([Math.round(g.x + dx - px[i].x), Math.round(g.y + dy - px[i].y)]);
+          liste[i].marker.getElement().style.visibility = "";
+          liste[i].marker.setOffset(n > 1 ? [Math.round(g.x + dx - px[i].x), Math.round(g.y + dy - px[i].y)] : [0, 0]);
         });
       }
     };
+    const surZoom = () => { if (!prevu) prevu = requestAnimationFrame(maj); };
     maj();
-    map.on("zoomend", maj);
+    map.on("zoom", surZoom);
+    maj.detacher = () => { map.off("zoom", surZoom); if (prevu) cancelAnimationFrame(prevu); bulles.forEach(b => b.remove()); bulles = []; };
     return maj;
   }
 

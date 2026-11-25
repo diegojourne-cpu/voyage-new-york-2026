@@ -216,8 +216,8 @@ function marqueurs(map, jours, actif, surClic) {
     }
     return new maplibregl.Marker({ element: elt }).setLngLat([it.lon, it.lat]).addTo(map);
   });
-  const maj = Carte.repartir(map, items.map((it, i) => ({ ...it, marker: markers[i] })));
-  markers.forEach(m => { const r = m.remove.bind(m); m.remove = () => { map.off("zoomend", maj); return r(); }; });
+  const maj = Carte.repartir(map, items.map((it, i) => ({ ...it, estompe: !it.hotel && !!actif && actif !== it.j.iso, marker: markers[i] })));
+  markers.forEach(m => { const r = m.remove.bind(m); m.remove = () => { maj.detacher(); return r(); }; });
   return markers;
 }
 function suivreTheme(map, features, jour) {
