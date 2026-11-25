@@ -1,31 +1,33 @@
 # New York · Noël 2026 — tour de contrôle
 
-Programme familial du 27 décembre 2026 au 1er janvier 2027, généré automatiquement à partir de fichiers de données.
+Programme familial du 27 décembre 2026 au 1er janvier 2027 : une appli web installable sur le téléphone,
+avec de vraies cartes qui marchent sans connexion, un PDF heure par heure, un agenda et une carte Google Maps.
+Tout est généré automatiquement à partir des fichiers de `data/`.
 
-## Ce qu'il y a à ouvrir
+## Ce qu'il y a
 
-| Fichier | À quoi ça sert |
+| Quoi | Où |
 |---|---|
-| [`dist/programme.pdf`](dist/programme.pdf) | Le programme heure par heure, à imprimer ou garder sur le téléphone |
-| [`dist/index.html`](dist/index.html) | Le mini-site, en un seul fichier : à télécharger sur le téléphone, il marche **sans connexion** |
-| [`dist/carte.html`](dist/carte.html) | Carte interactive (avec connexion) : un calque par jour |
-| [`dist/voyage.kml`](dist/voyage.kml) | À importer dans [Google My Maps](https://www.google.com/mymaps) → la carte dans Google Maps, avec la navigation |
-| [`dist/voyage.ics`](dist/voyage.ics) | À importer dans l'agenda du téléphone (Google Agenda, Apple Calendrier) |
-| [`dist/verification.md`](dist/verification.md) | Le rapport de faisabilité (horaires, trajets, couchers du soleil) |
-
-Le mini-site existe aussi en version en ligne sur claude.ai. Dans cette version, les cases cochées, le bingo et le vote du réveillon sont partagés entre les trois téléphones.
+| **L'appli** (à installer sur l'écran d'accueil) | l'adresse Cloudflare Pages du projet (voir `CLAUDE.md` §5) |
+| Le programme heure par heure, avec les cartes | [`dist/programme.pdf`](dist/programme.pdf) (aussi dans l'appli : Plus → PDF) |
+| L'agenda du téléphone | [`dist/voyage.ics`](dist/voyage.ics) |
+| La carte dans Google Maps (via Google My Maps) | [`dist/voyage.kml`](dist/voyage.kml) |
+| Le rapport de vérification | [`dist/verification.md`](dist/verification.md) |
 
 ## Modifier le programme
 
-**Le plus simple : le demander à Claude** (« il pleut », « on est en retard d'une heure », « on préfère faire X demain »). Claude modifie les données, revérifie tout, régénère les documents et les publie.
+**Le plus simple : l'écrire à Claude** (« il pleut », « on a une heure de retard », « on préfère faire X demain »).
+Claude modifie les données, revérifie horaires et trajets, et pousse sur GitHub : l'appli et le PDF se mettent à jour
+tout seuls en 2-3 minutes, sans changer d'adresse.
 
-**À la main** : modifier `data/programme.yaml` (même depuis l'appli GitHub sur téléphone). Les heures se recalculent toutes seules. Une action GitHub vérifie le planning et régénère `dist/` en quelques minutes.
+**À la main** : modifier `data/programme.yaml` (même depuis l'appli GitHub). Les heures se recalculent toutes seules.
 
 Sur ordinateur :
 
 ```bash
 pip install -r requirements.txt
 make          # vérifie, régénère dist/ et le PDF
+make serve    # teste l'appli sur http://127.0.0.1:8787
 ```
 
-Tous les détails techniques et l'historique des décisions sont dans [`CLAUDE.md`](CLAUDE.md).
+Détails techniques, règles et historique des décisions : [`CLAUDE.md`](CLAUDE.md).

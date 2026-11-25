@@ -1,5 +1,5 @@
 {
- "genere_le": "25/11/2026 à 07:18",
+ "genere_le": "25/11/2026 à 07:35",
  "jours": [
   {
    "iso": "2026-12-27",
@@ -134,7 +134,40 @@
      "coucher": false
     }
    ],
-   "alertes": []
+   "alertes": [],
+   "features": [
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-27",
+      "mode": "taxi",
+      "couleur": "#8a8f98"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.7822,
+        40.6441
+       ],
+       [
+        -73.9915,
+        40.7564
+       ]
+      ]
+     }
+    }
+   ],
+   "bounds": [
+    [
+     -73.9915,
+     40.6441
+    ],
+    [
+     -73.7822,
+     40.7564
+    ]
+   ]
   },
   {
    "iso": "2026-12-28",
@@ -189,8 +222,32 @@
       ],
       "de": "42 St–Port Authority",
       "a": "81 St–Museum of Natural History",
+      "via": [
+       "42 St–Port Authority",
+       "59 St–Columbus Circle",
+       "72 St (B C)",
+       "81 St–Museum of Natural History"
+      ],
       "duree": 35,
       "detail": "C (local) 7 arrêts, ~14 min. Puis traversée de Central Park à pied (79th St transverse → Belvedere Castle → Great Lawn), 15 min : la première balade du jour.",
+      "via_coords": [
+       [
+        40.7572,
+        -73.9898
+       ],
+       [
+        40.7682,
+        -73.9819
+       ],
+       [
+        40.7757,
+        -73.9763
+       ],
+       [
+        40.7815,
+        -73.972
+       ]
+      ],
       "duree_totale": 41,
       "icone": "🚇"
      },
@@ -1030,6 +1087,362 @@
      "etape": "Top of the Rock (Rockefeller Center)",
      "message": "Réservation obligatoire, pas encore faite."
     }
+   ],
+   "features": [
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-28",
+      "mode": "marche",
+      "couleur": "#c8102e"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9915,
+        40.7564
+       ],
+       [
+        -73.9898,
+        40.7572
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-28",
+      "mode": "metro",
+      "couleur": "#0039A6"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9898,
+        40.7572
+       ],
+       [
+        -73.9819,
+        40.7682
+       ],
+       [
+        -73.9763,
+        40.7757
+       ],
+       [
+        -73.972,
+        40.7815
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-28",
+      "mode": "marche",
+      "couleur": "#c8102e"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.972,
+        40.7815
+       ],
+       [
+        -73.9632,
+        40.7794
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-28",
+      "mode": "marche",
+      "couleur": "#c8102e"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9632,
+        40.7794
+       ],
+       [
+        -73.9708,
+        40.774
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-28",
+      "mode": "marche",
+      "couleur": "#c8102e"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9708,
+        40.774
+       ],
+       [
+        -73.9745,
+        40.7678
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-28",
+      "mode": "marche",
+      "couleur": "#c8102e"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9745,
+        40.7678
+       ],
+       [
+        -73.9783,
+        40.7649
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-28",
+      "mode": "marche",
+      "couleur": "#c8102e"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9783,
+        40.7649
+       ],
+       [
+        -73.9737,
+        40.7637
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-28",
+      "mode": "marche",
+      "couleur": "#c8102e"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9737,
+        40.7637
+       ],
+       [
+        -73.9794,
+        40.7593
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-28",
+      "mode": "marche",
+      "couleur": "#c8102e"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9794,
+        40.7593
+       ],
+       [
+        -73.9787,
+        40.7587
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-28",
+      "mode": "marche",
+      "couleur": "#c8102e"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9787,
+        40.7587
+       ],
+       [
+        -73.9772,
+        40.758
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-28",
+      "mode": "marche",
+      "couleur": "#c8102e"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9772,
+        40.758
+       ],
+       [
+        -73.976,
+        40.7585
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-28",
+      "mode": "marche",
+      "couleur": "#c8102e"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.976,
+        40.7585
+       ],
+       [
+        -73.9817,
+        40.7594
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-28",
+      "mode": "marche",
+      "couleur": "#c8102e"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9817,
+        40.7594
+       ],
+       [
+        -73.9832,
+        40.7536
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-28",
+      "mode": "marche",
+      "couleur": "#c8102e"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9832,
+        40.7536
+       ],
+       [
+        -73.9772,
+        40.7527
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-28",
+      "mode": "marche",
+      "couleur": "#c8102e"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9772,
+        40.7527
+       ],
+       [
+        -73.9851,
+        40.759
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-28",
+      "mode": "marche",
+      "couleur": "#c8102e"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9851,
+        40.759
+       ],
+       [
+        -73.9915,
+        40.7564
+       ]
+      ]
+     }
+    }
+   ],
+   "bounds": [
+    [
+     -73.9915,
+     40.7527
+    ],
+    [
+     -73.9632,
+     40.7815
+    ]
    ]
   },
   {
@@ -1086,9 +1499,53 @@
       ],
       "de": "Times Sq–42 St → Grand Central",
       "a": "Botanical Garden (Metro-North, ligne Harlem)",
+      "via": [
+       "Times Sq–42 St",
+       "Grand Central",
+       "Park Av & 96 St",
+       "Harlem–125 St",
+       "Melrose",
+       "Tremont",
+       "Fordham",
+       "Botanical Garden"
+      ],
       "duree": 50,
       "detail": "7 min à pied jusqu'à Times Square, navette S (ou ligne 7) jusqu'à Grand Central, train Metro-North de la ligne Harlem (~20 min, départ après 9h = tarif creux). Billet CityTicket 5,25 $ dans l'appli TrainTime. La gare débouche face à l'entrée Mosholu du jardin.",
       "prix": 5.25,
+      "via_coords": [
+       [
+        40.7553,
+        -73.9869
+       ],
+       [
+        40.7527,
+        -73.9772
+       ],
+       [
+        40.7856,
+        -73.951
+       ],
+       [
+        40.8053,
+        -73.939
+       ],
+       [
+        40.8255,
+        -73.9152
+       ],
+       [
+        40.847,
+        -73.8995
+       ],
+       [
+        40.8613,
+        -73.8907
+       ],
+       [
+        40.8665,
+        -73.8836
+       ]
+      ],
       "duree_totale": 58,
       "icone": "🚆"
      },
@@ -1153,8 +1610,62 @@
       ],
       "de": "Bedford Park Blvd",
       "a": "59 St–Columbus Circle",
+      "via": [
+       "Bedford Park Blvd",
+       "Fordham Rd (B D)",
+       "Tremont Av (B D)",
+       "161 St–Yankee Stadium",
+       "145 St (B D)",
+       "125 St (B D)",
+       "110 St–Cathedral Pkwy (B C)",
+       "81 St–Museum of Natural History",
+       "72 St (B C)",
+       "59 St–Columbus Circle"
+      ],
       "duree": 47,
       "detail": "12 min à pied jusqu'à la station (sortie Mosholu, Bedford Park Blvd), puis B ou D direct, ~30 min.",
+      "via_coords": [
+       [
+        40.8733,
+        -73.8871
+       ],
+       [
+        40.8614,
+        -73.8971
+       ],
+       [
+        40.8505,
+        -73.9053
+       ],
+       [
+        40.8278,
+        -73.9257
+       ],
+       [
+        40.8241,
+        -73.9442
+       ],
+       [
+        40.8111,
+        -73.9521
+       ],
+       [
+        40.8007,
+        -73.9581
+       ],
+       [
+        40.7815,
+        -73.972
+       ],
+       [
+        40.7757,
+        -73.9763
+       ],
+       [
+        40.7682,
+        -73.9819
+       ]
+      ],
       "duree_totale": 55,
       "icone": "🚇"
      },
@@ -1342,8 +1853,27 @@
       ],
       "de": "47-50 Sts–Rockefeller Ctr",
       "a": "34 St–Herald Sq",
+      "via": [
+       "47-50 Sts–Rockefeller Ctr",
+       "42 St–Bryant Park",
+       "34 St–Herald Sq"
+      ],
       "duree": 18,
       "detail": "6 min à pied jusqu'à la station (6e Av.), F ou M 2 arrêts.",
+      "via_coords": [
+       [
+        40.7587,
+        -73.9813
+       ],
+       [
+        40.7543,
+        -73.9845
+       ],
+       [
+        40.7496,
+        -73.9877
+       ]
+      ],
       "duree_totale": 21,
       "icone": "🚇"
      },
@@ -1640,6 +2170,393 @@
      "etape": "Empire State Building — observatoire du 86e (de nuit)",
      "message": "Réservation obligatoire, pas encore faite."
     }
+   ],
+   "features": [
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-29",
+      "mode": "marche",
+      "couleur": "#1f6f4a"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9915,
+        40.7564
+       ],
+       [
+        -73.9869,
+        40.7553
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-29",
+      "mode": "train",
+      "couleur": "#0b4f9c"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9869,
+        40.7553
+       ],
+       [
+        -73.9772,
+        40.7527
+       ],
+       [
+        -73.951,
+        40.7856
+       ],
+       [
+        -73.939,
+        40.8053
+       ],
+       [
+        -73.9152,
+        40.8255
+       ],
+       [
+        -73.8995,
+        40.847
+       ],
+       [
+        -73.8907,
+        40.8613
+       ],
+       [
+        -73.8836,
+        40.8665
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-29",
+      "mode": "marche",
+      "couleur": "#1f6f4a"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.8836,
+        40.8665
+       ],
+       [
+        -73.88,
+        40.8636
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-29",
+      "mode": "marche",
+      "couleur": "#1f6f4a"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.88,
+        40.8636
+       ],
+       [
+        -73.8871,
+        40.8733
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-29",
+      "mode": "metro",
+      "couleur": "#FF6319"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.8871,
+        40.8733
+       ],
+       [
+        -73.8971,
+        40.8614
+       ],
+       [
+        -73.9053,
+        40.8505
+       ],
+       [
+        -73.9257,
+        40.8278
+       ],
+       [
+        -73.9442,
+        40.8241
+       ],
+       [
+        -73.9521,
+        40.8111
+       ],
+       [
+        -73.9581,
+        40.8007
+       ],
+       [
+        -73.972,
+        40.7815
+       ],
+       [
+        -73.9763,
+        40.7757
+       ],
+       [
+        -73.9819,
+        40.7682
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-29",
+      "mode": "marche",
+      "couleur": "#1f6f4a"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9819,
+        40.7682
+       ],
+       [
+        -73.9813,
+        40.768
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-29",
+      "mode": "marche",
+      "couleur": "#1f6f4a"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9813,
+        40.768
+       ],
+       [
+        -73.9822,
+        40.7674
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-29",
+      "mode": "marche",
+      "couleur": "#1f6f4a"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9822,
+        40.7674
+       ],
+       [
+        -73.9776,
+        40.7614
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-29",
+      "mode": "marche",
+      "couleur": "#1f6f4a"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9776,
+        40.7614
+       ],
+       [
+        -73.9813,
+        40.7587
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-29",
+      "mode": "metro",
+      "couleur": "#FF6319"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9813,
+        40.7587
+       ],
+       [
+        -73.9845,
+        40.7543
+       ],
+       [
+        -73.9877,
+        40.7496
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-29",
+      "mode": "marche",
+      "couleur": "#1f6f4a"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9877,
+        40.7496
+       ],
+       [
+        -73.989,
+        40.7508
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-29",
+      "mode": "marche",
+      "couleur": "#1f6f4a"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.989,
+        40.7508
+       ],
+       [
+        -73.9867,
+        40.7479
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-29",
+      "mode": "marche",
+      "couleur": "#1f6f4a"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9867,
+        40.7479
+       ],
+       [
+        -73.9857,
+        40.7484
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-29",
+      "mode": "marche",
+      "couleur": "#1f6f4a"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9857,
+        40.7484
+       ],
+       [
+        -73.9851,
+        40.759
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-29",
+      "mode": "marche",
+      "couleur": "#1f6f4a"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9851,
+        40.759
+       ],
+       [
+        -73.9915,
+        40.7564
+       ]
+      ]
+     }
+    }
+   ],
+   "bounds": [
+    [
+     -73.9915,
+     40.7479
+    ],
+    [
+     -73.88,
+     40.8733
+    ]
    ]
   },
   {
@@ -1696,8 +2613,67 @@
       ],
       "de": "42 St–Port Authority",
       "a": "Jefferson St",
+      "via": [
+       "42 St–Port Authority",
+       "34 St–Penn Station (8 Av)",
+       "23 St (8 Av)",
+       "14 St–8 Av",
+       "6 Av (L)",
+       "Union Sq (L)",
+       "1 Av (L)",
+       "Bedford Av",
+       "Lorimer St (L)",
+       "Morgan Av",
+       "Jefferson St"
+      ],
       "duree": 47,
       "detail": "A (express) jusqu'à 14 St, correspondance couloir vers la L (8 Av), L jusqu'à Jefferson St (~22 min), 7 min à pied.",
+      "via_coords": [
+       [
+        40.7572,
+        -73.9898
+       ],
+       [
+        40.7523,
+        -73.9932
+       ],
+       [
+        40.7457,
+        -73.998
+       ],
+       [
+        40.7398,
+        -74.0021
+       ],
+       [
+        40.7377,
+        -73.9967
+       ],
+       [
+        40.7353,
+        -73.9906
+       ],
+       [
+        40.7307,
+        -73.9815
+       ],
+       [
+        40.7172,
+        -73.9567
+       ],
+       [
+        40.7141,
+        -73.9503
+       ],
+       [
+        40.7061,
+        -73.9333
+       ],
+       [
+        40.7066,
+        -73.9229
+       ]
+      ],
       "duree_totale": 55,
       "icone": "🚇"
      },
@@ -1826,8 +2802,27 @@
       ],
       "de": "Morgan Av",
       "a": "Bedford Av",
+      "via": [
+       "Morgan Av",
+       "Lorimer St (L)",
+       "Bedford Av"
+      ],
       "duree": 15,
       "detail": "L, 4 arrêts.",
+      "via_coords": [
+       [
+        40.7061,
+        -73.9333
+       ],
+       [
+        40.7141,
+        -73.9503
+       ],
+       [
+        40.7172,
+        -73.9567
+       ]
+      ],
       "duree_totale": 18,
       "icone": "🚇"
      },
@@ -1958,9 +2953,38 @@
       ],
       "de": "North Williamsburg",
       "a": "DUMBO / Fulton Ferry",
+      "via": [
+       "North Williamsburg",
+       "East River (Williamsburg Bridge)",
+       "East River (Navy Yard)",
+       "East River (Manhattan Bridge)",
+       "DUMBO / Fulton Ferry"
+      ],
       "duree": 15,
       "detail": "NYC Ferry East River : passage sous le Williamsburg Bridge et le Manhattan Bridge, skyline à droite.",
       "prix": 5,
+      "via_coords": [
+       [
+        40.7216,
+        -73.9624
+       ],
+       [
+        40.7135,
+        -73.9705
+       ],
+       [
+        40.7065,
+        -73.98
+       ],
+       [
+        40.7055,
+        -73.9905
+       ],
+       [
+        40.7035,
+        -73.9945
+       ]
+      ],
       "duree_totale": 18,
       "icone": "⛴️"
      },
@@ -2146,8 +3170,52 @@
       ],
       "de": "Borough Hall",
       "a": "79 St",
+      "via": [
+       "Borough Hall",
+       "Atlantic Av–Barclays Ctr",
+       "36 St (D)",
+       "9 Av (D)",
+       "50 St (D)",
+       "62 St (D)",
+       "71 St (D)",
+       "79 St"
+      ],
       "duree": 62,
       "detail": "4 ou 5 jusqu'à Atlantic Av–Barclays Ctr (1 arrêt), correspondance vers la D, D jusqu'à 79 St (~22 min), puis 20 min à pied jusqu'à la 84e Rue et la 12e Av. Option plus rapide : VTC depuis Brooklyn Heights, ~25 min, 25-35 $.",
+      "via_coords": [
+       [
+        40.693,
+        -73.9898
+       ],
+       [
+        40.6844,
+        -73.9779
+       ],
+       [
+        40.6551,
+        -74.0036
+       ],
+       [
+        40.6465,
+        -73.9944
+       ],
+       [
+        40.6362,
+        -73.9943
+       ],
+       [
+        40.6263,
+        -73.9966
+       ],
+       [
+        40.6193,
+        -73.9988
+       ],
+       [
+        40.6135,
+        -74.0005
+       ]
+      ],
       "duree_totale": 72,
       "icone": "🚇"
      },
@@ -2272,8 +3340,77 @@
       ],
       "de": "79 St",
       "a": "42 St–Bryant Park",
+      "via": [
+       "79 St",
+       "71 St (D)",
+       "62 St (D)",
+       "50 St (D)",
+       "9 Av (D)",
+       "36 St (D)",
+       "Atlantic Av–Barclays Ctr",
+       "DeKalb Av",
+       "Grand St (B D)",
+       "Broadway–Lafayette",
+       "W 4 St–Washington Sq",
+       "34 St–Herald Sq",
+       "42 St–Bryant Park"
+      ],
       "duree": 60,
       "detail": "D direct (~45 min), puis 12 min à pied jusqu'à l'hôtel par la 40e Rue.",
+      "via_coords": [
+       [
+        40.6135,
+        -74.0005
+       ],
+       [
+        40.6193,
+        -73.9988
+       ],
+       [
+        40.6263,
+        -73.9966
+       ],
+       [
+        40.6362,
+        -73.9943
+       ],
+       [
+        40.6465,
+        -73.9944
+       ],
+       [
+        40.6551,
+        -74.0036
+       ],
+       [
+        40.6844,
+        -73.9779
+       ],
+       [
+        40.6905,
+        -73.9817
+       ],
+       [
+        40.7186,
+        -73.9938
+       ],
+       [
+        40.7253,
+        -73.9962
+       ],
+       [
+        40.7322,
+        -74.0005
+       ],
+       [
+        40.7496,
+        -73.9877
+       ],
+       [
+        40.7543,
+        -73.9845
+       ]
+      ],
       "duree_totale": 69,
       "icone": "🚇"
      },
@@ -2314,6 +3451,558 @@
      "etape": "Déjeuner à Williamsburg + fripes et concept stores",
      "message": "Horaires à confirmer : Boutiques ouvertes tous les jours, généralement 11h-20h. Les marchés aux puces (Brooklyn Flea, Artists & Fleas) n'ouvrent que le week-end : aucun pendant notre séjour (lun-ven)."
     }
+   ],
+   "features": [
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-30",
+      "mode": "marche",
+      "couleur": "#d97706"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9915,
+        40.7564
+       ],
+       [
+        -73.9898,
+        40.7572
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-30",
+      "mode": "metro",
+      "couleur": "#A7A9AC"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9898,
+        40.7572
+       ],
+       [
+        -73.9932,
+        40.7523
+       ],
+       [
+        -73.998,
+        40.7457
+       ],
+       [
+        -74.0021,
+        40.7398
+       ],
+       [
+        -73.9967,
+        40.7377
+       ],
+       [
+        -73.9906,
+        40.7353
+       ],
+       [
+        -73.9815,
+        40.7307
+       ],
+       [
+        -73.9567,
+        40.7172
+       ],
+       [
+        -73.9503,
+        40.7141
+       ],
+       [
+        -73.9333,
+        40.7061
+       ],
+       [
+        -73.9229,
+        40.7066
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-30",
+      "mode": "marche",
+      "couleur": "#d97706"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9229,
+        40.7066
+       ],
+       [
+        -73.9198,
+        40.7046
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-30",
+      "mode": "marche",
+      "couleur": "#d97706"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9198,
+        40.7046
+       ],
+       [
+        -73.9338,
+        40.7053
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-30",
+      "mode": "marche",
+      "couleur": "#d97706"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9338,
+        40.7053
+       ],
+       [
+        -73.9333,
+        40.7061
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-30",
+      "mode": "metro",
+      "couleur": "#A7A9AC"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9333,
+        40.7061
+       ],
+       [
+        -73.9503,
+        40.7141
+       ],
+       [
+        -73.9567,
+        40.7172
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-30",
+      "mode": "marche",
+      "couleur": "#d97706"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9567,
+        40.7172
+       ],
+       [
+        -73.9572,
+        40.719
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-30",
+      "mode": "marche",
+      "couleur": "#d97706"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9572,
+        40.719
+       ],
+       [
+        -73.9624,
+        40.7216
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-30",
+      "mode": "marche",
+      "couleur": "#d97706"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9624,
+        40.7216
+       ],
+       [
+        -73.9624,
+        40.7216
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-30",
+      "mode": "ferry",
+      "couleur": "#d97706"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9624,
+        40.7216
+       ],
+       [
+        -73.9705,
+        40.7135
+       ],
+       [
+        -73.98,
+        40.7065
+       ],
+       [
+        -73.9905,
+        40.7055
+       ],
+       [
+        -73.9945,
+        40.7035
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-30",
+      "mode": "marche",
+      "couleur": "#d97706"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9945,
+        40.7035
+       ],
+       [
+        -73.9893,
+        40.7033
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-30",
+      "mode": "marche",
+      "couleur": "#d97706"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9893,
+        40.7033
+       ],
+       [
+        -73.9977,
+        40.6956
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-30",
+      "mode": "marche",
+      "couleur": "#d97706"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9977,
+        40.6956
+       ],
+       [
+        -73.9945,
+        40.6958
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-30",
+      "mode": "marche",
+      "couleur": "#d97706"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9945,
+        40.6958
+       ],
+       [
+        -73.9898,
+        40.693
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-30",
+      "mode": "metro",
+      "couleur": "#FF6319"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9898,
+        40.693
+       ],
+       [
+        -73.9779,
+        40.6844
+       ],
+       [
+        -74.0036,
+        40.6551
+       ],
+       [
+        -73.9944,
+        40.6465
+       ],
+       [
+        -73.9943,
+        40.6362
+       ],
+       [
+        -73.9966,
+        40.6263
+       ],
+       [
+        -73.9988,
+        40.6193
+       ],
+       [
+        -74.0005,
+        40.6135
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-30",
+      "mode": "marche",
+      "couleur": "#d97706"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -74.0005,
+        40.6135
+       ],
+       [
+        -74.0117,
+        40.6205
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-30",
+      "mode": "marche",
+      "couleur": "#d97706"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -74.0117,
+        40.6205
+       ],
+       [
+        -74.0117,
+        40.6205
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-30",
+      "mode": "marche",
+      "couleur": "#d97706"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -74.0117,
+        40.6205
+       ],
+       [
+        -74.0005,
+        40.6135
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-30",
+      "mode": "metro",
+      "couleur": "#FF6319"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -74.0005,
+        40.6135
+       ],
+       [
+        -73.9988,
+        40.6193
+       ],
+       [
+        -73.9966,
+        40.6263
+       ],
+       [
+        -73.9943,
+        40.6362
+       ],
+       [
+        -73.9944,
+        40.6465
+       ],
+       [
+        -74.0036,
+        40.6551
+       ],
+       [
+        -73.9779,
+        40.6844
+       ],
+       [
+        -73.9817,
+        40.6905
+       ],
+       [
+        -73.9938,
+        40.7186
+       ],
+       [
+        -73.9962,
+        40.7253
+       ],
+       [
+        -74.0005,
+        40.7322
+       ],
+       [
+        -73.9877,
+        40.7496
+       ],
+       [
+        -73.9845,
+        40.7543
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-30",
+      "mode": "marche",
+      "couleur": "#d97706"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9845,
+        40.7543
+       ],
+       [
+        -73.9915,
+        40.7564
+       ]
+      ]
+     }
+    }
+   ],
+   "bounds": [
+    [
+     -74.0117,
+     40.6135
+    ],
+    [
+     -73.9198,
+     40.7572
+    ]
    ]
   },
   {
@@ -2369,8 +4058,52 @@
       ],
       "de": "42 St–Port Authority",
       "a": "World Trade Center",
+      "via": [
+       "42 St–Port Authority",
+       "34 St–Penn Station (8 Av)",
+       "23 St (8 Av)",
+       "14 St–8 Av",
+       "W 4 St–Washington Sq",
+       "Spring St (C E)",
+       "Canal St (A C E)",
+       "World Trade Center"
+      ],
       "duree": 28,
       "detail": "E direct jusqu'au terminus, ~15 min.",
+      "via_coords": [
+       [
+        40.7572,
+        -73.9898
+       ],
+       [
+        40.7523,
+        -73.9932
+       ],
+       [
+        40.7457,
+        -73.998
+       ],
+       [
+        40.7398,
+        -74.0021
+       ],
+       [
+        40.7322,
+        -74.0005
+       ],
+       [
+        40.7262,
+        -74.0038
+       ],
+       [
+        40.7209,
+        -74.0052
+       ],
+       [
+        40.7126,
+        -74.0099
+       ]
+      ],
       "duree_totale": 33,
       "icone": "🚇"
      },
@@ -2866,8 +4599,57 @@
       ],
       "de": "South Ferry",
       "a": "28 St",
+      "via": [
+       "South Ferry",
+       "Rector St (1)",
+       "Chambers St (1)",
+       "Canal St (1)",
+       "Houston St (1)",
+       "Christopher St",
+       "14 St (1)",
+       "18 St (1)",
+       "28 St"
+      ],
       "duree": 29,
       "detail": "1 direct (~18 min).",
+      "via_coords": [
+       [
+        40.702,
+        -74.013
+       ],
+       [
+        40.7072,
+        -74.0138
+       ],
+       [
+        40.7155,
+        -74.0091
+       ],
+       [
+        40.7223,
+        -74.0061
+       ],
+       [
+        40.7283,
+        -74.0053
+       ],
+       [
+        40.7334,
+        -74.0029
+       ],
+       [
+        40.7378,
+        -74.0
+       ],
+       [
+        40.741,
+        -73.9978
+       ],
+       [
+        40.7475,
+        -73.9934
+       ]
+      ],
       "duree_totale": 34,
       "icone": "🚇"
      },
@@ -2931,8 +4713,27 @@
       ],
       "de": "28 St",
       "a": "Times Sq–42 St",
+      "via": [
+       "28 St",
+       "34 St–Penn Station (7 Av)",
+       "Times Sq–42 St"
+      ],
       "duree": 14,
       "detail": "1, 2 arrêts, puis 7 min à pied.",
+      "via_coords": [
+       [
+        40.7475,
+        -73.9934
+       ],
+       [
+        40.7506,
+        -73.991
+       ],
+       [
+        40.7553,
+        -73.9869
+       ]
+      ],
       "duree_totale": 17,
       "icone": "🚇"
      },
@@ -2973,6 +4774,479 @@
      "etape": "The Museum at FIT (expo « Doll Dressing »)",
      "message": "Horaires à confirmer : Officiel : mer-ven 12h-20h, sam-dim 10h-17h. « Doll Dressing » jusqu'au 3 janv. 2027. Horaires du 31 déc. non publiés (fermeture anticipée possible)."
     }
+   ],
+   "features": [
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-31",
+      "mode": "marche",
+      "couleur": "#1d4ed8"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9915,
+        40.7564
+       ],
+       [
+        -73.9898,
+        40.7572
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-31",
+      "mode": "metro",
+      "couleur": "#0039A6"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9898,
+        40.7572
+       ],
+       [
+        -73.9932,
+        40.7523
+       ],
+       [
+        -73.998,
+        40.7457
+       ],
+       [
+        -74.0021,
+        40.7398
+       ],
+       [
+        -74.0005,
+        40.7322
+       ],
+       [
+        -74.0038,
+        40.7262
+       ],
+       [
+        -74.0052,
+        40.7209
+       ],
+       [
+        -74.0099,
+        40.7126
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-31",
+      "mode": "marche",
+      "couleur": "#1d4ed8"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -74.0099,
+        40.7126
+       ],
+       [
+        -74.0134,
+        40.7114
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-31",
+      "mode": "marche",
+      "couleur": "#1d4ed8"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -74.0134,
+        40.7114
+       ],
+       [
+        -74.011,
+        40.7116
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-31",
+      "mode": "marche",
+      "couleur": "#1d4ed8"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -74.011,
+        40.7116
+       ],
+       [
+        -74.0026,
+        40.7212
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-31",
+      "mode": "balade",
+      "couleur": "#1d4ed8"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -74.0026,
+        40.7212
+       ],
+       [
+        -74.0023,
+        40.7223
+       ],
+       [
+        -74.0017,
+        40.7238
+       ],
+       [
+        -74.0009,
+        40.7247
+       ],
+       [
+        -74.0003,
+        40.7231
+       ],
+       [
+        -73.9993,
+        40.7223
+       ],
+       [
+        -73.9989,
+        40.7243
+       ],
+       [
+        -73.9977,
+        40.7254
+       ],
+       [
+        -73.9958,
+        40.7262
+       ],
+       [
+        -73.9944,
+        40.7247
+       ],
+       [
+        -73.9944,
+        40.7262
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-31",
+      "mode": "marche",
+      "couleur": "#1d4ed8"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9944,
+        40.7262
+       ],
+       [
+        -73.9965,
+        40.721
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-31",
+      "mode": "balade",
+      "couleur": "#1d4ed8"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9965,
+        40.721
+       ],
+       [
+        -73.9982,
+        40.718
+       ],
+       [
+        -73.9985,
+        40.716
+       ],
+       [
+        -73.9981,
+        40.7144
+       ],
+       [
+        -74.0001,
+        40.7154
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-31",
+      "mode": "marche",
+      "couleur": "#1d4ed8"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -74.0001,
+        40.7154
+       ],
+       [
+        -74.0036,
+        40.7068
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-31",
+      "mode": "marche",
+      "couleur": "#1d4ed8"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -74.0036,
+        40.7068
+       ],
+       [
+        -74.0113,
+        40.7069
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-31",
+      "mode": "marche",
+      "couleur": "#1d4ed8"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -74.0113,
+        40.7069
+       ],
+       [
+        -74.013,
+        40.7013
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-31",
+      "mode": "marche",
+      "couleur": "#1d4ed8"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -74.013,
+        40.7013
+       ],
+       [
+        -74.013,
+        40.702
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-31",
+      "mode": "metro",
+      "couleur": "#EE352E"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -74.013,
+        40.702
+       ],
+       [
+        -74.0138,
+        40.7072
+       ],
+       [
+        -74.0091,
+        40.7155
+       ],
+       [
+        -74.0061,
+        40.7223
+       ],
+       [
+        -74.0053,
+        40.7283
+       ],
+       [
+        -74.0029,
+        40.7334
+       ],
+       [
+        -74.0,
+        40.7378
+       ],
+       [
+        -73.9978,
+        40.741
+       ],
+       [
+        -73.9934,
+        40.7475
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-31",
+      "mode": "marche",
+      "couleur": "#1d4ed8"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9934,
+        40.7475
+       ],
+       [
+        -73.9937,
+        40.7469
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-31",
+      "mode": "marche",
+      "couleur": "#1d4ed8"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9937,
+        40.7469
+       ],
+       [
+        -73.9934,
+        40.7475
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-31",
+      "mode": "metro",
+      "couleur": "#EE352E"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9934,
+        40.7475
+       ],
+       [
+        -73.991,
+        40.7506
+       ],
+       [
+        -73.9869,
+        40.7553
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2026-12-31",
+      "mode": "marche",
+      "couleur": "#1d4ed8"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9869,
+        40.7553
+       ],
+       [
+        -73.9915,
+        40.7564
+       ]
+      ]
+     }
+    }
+   ],
+   "bounds": [
+    [
+     -74.0138,
+     40.7013
+    ],
+    [
+     -73.9869,
+     40.7572
+    ]
    ]
   },
   {
@@ -3028,8 +5302,32 @@
       ],
       "de": "42 St–Port Authority",
       "a": "81 St–Museum of Natural History",
+      "via": [
+       "42 St–Port Authority",
+       "59 St–Columbus Circle",
+       "72 St (B C)",
+       "81 St–Museum of Natural History"
+      ],
       "duree": 24,
       "detail": "C (local), ~14 min ; la station donne directement dans le musée.",
+      "via_coords": [
+       [
+        40.7572,
+        -73.9898
+       ],
+       [
+        40.7682,
+        -73.9819
+       ],
+       [
+        40.7757,
+        -73.9763
+       ],
+       [
+        40.7815,
+        -73.972
+       ]
+      ],
       "duree_totale": 28,
       "icone": "🚇"
      },
@@ -3224,8 +5522,52 @@
       ],
       "de": "81 St–Museum of Natural History",
       "a": "W 4 St–Washington Sq",
+      "via": [
+       "81 St–Museum of Natural History",
+       "72 St (B C)",
+       "59 St–Columbus Circle",
+       "42 St–Port Authority",
+       "34 St–Penn Station (8 Av)",
+       "23 St (8 Av)",
+       "14 St–8 Av",
+       "W 4 St–Washington Sq"
+      ],
       "duree": 31,
       "detail": "C direct (~20 min).",
+      "via_coords": [
+       [
+        40.7815,
+        -73.972
+       ],
+       [
+        40.7757,
+        -73.9763
+       ],
+       [
+        40.7682,
+        -73.9819
+       ],
+       [
+        40.7572,
+        -73.9898
+       ],
+       [
+        40.7523,
+        -73.9932
+       ],
+       [
+        40.7457,
+        -73.998
+       ],
+       [
+        40.7398,
+        -74.0021
+       ],
+       [
+        40.7322,
+        -74.0005
+       ]
+      ],
       "duree_totale": 36,
       "icone": "🚇"
      },
@@ -3589,6 +5931,416 @@
      "etape": "Départ JFK",
      "message": "Arrivée à JFK à 20:45, soit 3 h 14 avant le vol de 23:59."
     }
+   ],
+   "features": [
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2027-01-01",
+      "mode": "marche",
+      "couleur": "#7c3aed"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9915,
+        40.7564
+       ],
+       [
+        -73.9898,
+        40.7572
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2027-01-01",
+      "mode": "metro",
+      "couleur": "#0039A6"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9898,
+        40.7572
+       ],
+       [
+        -73.9819,
+        40.7682
+       ],
+       [
+        -73.9763,
+        40.7757
+       ],
+       [
+        -73.972,
+        40.7815
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2027-01-01",
+      "mode": "marche",
+      "couleur": "#7c3aed"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.972,
+        40.7815
+       ],
+       [
+        -73.974,
+        40.7813
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2027-01-01",
+      "mode": "marche",
+      "couleur": "#7c3aed"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.974,
+        40.7813
+       ],
+       [
+        -73.974,
+        40.7813
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2027-01-01",
+      "mode": "marche",
+      "couleur": "#7c3aed"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.974,
+        40.7813
+       ],
+       [
+        -73.972,
+        40.7815
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2027-01-01",
+      "mode": "metro",
+      "couleur": "#0039A6"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.972,
+        40.7815
+       ],
+       [
+        -73.9763,
+        40.7757
+       ],
+       [
+        -73.9819,
+        40.7682
+       ],
+       [
+        -73.9898,
+        40.7572
+       ],
+       [
+        -73.9932,
+        40.7523
+       ],
+       [
+        -73.998,
+        40.7457
+       ],
+       [
+        -74.0021,
+        40.7398
+       ],
+       [
+        -74.0005,
+        40.7322
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2027-01-01",
+      "mode": "marche",
+      "couleur": "#7c3aed"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -74.0005,
+        40.7322
+       ],
+       [
+        -73.9973,
+        40.7308
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2027-01-01",
+      "mode": "balade",
+      "couleur": "#7c3aed"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9973,
+        40.7308
+       ],
+       [
+        -73.9971,
+        40.7312
+       ],
+       [
+        -73.9957,
+        40.7322
+       ],
+       [
+        -73.9948,
+        40.7335
+       ],
+       [
+        -73.9945,
+        40.7341
+       ],
+       [
+        -73.9937,
+        40.735
+       ],
+       [
+        -73.9968,
+        40.736
+       ],
+       [
+        -73.9993,
+        40.7372
+       ],
+       [
+        -74.001,
+        40.736
+       ],
+       [
+        -73.9989,
+        40.7344
+       ],
+       [
+        -74.001,
+        40.733
+       ],
+       [
+        -74.002,
+        40.7336
+       ],
+       [
+        -74.004,
+        40.735
+       ],
+       [
+        -74.0053,
+        40.7327
+       ],
+       [
+        -74.0071,
+        40.7318
+       ],
+       [
+        -74.0047,
+        40.7313
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2027-01-01",
+      "mode": "marche",
+      "couleur": "#7c3aed"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -74.0047,
+        40.7313
+       ],
+       [
+        -74.0089,
+        40.7395
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2027-01-01",
+      "mode": "balade",
+      "couleur": "#7c3aed"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -74.0089,
+        40.7395
+       ],
+       [
+        -74.0066,
+        40.7425
+       ],
+       [
+        -74.005,
+        40.746
+       ],
+       [
+        -74.004,
+        40.7495
+       ],
+       [
+        -74.006,
+        40.752
+       ],
+       [
+        -74.0021,
+        40.7537
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2027-01-01",
+      "mode": "marche",
+      "couleur": "#7c3aed"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -74.0021,
+        40.7537
+       ],
+       [
+        -74.0021,
+        40.7537
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2027-01-01",
+      "mode": "marche",
+      "couleur": "#7c3aed"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -74.0021,
+        40.7537
+       ],
+       [
+        -74.0021,
+        40.7537
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2027-01-01",
+      "mode": "marche",
+      "couleur": "#7c3aed"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -74.0021,
+        40.7537
+       ],
+       [
+        -73.9915,
+        40.7564
+       ]
+      ]
+     }
+    },
+    {
+     "type": "Feature",
+     "properties": {
+      "jour": "2027-01-01",
+      "mode": "taxi",
+      "couleur": "#7c3aed"
+     },
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        -73.9915,
+        40.7564
+       ],
+       [
+        -73.7822,
+        40.6441
+       ]
+      ]
+     }
+    }
+   ],
+   "bounds": [
+    [
+     -74.0089,
+     40.7308
+    ],
+    [
+     -73.972,
+     40.7815
+    ]
    ]
   }
  ],
@@ -5093,6 +7845,12 @@
    ]
   },
   "fuseau": "America/New_York",
-  "taux_eur_usd": 1.075
+  "taux_eur_usd": 1.075,
+  "urgences": [
+   "Urgences (police, pompiers, ambulance) : 911",
+   "Infos ville / objets perdus : 311",
+   "Consulat de France à New York : 934 5th Ave — +1 212 606 3600",
+   "Assistance carte bancaire : numéro au dos de chaque carte (le noter à part)"
+  ]
  }
 }

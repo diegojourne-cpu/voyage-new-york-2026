@@ -8,7 +8,9 @@ Une seule source de vérité : les fichiers YAML. Ne jamais éditer dist/ à la 
 from __future__ import annotations
 
 import datetime as dt
+import hashlib
 import html
+import shutil
 import json
 import sys
 import zoneinfo
@@ -20,10 +22,43 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 sys.path.insert(0, str(Path(__file__).parent))
 from core import (COULEURS_LIGNES, ICONES_MODE, LIGNES_TEXTE_NOIR, RACINE, charger, charger_et_calculer,  # noqa: E402
                   date_fr, hm, hm_fr, plage_du_jour)
-from svgmap import carte_ensemble, carte_jour, symbole_fond  # noqa: E402
+from zones import ecrire as ecrire_zones  # noqa: E402
 
 DIST = RACINE / "dist"
+SITE_SRC = RACINE / "site"
+SITE = DIST / "site"
 TPL = Path(__file__).parent / "templates"
+
+
+def geo_jour(jj):
+    """Tracés GeoJSON d'une journée (lon, lat) + emprise pour cadrer la carte."""
+    feats, pts = [], []
+    for e in jj["etapes"]:
+        tr = e.get("trajet")
+        if tr:
+            mode = tr["mode"]
+            lig = (tr.get("lignes") or [None])[-1]
+            couleur = COULEURS_LIGNES.get(lig, "#8e8e93") if mode in ("metro", "train") else jj["couleur"]
+            via = tr.get("via_coords")
+            ligne = lambda pts, m=mode, c=couleur: {"type": "Feature", "properties": {"jour": jj["iso"], "mode": m, "couleur": c},
+                                                    "geometry": {"type": "LineString", "coordinates": [p[::-1] for p in pts]}}
+            if via:
+                feats.append(ligne([e["origine"], via[0]], "marche", jj["couleur"]))
+                feats.append(ligne(via))
+                feats.append(ligne([via[-1], e["coord_debut"]], "marche", jj["couleur"]))
+                pts += via
+            else:
+                feats.append(ligne([e["origine"], e["coord_debut"]]))
+        if e.get("waypoints"):
+            feats.append({"type": "Feature", "properties": {"jour": jj["iso"], "mode": "balade", "couleur": jj["couleur"]},
+                          "geometry": {"type": "LineString", "coordinates": [w[::-1] for w in e["waypoints"]]}})
+            pts += e["waypoints"]
+        if e["id_lieu"] != "jfk" or jj["iso"] == "2026-12-27":
+            pts.append(e["coord"])
+            if tr and (tr["mode"] != "taxi" or jj["iso"] == "2026-12-27"):
+                pts.append(e["origine"])
+    lats, lons = [p[0] for p in pts], [p[1] for p in pts]
+    return feats, [[min(lons), min(lats)], [max(lons), max(lats)]]
 
 
 # --------------------------------------------------------------------------- contexte
@@ -97,7 +132,7 @@ def contexte():
             "alertes": [a.__dict__ for a in R["alertes"] if a.jour == j.date.isoformat()],
         })
     for jj in jours:
-        jj["svg"] = carte_jour(jj, hotel, f"carte-{jj['iso']}")
+        jj["features"], jj["bounds"] = geo_jour(jj)
     O = R["options"]
     rev = O["reveillon"]
     for c in rev["choix"]:
@@ -233,37 +268,62 @@ def rapport_md(ctx, R):
 
 
 # --------------------------------------------------------------------------- main
+def construire_site(data):
+    """Copie l'appli (site/) dans dist/site/, avec les données et le service worker versionné."""
+    if SITE.exists():
+        for f in sorted(SITE.rglob("*"), reverse=True):
+            if f.is_file() and f.parts[-2:] != ("fichiers", "programme.pdf"):
+                f.unlink()
+    for f in SITE_SRC.rglob("*"):
+        if f.is_file() and f.name != "zones.geojson" and f.name != "SOURCE.txt":
+            dest = SITE / f.relative_to(SITE_SRC)
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(f, dest)
+    (SITE / "data.json").write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":"), default=str), encoding="utf-8")
+    fichiers = SITE / "fichiers"
+    fichiers.mkdir(exist_ok=True)
+    for n in ("voyage.ics", "voyage.kml"):
+        shutil.copy2(DIST / n, fichiers / n)
+    # précache du service worker : tout sauf les tuiles (cache dédié, rempli en tâche de fond)
+    liste = sorted(str(f.relative_to(SITE)) for f in SITE.rglob("*")
+                   if f.is_file() and f.suffix != ".pmtiles" and f.name not in ("sw.js", "_headers"))
+    if "fichiers/programme.pdf" not in liste:
+        liste.append("fichiers/programme.pdf")
+    h = hashlib.sha256()
+    for rel in liste:
+        f = SITE / rel
+        if f.exists() and rel != "fichiers/programme.pdf":
+            h.update(rel.encode()); h.update(f.read_bytes())
+    tuiles = SITE / "tiles" / "nyc.pmtiles"
+    ht = hashlib.sha256(tuiles.read_bytes()).hexdigest()[:10] if tuiles.exists() else "absent"
+    sw = (SITE_SRC / "sw.js").read_text(encoding="utf-8")
+    sw = (sw.replace("__VERSION__", h.hexdigest()[:10]).replace("__TUILES__", ht)
+            .replace("__PRECACHE__", json.dumps(["./"] + liste, ensure_ascii=False)))
+    (SITE / "sw.js").write_text(sw, encoding="utf-8")
+
+
 def main():
     ctx, R = contexte()
     DIST.mkdir(exist_ok=True)
+    zones_changees = ecrire_zones(ctx, RACINE)
     env = Environment(loader=FileSystemLoader(TPL), autoescape=select_autoescape(["html", "j2"]),
                       trim_blocks=True, lstrip_blocks=True)
     env.filters["usd"] = lambda v: (f"{v:,.0f} $".replace(",", " ") if v == int(v) else f"{v:,.2f} $".replace(",", " ").replace(".", ","))
     env.filters["eur"] = lambda v: f"{v:,.0f} €".replace(",", " ")
     env.filters["eur2"] = lambda v: f"{v:,.2f} €".replace(",", " ").replace(".", ",")
     env.globals.update(COULEURS=COULEURS_LIGNES, NOIR=LIGNES_TEXTE_NOIR, quote=quote)
-    fond = symbole_fond()
-    ensemble = carte_ensemble(ctx["jours"], ctx["hotel"])
-    # données pour le JS du site (sans les SVG, déjà dans le HTML)
-    data = {k: v for k, v in ctx.items() if k not in ("voyage",)}
-    data["jours"] = [{k: v for k, v in j.items() if k != "svg"} for j in ctx["jours"]]
-    data["voyage"] = {k: ctx["voyage"][k] for k in ("titre", "sous_titre", "vols", "hotel", "fuseau", "taux_eur_usd")}
-    data_json = json.dumps(data, ensure_ascii=False, default=str).replace("<", "\\u003c")
-
-    site = env.get_template("site.html.j2")
-    corps = site.render(ctx=ctx, fond=fond, ensemble=ensemble, data_json=data_json, autonome=False)
-    (DIST / "artifact.html").write_text(corps, encoding="utf-8")
-    autonome = site.render(ctx=ctx, fond=fond, ensemble=ensemble, data_json=data_json, autonome=True)
-    (DIST / "index.html").write_text(autonome, encoding="utf-8")
-    (DIST / "programme.html").write_text(
-        env.get_template("print.html.j2").render(ctx=ctx, fond=fond, ensemble=ensemble), encoding="utf-8")
-    (DIST / "carte.html").write_text(env.get_template("carte.html.j2").render(ctx=ctx, data_json=data_json), encoding="utf-8")
+    data = {k: v for k, v in ctx.items() if k != "voyage"}
+    data["voyage"] = {k: ctx["voyage"][k] for k in ("titre", "sous_titre", "vols", "hotel", "fuseau", "taux_eur_usd", "urgences")}
+    (DIST / "programme.html").write_text(env.get_template("print.html.j2").render(ctx=ctx), encoding="utf-8")
     (DIST / "voyage.ics").write_text(ics(ctx), encoding="utf-8", newline="")
     (DIST / "voyage.kml").write_text(kml(ctx), encoding="utf-8")
     (DIST / "verification.md").write_text(rapport_md(ctx, R), encoding="utf-8")
     (DIST / "programme.json").write_text(json.dumps(data, ensure_ascii=False, indent=1, default=str), encoding="utf-8")
+    construire_site(data)
     nb = ctx["nb"]
     print(f"dist/ régénéré — {nb['erreur']} erreur(s), {nb['attention']} attention(s), {nb['info']} info(s)")
+    if zones_changees:
+        print("ZONES_CHANGEES : le fond de carte doit être ré-extrait (action GitHub « Fond de carte »).")
     return nb["erreur"]
 
 

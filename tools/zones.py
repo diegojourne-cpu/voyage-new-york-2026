@@ -49,8 +49,11 @@ def zones(ctx) -> dict:
             polys.append(cercle(*e["coord"], r))
             for w in e.get("waypoints") or []:
                 polys.append(cercle(*w, 500, 12))
-            if e.get("trajet") and e["trajet"]["mode"] != "taxi":
-                polys.append(couloir(e["origine"], e["coord_debut"], LARGEUR_TRAJET_M))
+            tr = e.get("trajet")
+            if tr and tr["mode"] != "taxi":
+                chemin = [e["origine"], *(tr.get("via_coords") or []), e["coord_debut"]]
+                for a, b in zip(chemin, chemin[1:]):
+                    polys.append(couloir(a, b, LARGEUR_TRAJET_M))
     # options de la soirée du 31 et Statue de la Liberté
     for c in ctx["reveillon"]["choix"]:
         polys.append(cercle(*c["coord"], 900))

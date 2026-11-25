@@ -146,6 +146,7 @@ class Jour:
 
 # --------------------------------------------------------------------------- calcul
 def calculer(voyage, lieux, programme):
+    stations = charger("stations") if (DATA / "stations.yaml").exists() else {}
     regles = voyage["regles_calcul"]
     tz = voyage["fuseau"]
     hotel = tuple(lieux["hotel"]["coord"])
@@ -169,6 +170,11 @@ def calculer(voyage, lieux, programme):
             c_fin = tuple(s.get("coord") or (wps[-1] if wps else L["coord"]))
             titre = s.get("titre") or L["nom"]
             tr = s.get("trajet")
+            if tr and tr.get("via"):
+                inconnues = [v for v in tr["via"] if v not in stations]
+                if inconnues:
+                    alertes.append(Alerte("erreur", d.isoformat(), titre, f"Station(s) inconnue(s) dans data/stations.yaml : {', '.join(inconnues)}."))
+                tr = {**tr, "via_coords": [stations[v] for v in tr["via"] if v in stations]}
             base, dist = 0, None
             if tr:
                 dist = haversine_km(pos, c_debut)

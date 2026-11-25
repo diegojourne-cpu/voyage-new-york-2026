@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="fr"><head><meta charset="utf-8">
 <title>New York Noël 2026 — programme heure par heure</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>@font-face{font-family:"InterVar";src:url("site/vendor/fonts/inter-latin-wght-normal.woff2") format("woff2");font-weight:100 900}@font-face{font-family:"InterVar";src:url("site/vendor/fonts/inter-latin-ext-wght-normal.woff2") format("woff2");font-weight:100 900;unicode-range:U+0100-02BA,U+1E00-1EFF}</style>
 <style>
-:root{--ink:#15191d;--muted:#59626b;--line:#d6dbd5;--bg:#ffffff;--soft:#f3f4f0;--sign:#121417;--red:#c8102e;--gold:#9a6b12;--green:#0f6b45;--warn:#a15c07;--warn-bg:#fdf3e1;--err:#b91c1c;--err-bg:#fde8e8;--info-bg:#eef2f7;
+:root{--ink:#15191d;--muted:#59626b;--line:#d6dbd5;--bg:#ffffff;--soft:#f3f4f0;--sign:#000000;--red:#c8102e;--gold:#9a6b12;--green:#0f6b45;--warn:#a15c07;--warn-bg:#fdf3e1;--err:#b91c1c;--err-bg:#fde8e8;--info-bg:#eef2f7;
   --map-eau:#cddfe9;--map-terre:#fbfbf8;--map-terre2:#e9ece6;--map-cote:#b5c3c9;--map-parc:#cfe4cc;--map-marche:#59636c;--map-hotel:#15191d;--map-lbl:#7d8a92;
-  --f-display:"Archivo","Arial Narrow",Arial,sans-serif;--f-body:"Instrument Sans",Arial,sans-serif;--f-mono:"JetBrains Mono",Menlo,monospace}
+  --f-display:"InterVar",Arial,sans-serif;--f-body:"InterVar",Arial,sans-serif;--f-mono:"InterVar",Arial,sans-serif}
 @page{size:A4;margin:12mm 12mm 14mm}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:9.6pt/1.42 var(--f-body);-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -30,10 +30,8 @@ th,td{text-align:left;padding:5px 7px;border-bottom:1px solid var(--line);vertic
 th{font:700 7pt/1.2 var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--soft)}
 td.num,th.num{text-align:right;font-family:var(--f-mono);white-space:nowrap}
 tr{break-inside:avoid}
-.carte{display:block;width:100%;height:auto;aspect-ratio:1.25;max-height:92mm;border:1px solid var(--line);border-radius:6px;background:var(--map-eau)}
-.map-lbl text{font-family:var(--f-display);font-weight:800;letter-spacing:.2em;fill:var(--map-lbl);font-size:48px}
-.carte-ensemble{aspect-ratio:.95;max-height:150mm;width:auto;margin:0 auto}
-.map-lbl text.eau{font-style:italic;font-weight:600;font-size:34px}
+.carte{display:block;width:100%;height:auto;aspect-ratio:1.4;object-fit:cover;max-height:100mm;border-radius:10px;background:#eceae5}
+.carte-ensemble{max-height:170mm}
 .step{display:grid;grid-template-columns:22mm 1fr;gap:0 9px;border-left:5px solid var(--c);padding:5px 0 7px 8px;break-inside:avoid}
 .step .h{font:700 12pt/1 var(--f-mono)}
 .step .h small{display:block;font-size:8pt;color:var(--muted);font-weight:500;margin-top:3px}
@@ -57,7 +55,6 @@ ul{margin:4px 0 0;padding-left:14px}
 .sec>h2{font-size:17pt;font-weight:800;font-stretch:78%}
 .src{font-size:7.5pt;color:var(--muted);word-break:break-all}
 </style></head><body>
-{{ fond|safe }}
 
 <!-- ===================================================== COUVERTURE -->
 <section class="page cover">
@@ -79,7 +76,7 @@ ul{margin:4px 0 0;padding-left:14px}
 <section class="page sec">
   <h2>Les cinq parcours</h2>
   <p style="margin:0">Une couleur par jour, l'hôtel est le carré noir « H ». Chaque journée a ensuite sa carte détaillée.{% for j in ctx.jours if j.iso != '2026-12-27' %} <span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:{{ j.couleur }}"></span> {{ j.label_court }}{% endfor %}</p>
-  {{ ensemble|safe }}
+  <img class="carte carte-ensemble" src="cartes/ensemble.jpg" alt="Carte de tous les parcours">
 </section>
 
 <!-- ===================================================== RÉSERVATIONS -->
@@ -96,7 +93,7 @@ ul{margin:4px 0 0;padding-left:14px}
   <div class="band"><div class="rond" style="background:{{ j.couleur }}">{{ j.iso[8:]|int }}</div><div><div class="eyebrow" style="color:#9aa1a7">{{ j.label }}</div><h2>{{ j.titre }}</h2></div>
     <div class="meta">Départ <b>{{ j.depart }}</b> · coucher <b>{{ j.soleil.coucher }}</b><br>nuit noire <b>{{ j.soleil.nuit }}</b>{% if j.etapes %} · fin <b>{{ j.etapes[-1].debut }}</b>{% endif %}</div></div>
   <p style="margin:6px 0">{{ j.theme }}{% if j.note %} — <b>{{ j.note }}</b>{% endif %}</p>
-  {{ j.svg|safe }}
+  <img class="carte" src="cartes/{{ j.iso }}.jpg" alt="Carte du {{ j.label }}">
   {% for a in j.alertes if a.niveau != 'info' %}<div class="al {{ a.niveau }}"><b>{{ a.etape }}</b> — {{ a.message }}</div>{% endfor %}
   <div style="margin-top:8px">
   {% for e in j.etapes %}

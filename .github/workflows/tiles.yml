@@ -11,6 +11,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: tuiles
@@ -54,3 +55,7 @@ jobs:
           git diff --cached --quiet || git commit -m "Fond de carte : tuiles OpenStreetMap des zones du voyage"
           git pull --rebase
           git push
+      - name: Régénérer l'appli et le PDF avec le nouveau fond de carte
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run build.yml --ref main

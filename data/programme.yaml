@@ -55,7 +55,7 @@ jours:
   depart: "09:00"
   etapes:
     - lieu: met
-      trajet: { mode: metro, lignes: [C], de: "42 St–Port Authority", a: "81 St–Museum of Natural History", duree: 35, detail: "C (local) 7 arrêts, ~14 min. Puis traversée de Central Park à pied (79th St transverse → Belvedere Castle → Great Lawn), 15 min : la première balade du jour." }
+      trajet: { mode: metro, lignes: [C], de: "42 St–Port Authority", a: "81 St–Museum of Natural History", via: ["42 St–Port Authority", "59 St–Columbus Circle", "72 St (B C)", "81 St–Museum of Natural History"], duree: 35, detail: "C (local) 7 arrêts, ~14 min. Puis traversée de Central Park à pied (79th St transverse → Belvedere Castle → Great Lawn), 15 min : la première balade du jour." }
       pas_avant: "10:00"
       duree: 140
       quoi: "Ouverture à 10h. 1) Le sapin aux anges et la crèche napolitaine (salle 305, à gauche du grand hall) avant la foule. 2) Costume Institute (Anna Wintour Costume Center, rez-de-chaussée). 3) Arts décoratifs : salons d'époque de l'American Wing et galeries européennes (Wrightsman Rooms)."
@@ -138,14 +138,14 @@ jours:
   depart: "08:45"
   etapes:
     - lieu: nybg
-      trajet: { mode: train, lignes: [S, MNR], de: "Times Sq–42 St → Grand Central", a: "Botanical Garden (Metro-North, ligne Harlem)", duree: 50, detail: "7 min à pied jusqu'à Times Square, navette S (ou ligne 7) jusqu'à Grand Central, train Metro-North de la ligne Harlem (~20 min, départ après 9h = tarif creux). Billet CityTicket 5,25 $ dans l'appli TrainTime. La gare débouche face à l'entrée Mosholu du jardin.", prix: 5.25 }
+      trajet: { mode: train, lignes: [S, MNR], de: "Times Sq–42 St → Grand Central", a: "Botanical Garden (Metro-North, ligne Harlem)", via: ["Times Sq–42 St", "Grand Central", "Park Av & 96 St", "Harlem–125 St", "Melrose", "Tremont", "Fordham", "Botanical Garden"], duree: 50, detail: "7 min à pied jusqu'à Times Square, navette S (ou ligne 7) jusqu'à Grand Central, train Metro-North de la ligne Harlem (~20 min, départ après 9h = tarif creux). Billet CityTicket 5,25 $ dans l'appli TrainTime. La gare débouche face à l'entrée Mosholu du jardin.", prix: 5.25 }
       creneau: "10:00"
       duree: 135
       quoi: "Le Holiday Train Show dans la serre Enid A. Haupt (190 répliques de New York en matériaux naturels, trains à toute vitesse), puis un tour dans le jardin d'hiver et la boutique."
       conseil: "Prendre le train qui arrive avant 9h50 (horaires dans TrainTime). Billet à heure fixe de 10h, à réserver dès maintenant."
     - lieu: columbus_market
       titre: "Déjeuner à Columbus Circle + marché de Noël"
-      trajet: { mode: metro, lignes: [B, D], de: "Bedford Park Blvd", a: "59 St–Columbus Circle", duree: 47, detail: "12 min à pied jusqu'à la station (sortie Mosholu, Bedford Park Blvd), puis B ou D direct, ~30 min." }
+      trajet: { mode: metro, lignes: [B, D], de: "Bedford Park Blvd", a: "59 St–Columbus Circle", via: ["Bedford Park Blvd", "Fordham Rd (B D)", "Tremont Av (B D)", "161 St–Yankee Stadium", "145 St (B D)", "125 St (B D)", "110 St–Cathedral Pkwy (B C)", "81 St–Museum of Natural History", "72 St (B C)", "59 St–Columbus Circle"], duree: 47, detail: "12 min à pied jusqu'à la station (sortie Mosholu, Bedford Park Blvd), puis B ou D direct, ~30 min." }
       duree: 45
       quoi: "Déjeuner, puis le marché de Noël de Columbus Circle (vu rapidement lundi, on prend le temps)."
       repas: "Déjeuner — Columbus Circle"
@@ -159,7 +159,7 @@ jours:
       quoi: "Le 5e étage (1880-1940) : La Nuit étoilée, Les Demoiselles d'Avignon, les Nymphéas, Matisse ; puis le 4e (1940-1970 : Warhol, Pollock) et le jardin de sculptures."
       conseil: "Fermeture à 17h30 : on fait le 5e en premier."
     - lieu: macys
-      trajet: { mode: metro, lignes: [F, M], de: "47-50 Sts–Rockefeller Ctr", a: "34 St–Herald Sq", duree: 18, detail: "6 min à pied jusqu'à la station (6e Av.), F ou M 2 arrêts." }
+      trajet: { mode: metro, lignes: [F, M], de: "47-50 Sts–Rockefeller Ctr", a: "34 St–Herald Sq", via: ["47-50 Sts–Rockefeller Ctr", "42 St–Bryant Park", "34 St–Herald Sq"], duree: 18, detail: "6 min à pied jusqu'à la station (6e Av.), F ou M 2 arrêts." }
       duree: 40
       nuit: true
       quoi: "Les vitrines de Noël de la 34e Rue et de Broadway, Herald Square illuminé, les escalators en bois d'origine à l'intérieur."
@@ -196,7 +196,7 @@ jours:
   depart: "09:00"
   etapes:
     - lieu: bushwick
-      trajet: { mode: metro, lignes: [A, L], de: "42 St–Port Authority", a: "Jefferson St", duree: 47, detail: "A (express) jusqu'à 14 St, correspondance couloir vers la L (8 Av), L jusqu'à Jefferson St (~22 min), 7 min à pied." }
+      trajet: { mode: metro, lignes: [A, L], de: "42 St–Port Authority", a: "Jefferson St", via: ["42 St–Port Authority", "34 St–Penn Station (8 Av)", "23 St (8 Av)", "14 St–8 Av", "6 Av (L)", "Union Sq (L)", "1 Av (L)", "Bedford Av", "Lorimer St (L)", "Morgan Av", "Jefferson St"], duree: 47, detail: "A (express) jusqu'à 14 St, correspondance couloir vers la L (8 Av), L jusqu'à Jefferson St (~22 min), 7 min à pied." }
       duree: 50
       quoi: "Les fresques du Bushwick Collective : Troutman St, St Nicholas Ave, Wyckoff Ave. Café chaud dans le quartier."
     - lieu: fripes_bushwick
@@ -206,7 +206,7 @@ jours:
       quoi: "Première chine : grands dépôts-ventes, vintage pas cher, friperies au kilo."
     - lieu: fripes_williamsburg
       titre: "Déjeuner à Williamsburg + fripes et concept stores"
-      trajet: { mode: metro, lignes: [L], de: "Morgan Av", a: "Bedford Av", duree: 15, detail: "L, 4 arrêts." }
+      trajet: { mode: metro, lignes: [L], de: "Morgan Av", a: "Bedford Av", via: ["Morgan Av", "Lorimer St (L)", "Bedford Av"], duree: 15, detail: "L, 4 arrêts." }
       duree: 120
       quoi: "Déjeuner (~45 min) près de Bedford Ave, puis friperies sélectionnées, concept stores de North 6th St, créateurs indépendants. Les marchés aux puces sont fermés en semaine : on chine en boutiques."
       repas: "Déjeuner — Williamsburg (Bedford Ave)"
@@ -216,7 +216,7 @@ jours:
       quoi: "Attente du NYC Ferry, ligne East River, vers le sud."
       conseil: "Horaires en direct dans l'appli NYC Ferry. Billet 5 $ dans l'appli (le pass 2 jours à 15 $ ne vaut pas le coup pour un seul trajet)."
     - lieu: dumbo
-      trajet: { mode: ferry, lignes: [FERRY], de: "North Williamsburg", a: "DUMBO / Fulton Ferry", duree: 15, detail: "NYC Ferry East River : passage sous le Williamsburg Bridge et le Manhattan Bridge, skyline à droite.", prix: 5 }
+      trajet: { mode: ferry, lignes: [FERRY], de: "North Williamsburg", a: "DUMBO / Fulton Ferry", via: ["North Williamsburg", "East River (Williamsburg Bridge)", "East River (Navy Yard)", "East River (Manhattan Bridge)", "DUMBO / Fulton Ferry"], duree: 15, detail: "NYC Ferry East River : passage sous le Williamsburg Bridge et le Manhattan Bridge, skyline à droite.", prix: 5 }
       duree: 25
       quoi: "Washington St et la vue culte sous le Manhattan Bridge, le Jane's Carousel dans sa boîte de verre, Pebble Beach."
       conseil: "Goûter : chocolat chaud à DUMBO, le dîner sera tardif."
@@ -231,7 +231,7 @@ jours:
       nuit: true
       quoi: "Les brownstones décorées de Willow St, Pierrepont St et Montague St à la tombée de la nuit : couronnes, guirlandes, fenêtres éclairées."
     - lieu: dyker_heights
-      trajet: { mode: metro, lignes: [4, D], de: "Borough Hall", a: "79 St", duree: 62, detail: "4 ou 5 jusqu'à Atlantic Av–Barclays Ctr (1 arrêt), correspondance vers la D, D jusqu'à 79 St (~22 min), puis 20 min à pied jusqu'à la 84e Rue et la 12e Av. Option plus rapide : VTC depuis Brooklyn Heights, ~25 min, 25-35 $." }
+      trajet: { mode: metro, lignes: [4, D], de: "Borough Hall", a: "79 St", via: ["Borough Hall", "Atlantic Av–Barclays Ctr", "36 St (D)", "9 Av (D)", "50 St (D)", "62 St (D)", "71 St (D)", "79 St"], duree: 62, detail: "4 ou 5 jusqu'à Atlantic Av–Barclays Ctr (1 arrêt), correspondance vers la D, D jusqu'à 79 St (~22 min), puis 20 min à pied jusqu'à la 84e Rue et la 12e Av. Option plus rapide : VTC depuis Brooklyn Heights, ~25 min, 25-35 $." }
       duree: 75
       nuit: true
       quoi: "Flânerie entre la 83e et la 86e Rue, de la 11e à la 13e Avenue : soldats de bois géants, rennes, crèches, musique. Les maisons sont presque toutes allumées avant 21h."
@@ -243,7 +243,7 @@ jours:
       quoi: "Dîner tardif dans le quartier italo-américain : on finit avec un cannolo."
       repas: "Dîner — Dyker Heights / Bensonhurst (13e Av. ou 86e Rue)"
     - lieu: hotel
-      trajet: { mode: metro, lignes: [D], de: "79 St", a: "42 St–Bryant Park", duree: 60, detail: "D direct (~45 min), puis 12 min à pied jusqu'à l'hôtel par la 40e Rue." }
+      trajet: { mode: metro, lignes: [D], de: "79 St", a: "42 St–Bryant Park", via: ["79 St", "71 St (D)", "62 St (D)", "50 St (D)", "9 Av (D)", "36 St (D)", "Atlantic Av–Barclays Ctr", "DeKalb Av", "Grand St (B D)", "Broadway–Lafayette", "W 4 St–Washington Sq", "34 St–Herald Sq", "42 St–Bryant Park"], duree: 60, detail: "D direct (~45 min), puis 12 min à pied jusqu'à l'hôtel par la 40e Rue." }
       duree: 0
       quoi: "Retour à l'hôtel."
 
@@ -255,7 +255,7 @@ jours:
   depart: "09:00"
   etapes:
     - lieu: memorial_911
-      trajet: { mode: metro, lignes: [E], de: "42 St–Port Authority", a: "World Trade Center", duree: 28, detail: "E direct jusqu'au terminus, ~15 min." }
+      trajet: { mode: metro, lignes: [E], de: "42 St–Port Authority", a: "World Trade Center", via: ["42 St–Port Authority", "34 St–Penn Station (8 Av)", "23 St (8 Av)", "14 St–8 Av", "W 4 St–Washington Sq", "Spring St (C E)", "Canal St (A C E)", "World Trade Center"], duree: 28, detail: "E direct jusqu'au terminus, ~15 min." }
       creneau: "09:45"
       duree: 105
       quoi: "Arrivée 9h35 : 10 min autour des deux bassins du mémorial dans la lumière du matin. Puis le musée (1 h 45) : exposition historique, Foundation Hall, la « Last Column »."
@@ -290,14 +290,14 @@ jours:
       quoi: "Aller-retour gratuit : la Statue de la Liberté au coucher du soleil (16h37) à l'aller, Lower Manhattan qui s'illumine au retour."
       conseil: "Viser le bateau de ~16h15-16h30. À St George, descendre puis reprendre le bateau suivant."
     - lieu: museum_fit
-      trajet: { mode: metro, lignes: ["1"], de: "South Ferry", a: "28 St", duree: 29, detail: "1 direct (~18 min)." }
+      trajet: { mode: metro, lignes: ["1"], de: "South Ferry", a: "28 St", via: ["South Ferry", "Rector St (1)", "Chambers St (1)", "Canal St (1)", "Houston St (1)", "Christopher St", "14 St (1)", "18 St (1)", "28 St"], duree: 29, detail: "1 direct (~18 min)." }
       duree: 40
       nuit: true
       quoi: "« Doll Dressing », l'exposition sur les poupées et la mode, avant sa fermeture le 3 janvier."
       conseil: "À confirmer le 30 : si le musée ferme tôt le 31, on file directement à l'hôtel."
     - lieu: hotel
       titre: "Pause à l'hôtel avant le réveillon"
-      trajet: { mode: metro, lignes: ["1"], de: "28 St", a: "Times Sq–42 St", duree: 14, detail: "1, 2 arrêts, puis 7 min à pied." }
+      trajet: { mode: metro, lignes: ["1"], de: "28 St", a: "Times Sq–42 St", via: ["28 St", "34 St–Penn Station (7 Av)", "Times Sq–42 St"], duree: 14, detail: "1, 2 arrêts, puis 7 min à pied." }
       duree: 0
       quoi: "Douche, couches chaudes, et c'est parti pour la soirée choisie (voir l'onglet Réveillon : 6 possibilités comparées)."
 
@@ -310,7 +310,7 @@ jours:
   note: "Check-out avant 10h15, valises laissées à la bagagerie de l'hôtel. Grasse matinée méritée après la nuit du 31."
   etapes:
     - lieu: amnh
-      trajet: { mode: metro, lignes: [C], de: "42 St–Port Authority", a: "81 St–Museum of Natural History", duree: 24, detail: "C (local), ~14 min ; la station donne directement dans le musée." }
+      trajet: { mode: metro, lignes: [C], de: "42 St–Port Authority", a: "81 St–Museum of Natural History", via: ["42 St–Port Authority", "59 St–Columbus Circle", "72 St (B C)", "81 St–Museum of Natural History"], duree: 24, detail: "C (local), ~14 min ; la station donne directement dans le musée." }
       duree: 150
       quoi: "La baleine bleue, les dinosaures du 4e étage (T. rex, Titanosaure), le Gilder Center (vivarium des papillons et insectarium, en supplément), les dioramas des mammifères d'Amérique du Nord."
     - lieu: amnh
@@ -320,7 +320,7 @@ jours:
       quoi: "Déjeuner sur Columbus Ave ou Amsterdam Ave (beaucoup d'adresses ouvertes le 1er pour le brunch)."
       repas: "Déjeuner — Upper West Side (Columbus Ave)"
     - lieu: greenwich_routard
-      trajet: { mode: metro, lignes: [C], de: "81 St–Museum of Natural History", a: "W 4 St–Washington Sq", duree: 31, detail: "C direct (~20 min)." }
+      trajet: { mode: metro, lignes: [C], de: "81 St–Museum of Natural History", a: "W 4 St–Washington Sq", via: ["81 St–Museum of Natural History", "72 St (B C)", "59 St–Columbus Circle", "42 St–Port Authority", "34 St–Penn Station (8 Av)", "23 St (8 Av)", "14 St–8 Av", "W 4 St–Washington Sq"], duree: 31, detail: "C direct (~20 min)." }
       duree: 85
       quoi: "Itinéraire Routard p. 191, raccourci : Washington Square et son arche, Washington Mews, 5e Avenue, W 11th St, Jefferson Market, Gay St, Sheridan Square et Stonewall, Bleecker St, Grove Court, les jardins de St Luke in the Fields, la maison la plus étroite de New York."
     - lieu: high_line

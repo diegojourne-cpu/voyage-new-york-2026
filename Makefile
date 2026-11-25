@@ -1,4 +1,4 @@
-.PHONY: all check build pdf
+.PHONY: all check build pdf serve
 
 all: check build pdf
 
@@ -10,3 +10,6 @@ build:
 
 pdf:
 	node tools/render_pdf.mjs
+
+serve:
+	node tools/serve.mjs dist/site 8787
