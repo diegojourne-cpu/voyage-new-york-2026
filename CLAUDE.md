@@ -33,6 +33,7 @@ pour reprendre sans rien perdre. **Toujours répondre en français.**
 data/voyage.yaml        paramètres (vols, hôtel, règles de calcul, marges, taux €/$)
 data/lieux.yaml         base des lieux : horaires par jour + exceptions, prix, pass, source, date de vérif, astuce photo, anecdote
 data/programme.yaml     ★ le planning : jours → étapes (lieu, trajet, durée, créneau). Les HEURES sont CALCULÉES.
+data/itineraires.json   CACHE des trajets à pied réels (rue par rue), rempli par tools/itineraires.py dans GitHub Actions
 data/stations.yaml      coordonnées des stations : `trajet.via: [stations]` fait suivre au tracé le vrai parcours des lignes
 data/options.yaml       réveillon (7 options comparées), Statue de la Liberté, match, Greeter, banque d'idées, plan pluie
 data/reservations.yaml  réservations par urgence, avec statut (a_faire / fait)
@@ -76,7 +77,7 @@ dist/                   GÉNÉRÉ, ne jamais éditer à la main (dist/site = ce 
 
 ### Comment fonctionne le calcul
 - `debut = max(arrivée, pas_avant, ouverture du lieu ce jour-là, créneau)` ; `arrivée = fin précédente + trajet × 1,15 (min +3 min)`, arrondie aux 5 min.
-- Marche : durée calculée depuis les coordonnées (vol d'oiseau × 1,3 / 4,5 km/h) si non saisie ; alerte si l'écart dépasse 45 %.
+- Marche : durée = distance RÉELLE à pied (data/itineraires.json, routeur piéton OpenStreetMap) / 4,5 km/h ; à défaut vol d'oiseau × 1,3. Si non saisie ; alerte si l'écart dépasse 45 %.
 - Contrôles : lieu fermé, dernière entrée, fermeture, créneau manqué, `nuit: true` avant la nuit, `coucher: true` qui n'encadre pas le coucher du soleil (astral), repas hors créneau, retour à l'hôtel après 23h, arrivée à JFK moins de 3 h avant le vol, horaires « à vérifier », station inconnue dans `via`.
 
 ### Mode opératoire pour une modification (pendant le voyage)
@@ -90,7 +91,7 @@ dist/                   GÉNÉRÉ, ne jamais éditer à la main (dist/site = ce 
 - Synchroniser les réservations faites dans l'appli → `data/reservations.yaml` : lire `https://<site>/api/etat` (si accessible) ou demander à la famille.
 
 ### GitHub Actions
-- `build.yml` : à chaque push qui touche `data/`, `tools/`, `site/` ou `functions/` → vérifie, régénère dist/ (appli + PDF) et le commite ; relance `tiles.yml` si les zones ont changé.
+- `build.yml` : calcule d'abord les trajets à pied manquants (tools/itineraires.py → routing.openstreetmap.de, inaccessible depuis le conteneur) ; à chaque push qui touche `data/`, `tools/`, `site/` ou `functions/` → vérifie, régénère dist/ (appli + PDF) et le commite ; relance `tiles.yml` si les zones ont changé.
 - `tiles.yml` : extrait les tuiles OpenStreetMap des zones (build Protomaps du jour), commite `site/tiles/nyc.pmtiles`, puis relance `build.yml`.
 
 ### Cloudflare Pages (configuration faite par la famille, une fois)
@@ -131,3 +132,4 @@ Matchs : aucun Knicks/Rangers/Devils à domicile du 28 au 31 ; Nets à l'extéri
   Trajets en métro tracés station par station (data/stations.yaml). Points d'intérêt allégés (style Apple Plans).
 - 25/11 — Appli en ligne sur https://voyage-new-york-2026.pages.dev (Cloudflare Pages + KV « ETAT » : synchro vérifiée, point vert). Ancien mini-site claude.ai supprimé. Reste à faire par la famille : installation sur les 3 téléphones.
 - 25/11 — Protection Cloudflare Access active (application « NY Noël », règle « Famille » = e-mails autorisés, connexion par code à usage unique « One-time PIN » ; équipe Zero Trust weathered-credit-4792). Session max 1 mois → rappel « se reconnecter le 26 déc. » ajouté aux réservations. Ajout du réglage Apparence (Automatique/Clair/Sombre) dans Plus.
+- 25/11 — Trajets à pied réels rue par rue sur les cartes et dans les durées (62 trajets). Dîner à Koreatown ramené à 65 min pour tenir le créneau de 20h à l'Empire State. Guide d'installation PDF (docs/, aussi dans l'appli).
