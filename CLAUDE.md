@@ -134,6 +134,8 @@ Matchs : aucun Knicks/Rangers/Devils à domicile du 28 au 31 ; Nets à l'extéri
 - 25/11 — Protection Cloudflare Access active (application « NY Noël », règle « Famille » = e-mails autorisés, connexion par code à usage unique « One-time PIN » ; équipe Zero Trust weathered-credit-4792). Session max 1 mois → rappel « se reconnecter le 26 déc. » ajouté aux réservations. Ajout du réglage Apparence (Automatique/Clair/Sombre) dans Plus.
 - 25/11 — Trajets à pied réels rue par rue sur les cartes et dans les durées (62 trajets). Dîner à Koreatown ramené à 65 min pour tenir le créneau de 20h à l'Empire State. Guide d'installation PDF (docs/, aussi dans l'appli).
 
+- 25/11 — Cartes : l'écartement des pastilles (qui les éloignait de leur vrai lieu en vue large) est remplacé par un regroupement façon Plans : au dézoom, les pastilles qui se touchent fusionnent (« 3–5 » si même jour, anneau multicolore + nombre si plusieurs jours) ; toucher = zoom ; au zoom de rue (≥ 15), côte à côte.
+
 ## 7. Rôles et file d'attente
 
 - **Chef d'orchestre** (conversation principale) : AVANT le voyage et maintenance — préparation, vérifications, améliorations de l'appli, automatisation, audits.
