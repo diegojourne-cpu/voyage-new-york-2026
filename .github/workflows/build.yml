@@ -33,6 +33,8 @@ jobs:
           pip install -r requirements.txt
           npm install --no-save playwright@1.49.1
           npx playwright install --with-deps chromium
+      - name: Itinéraires à pied réels (OpenStreetMap)
+        run: python tools/itineraires.py || echo "itinéraires indisponibles : lignes droites conservées"
       - name: Vérification de faisabilité
         run: python tools/check.py
       - name: Génération (appli, agenda, KML, cartes, PDF)
@@ -43,7 +45,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dist site/tiles/zones.geojson
+          git add dist site/tiles/zones.geojson data/itineraires.json
           git diff --cached --quiet || git commit -m "Régénération automatique de dist/"
           git pull --rebase
           git push

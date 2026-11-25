@@ -23,11 +23,21 @@ sys.path.insert(0, str(Path(__file__).parent))
 from core import (COULEURS_LIGNES, ICONES_MODE, LIGNES_TEXTE_NOIR, RACINE, charger, charger_et_calculer,  # noqa: E402
                   date_fr, hm, hm_fr, plage_du_jour)
 from zones import ecrire as ecrire_zones  # noqa: E402
+from itineraires import charger_cache, cle as cle_itin  # noqa: E402
 
 DIST = RACINE / "dist"
 SITE_SRC = RACINE / "site"
 SITE = DIST / "site"
 TPL = Path(__file__).parent / "templates"
+
+
+ITIN = {}
+
+
+def a_pied(a, b):
+    """Coordonnées (lon, lat) du vrai trajet à pied si calculé, sinon la ligne droite."""
+    r = ITIN.get(cle_itin([tuple(a), tuple(b)]))
+    return r["coords"] if r else [list(a)[::-1], list(b)[::-1]]
 
 
 def geo_jour(jj):
@@ -42,16 +52,21 @@ def geo_jour(jj):
             via = tr.get("via_coords")
             ligne = lambda pts, m=mode, c=couleur: {"type": "Feature", "properties": {"jour": jj["iso"], "mode": m, "couleur": c},
                                                     "geometry": {"type": "LineString", "coordinates": [p[::-1] for p in pts]}}
+            brut = lambda coords, m: {"type": "Feature", "properties": {"jour": jj["iso"], "mode": m, "couleur": jj["couleur"]},
+                                      "geometry": {"type": "LineString", "coordinates": coords}}
             if via:
-                feats.append(ligne([e["origine"], via[0]], "marche", jj["couleur"]))
+                feats.append(brut(a_pied(e["origine"], via[0]), "marche"))
                 feats.append(ligne(via))
-                feats.append(ligne([via[-1], e["coord_debut"]], "marche", jj["couleur"]))
+                feats.append(brut(a_pied(via[-1], e["coord_debut"]), "marche"))
                 pts += via
+            elif mode == "marche":
+                feats.append(brut(a_pied(e["origine"], e["coord_debut"]), "marche"))
             else:
                 feats.append(ligne([e["origine"], e["coord_debut"]]))
         if e.get("waypoints"):
+            r = ITIN.get(cle_itin([tuple(w) for w in e["waypoints"]]))
             feats.append({"type": "Feature", "properties": {"jour": jj["iso"], "mode": "balade", "couleur": jj["couleur"]},
-                          "geometry": {"type": "LineString", "coordinates": [w[::-1] for w in e["waypoints"]]}})
+                          "geometry": {"type": "LineString", "coordinates": r["coords"] if r else [w[::-1] for w in e["waypoints"]]}})
             pts += e["waypoints"]
         if e["id_lieu"] != "jfk" or jj["iso"] == "2026-12-27":
             pts.append(e["coord"])
@@ -78,6 +93,8 @@ def plage_txt(lieu, d):
 
 
 def contexte():
+    ITIN.clear()
+    ITIN.update(charger_cache())
     R = charger_et_calculer()
     V, lieux = R["voyage"], R["lieux"]
     hotel = tuple(lieux["hotel"]["coord"])

@@ -6,6 +6,7 @@ Tout le reste (PDF, site, carte, agenda) consomme le résultat de `charger_et_ca
 from __future__ import annotations
 
 import datetime as dt
+import json
 import math
 import zoneinfo
 from dataclasses import dataclass, field
@@ -147,6 +148,10 @@ class Jour:
 # --------------------------------------------------------------------------- calcul
 def calculer(voyage, lieux, programme):
     stations = charger("stations") if (DATA / "stations.yaml").exists() else {}
+    # itinéraires piétons réels (tools/itineraires.py, calculés dans GitHub Actions)
+    f_iti = DATA / "itineraires.json"
+    itin = json.loads(f_iti.read_text()) if f_iti.exists() else {}
+    cle = lambda pts: "|".join(f"{a:.5f},{b:.5f}" for a, b in pts)
     regles = voyage["regles_calcul"]
     tz = voyage["fuseau"]
     hotel = tuple(lieux["hotel"]["coord"])
@@ -179,6 +184,10 @@ def calculer(voyage, lieux, programme):
             if tr:
                 dist = haversine_km(pos, c_debut)
                 calc = dist * regles["facteur_grille"] / regles["marche_kmh"] * 60
+                reel = itin.get(cle([pos, c_debut])) if tr["mode"] == "marche" else None
+                if reel:  # distance réelle à pied, rue par rue
+                    dist = reel["m"] / 1000 / regles["facteur_grille"]
+                    calc = reel["m"] / 1000 / regles["marche_kmh"] * 60
                 if tr["mode"] == "marche":
                     if "duree" in tr:
                         base = tr["duree"]
