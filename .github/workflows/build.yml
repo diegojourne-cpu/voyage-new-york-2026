@@ -34,7 +34,8 @@ jobs:
           npm install --no-save playwright@1.49.1
           npx playwright install --with-deps chromium
       - name: Itinéraires à pied réels (OpenStreetMap)
-        run: python tools/itineraires.py || echo "itinéraires indisponibles : lignes droites conservées"
+        run: |
+          python tools/itineraires.py || echo "itinéraires indisponibles, lignes droites conservées"
       - name: Vérification de faisabilité
         run: python tools/check.py
       - name: Génération (appli, agenda, KML, cartes, PDF)
