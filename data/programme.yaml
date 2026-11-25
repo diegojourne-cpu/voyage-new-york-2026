@@ -166,7 +166,7 @@ jours:
     - lieu: koreatown
       titre: "Dîner à Koreatown"
       trajet: { mode: marche }
-      duree: 70
+      duree: 65
       nuit: true
       quoi: "Dîner dans l'ambiance électrique de la 32e Rue (barbecue coréen, ragoûts, desserts)."
       repas: "Dîner — Koreatown (32e Rue)"
