@@ -23,12 +23,18 @@ html,body{margin:0;background:#fff}
   const bounds = [[Math.min(...b.map(x => x[0][0])), Math.min(...b.map(x => x[0][1]))], [Math.max(...b.map(x => x[1][0])), Math.max(...b.map(x => x[1][1]))]];
   const feats = jours.flatMap(j => j.features);
   const map = Carte.creer("m", { theme: "clair", bounds, features: feats, jour: null, padding: 70, impression: true, onload: m => {
-    const h = document.createElement("div"); h.className = "pin hotel"; h.textContent = "H";
-    new maplibregl.Marker({ element: h }).setLngLat([D.hotel[1], D.hotel[0]]).addTo(m);
+    const items = [{ hotel: true, lat: D.hotel[0], lon: D.hotel[1] }];
     for (const j of jours) for (const e of j.etapes) {
       if (!e.n || (e.id_lieu === "jfk" && j.iso !== "2026-12-27")) continue;
-      new maplibregl.Marker({ element: Carte.pastille(iso ? e.n : "", j.couleur) }).setLngLat([e.coord[1], e.coord[0]]).addTo(m);
+      items.push({ e, j, lat: e.coord[0], lon: e.coord[1] });
     }
+    const liste = items.map(it => {
+      let elt;
+      if (it.hotel) { elt = document.createElement("div"); elt.className = "pin hotel"; elt.textContent = "H"; }
+      else elt = Carte.pastille(iso ? it.e.n : "", it.j.couleur);
+      return { ...it, marker: new maplibregl.Marker({ element: elt }).setLngLat([it.lon, it.lat]).addTo(m) };
+    });
+    Carte.repartir(m, liste, iso ? 36 : 24);
     m.once("idle", () => setTimeout(() => { window.carteprete = true; }, 400));
   }});
 })();

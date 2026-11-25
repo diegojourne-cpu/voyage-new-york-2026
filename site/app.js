@@ -202,17 +202,23 @@ function ouvrirEtape(e, jour) {
 let cartes = [];
 function libererCartes() { for (const m of cartes) { try { m.remove(); } catch (e) {} } cartes = []; }
 function marqueurs(map, jours, actif, surClic) {
-  const out = [];
-  const hotel = el("div", { class: "pin hotel", text: "H", title: "Hôtel" });
-  out.push(new maplibregl.Marker({ element: hotel }).setLngLat([D.hotel[1], D.hotel[0]]).addTo(map));
+  const items = [{ hotel: true, lat: D.hotel[0], lon: D.hotel[1] }];
   for (const j of jours) for (const e of j.etapes) {
-    if (e.id_lieu === "hotel" || (e.id_lieu === "jfk" && j.iso !== "2026-12-27")) continue;
-    if (!e.n) continue;
-    const p = Carte.pastille(e.n, j.couleur, actif && actif !== j.iso ? "estompe" : "");
-    p.addEventListener("click", ev => { ev.stopPropagation(); surClic(e, j); });
-    out.push(new maplibregl.Marker({ element: p }).setLngLat([e.coord[1], e.coord[0]]).addTo(map));
+    if (e.id_lieu === "hotel" || (e.id_lieu === "jfk" && j.iso !== "2026-12-27") || !e.n) continue;
+    items.push({ e, j, lat: e.coord[0], lon: e.coord[1] });
   }
-  return out;
+  const markers = items.map(it => {
+    let elt;
+    if (it.hotel) elt = el("div", { class: "pin hotel", text: "H", title: "Hôtel" });
+    else {
+      elt = Carte.pastille(it.e.n, it.j.couleur, actif && actif !== it.j.iso ? "estompe" : "");
+      elt.addEventListener("click", ev => { ev.stopPropagation(); surClic(it.e, it.j); });
+    }
+    return new maplibregl.Marker({ element: elt }).setLngLat([it.lon, it.lat]).addTo(map);
+  });
+  const maj = Carte.repartir(map, items.map((it, i) => ({ ...it, marker: markers[i] })));
+  markers.forEach(m => { const r = m.remove.bind(m); m.remove = () => { map.off("zoomend", maj); return r(); }; });
+  return markers;
 }
 function suivreTheme(map, features, jour) {
   const mq = matchMedia("(prefers-color-scheme: dark)");
