@@ -15,7 +15,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:2026-12-27-0@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261227T200000
 DTEND;TZID=America/New_York:20261227T212000
 SUMMARY:Atterrissage à JFK
@@ -32,7 +32,7 @@ DESCRIPTION:Débarquement\, contrôle des passeports (ESTA)\, récupérati
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-27-1@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261227T222000
 DTEND;TZID=America/New_York:20261227T223500
 SUMMARY:Taxi jaune → hôtel
@@ -52,7 +52,7 @@ DESCRIPTION:Trajet : taxi   →  (58 min). File officielle « Taxi » à l
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-28-0@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261228T100000
 DTEND;TZID=America/New_York:20261228T122000
 SUMMARY:The Metropolitan Museum of Art (MET)
@@ -79,13 +79,13 @@ DESCRIPTION:Trajet : metro C 42 St–Port Authority → 81 St–Museum of
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-28-1@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261228T124000
 DTEND;TZID=America/New_York:20261228T131000
 SUMMARY:Central Park : The Mall\, Bethesda Terrace\, Bow Bridge
 LOCATION:Entrée 5th Ave & 72nd St → Bethesda → The Mall → 59e Rue
 GEO:40.774;-73.9708
-DESCRIPTION:Trajet : marche   →  (18 min). Sortie 5th Ave\, entrée dans
+DESCRIPTION:Trajet : marche   →  (17 min). Sortie 5th Ave\, entrée dans
   le parc à la 79e Rue\, descente vers le lac.\n\nCedar Hill → Bethesda 
  Terrace et sa fontaine → vue sur le Bow Bridge → The Mall (allée des 
  ormes et Literary Walk).\n\nPhoto : Sur la Bethesda Terrace\, descendre l'
@@ -98,13 +98,13 @@ DESCRIPTION:Trajet : marche   →  (18 min). Sortie 5th Ave\, entrée dans
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-28-2@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261228T133000
 DTEND;TZID=America/New_York:20261228T143000
 SUMMARY:Patinoire Wollman (Central Park)
 LOCATION:Entrée 6th Ave & 59th St\, puis 5 min dans le parc
 GEO:40.7678;-73.9745
-DESCRIPTION:Trajet : marche   →  (16 min). Bas du Mall → The Dairy →
+DESCRIPTION:Trajet : marche   →  (15 min). Bas du Mall → The Dairy →
   Wollman Rink.\n\nUne heure de patin au pied des gratte-ciel de Central Pa
  rk South.\n\nConseil : Réserver le créneau de 13h30 en ligne (entrée + 
  location). Si les horaires des fêtes 2026 sont étendus (probable)\, on p
@@ -123,7 +123,7 @@ DESCRIPTION:Trajet : marche   →  (16 min). Bas du Mall → The Dairy →
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-28-3@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261228T144500
 DTEND;TZID=America/New_York:20261228T153000
 SUMMARY:🍽 Déjeuner tardif — Central Park South / 57e Rue
@@ -142,21 +142,21 @@ DESCRIPTION:Trajet : marche   →  (11 min). Sortie du parc par la 6e Aven
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-28-4@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261228T154000
 DTEND;TZID=America/New_York:20261228T160000
 SUMMARY:Vitrines de la 5e Avenue : Bergdorf Goodman\, Plaza\, Tiffany\, Lo
  uis Vuitton\, Cartier
 LOCATION:5th Ave entre 58th St et 52nd St
 GEO:40.7637;-73.9737
-DESCRIPTION:Trajet : marche   →  (10 min). La 57e Rue vers l'est jusqu'
- à la 5e Avenue.\n\nLes vitrines de Bergdorf Goodman (58e Rue)\, l'hôtel 
- Plaza\, Tiffany « The Landmark » (57e Rue)\, la façade de Louis Vuitton
- \, puis on descend la 5e jusqu'à Cartier\, enrubanné comme un paquet cad
- eau (52e Rue).\n\nPhoto : Bergdorf (58e Rue) : se coller à la vitre\, té
- léphone en mode portrait\, pour éliminer les reflets. Façade de Cartier
-  (52e Rue) enrubannée : la prendre depuis le trottoir d'en face.\n\nAnecd
- ote : Les vitrines de Bergdorf Goodman demandent près d'un an de travail 
+DESCRIPTION:Trajet : marche   →  (9 min). La 57e Rue vers l'est jusqu'à
+  la 5e Avenue.\n\nLes vitrines de Bergdorf Goodman (58e Rue)\, l'hôtel Pl
+ aza\, Tiffany « The Landmark » (57e Rue)\, la façade de Louis Vuitton\,
+  puis on descend la 5e jusqu'à Cartier\, enrubanné comme un paquet cadea
+ u (52e Rue).\n\nPhoto : Bergdorf (58e Rue) : se coller à la vitre\, tél
+ éphone en mode portrait\, pour éliminer les reflets. Façade de Cartier 
+ (52e Rue) enrubannée : la prendre depuis le trottoir d'en face.\n\nAnecdo
+ te : Les vitrines de Bergdorf Goodman demandent près d'un an de travail 
  à une équipe de dizaines d'artisans \; elles sont dévoilées fin novemb
  re et n'affichent presque jamais de vêtements à vendre.\n\nItinéraire :
   https://www.google.com/maps/dir/?api=1&origin=40.7649\,-73.9783&destinati
@@ -164,14 +164,14 @@ DESCRIPTION:Trajet : marche   →  (10 min). La 57e Rue vers l'est jusqu'
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-28-5@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261228T161500
 DTEND;TZID=America/New_York:20261228T172000
 SUMMARY:Top of the Rock (Rockefeller Center)
 LOCATION:30 Rockefeller Plaza\, entrée sur la 50e Rue (entre 5e et 6e Av.
  )
 GEO:40.7593;-73.9794
-DESCRIPTION:Trajet : marche   →  (15 min). 5e Avenue jusqu'à la 50e Rue
+DESCRIPTION:Trajet : marche   →  (14 min). 5e Avenue jusqu'à la 50e Rue
  \, entrée côté 50e Rue (entre 5e et 6e Av.).\n\nCoucher du soleil à 16
  h35 sur l'Empire State et Lower Manhattan\, puis Central Park côté nord.
   On reste pour l'heure bleue (17h05) : la ville s'allume sous nos yeux.\n\
@@ -189,7 +189,7 @@ DESCRIPTION:Trajet : marche   →  (15 min). 5e Avenue jusqu'à la 50e Rue
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-28-6@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261228T172500
 DTEND;TZID=America/New_York:20261228T174500
 SUMMARY:Sapin du Rockefeller Center\, Channel Gardens et patinoire
@@ -208,13 +208,13 @@ DESCRIPTION:Trajet : marche   →  (5 min). \n\nLe sapin\, les anges tromp
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-28-7@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
-DTSTART;TZID=America/New_York:20261228T175500
-DTEND;TZID=America/New_York:20261228T180500
+DTSTAMP:20261125T092206Z
+DTSTART;TZID=America/New_York:20261228T175000
+DTEND;TZID=America/New_York:20261228T180000
 SUMMARY:Spectacle de lumières de Saks Fifth Avenue
 LOCATION:611 5th Ave (face au sapin\, entre 49e et 50e Rue)
 GEO:40.758;-73.9772
-DESCRIPTION:Trajet : marche   →  (6 min). On traverse la 5e Avenue.\n\nL
+DESCRIPTION:Trajet : marche   →  (5 min). On traverse la 5e Avenue.\n\nL
  e spectacle de lumières de la façade (toutes les ~10 min) et les vitrine
  s de Saks.\n\nPhoto : Se placer sur les marches de la cathédrale Saint-Pa
  trick en face ou au coin 50e/5e : la façade entière + la foule en silhou
@@ -226,13 +226,13 @@ DESCRIPTION:Trajet : marche   →  (6 min). On traverse la 5e Avenue.\n\nL
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-28-8@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261228T181000
 DTEND;TZID=America/New_York:20261228T182500
 SUMMARY:Cathédrale Saint-Patrick
 LOCATION:5th Ave & 50th St
 GEO:40.7585;-73.976
-DESCRIPTION:Trajet : marche   →  (5 min). \n\nLa nef gothique illuminée
+DESCRIPTION:Trajet : marche   →  (6 min). \n\nLa nef gothique illuminée
  \, la crèche\, un moment de calme. En ressortant\, le sapin du Lotte New 
  York Palace (Madison Ave\, juste derrière).\n\nPhoto : Depuis l'allée ce
  ntrale\, cadrer la grande crèche et l'orgue. À l'extérieur\, la flèche
@@ -245,13 +245,13 @@ DESCRIPTION:Trajet : marche   →  (5 min). \n\nLa nef gothique illuminée
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-28-9@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261228T184000
 DTEND;TZID=America/New_York:20261228T185000
 SUMMARY:Radio City Music Hall et boules rouges géantes de la 6e Avenue
 LOCATION:1251 Avenue of the Americas (6e Av. entre 49e et 50e Rue)
 GEO:40.7594;-73.9817
-DESCRIPTION:Trajet : marche   →  (12 min). On retraverse le Rockefeller 
+DESCRIPTION:Trajet : marche   →  (13 min). On retraverse le Rockefeller 
  Center vers l'ouest jusqu'à la 6e Avenue.\n\nLes boules rouges géantes\,
   la fontaine décorée\, la façade néon de Radio City.\n\nPhoto : Accrou
  pi à 1 m d'une boule géante\, en contre-plongée : votre reflet + les gr
@@ -264,14 +264,14 @@ DESCRIPTION:Trajet : marche   →  (12 min). On retraverse le Rockefeller
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-28-10@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261228T190500
 DTEND;TZID=America/New_York:20261228T195500
 SUMMARY:Winter Village de Bryant Park (marché de Noël + patinoire gratui
  te)
 LOCATION:Bryant Park\, 6th Ave entre 40th et 42nd St
 GEO:40.7536;-73.9832
-DESCRIPTION:Trajet : marche   →  (14 min). On descend la 6e Avenue de la
+DESCRIPTION:Trajet : marche   →  (15 min). On descend la 6e Avenue de la
   50e à la 42e Rue (les vitrines du Rockefeller Center défilent).\n\nLe m
  arché de Noël (les stands ferment à 20h)\, le grand sapin\, les patineu
  rs\, la terrasse de la bibliothèque.\n\nConseil : Le marché est LE coup 
@@ -286,7 +286,7 @@ DESCRIPTION:Trajet : marche   →  (14 min). On descend la 6e Avenue de la
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-28-11@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261228T201000
 DTEND;TZID=America/New_York:20261228T214500
 SUMMARY:🍽 Dîner à Midtown East\, puis Grand Central de nuit
@@ -306,13 +306,13 @@ DESCRIPTION:Trajet : marche   →  (12 min). 42e Rue vers l'est (0\,6 km).
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-28-12@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261228T220500
 DTEND;TZID=America/New_York:20261228T222000
 SUMMARY:Times Square
 LOCATION:Broadway & 7th Ave\, 42e → 47e Rue (escalier rouge au 47e)
 GEO:40.759;-73.9851
-DESCRIPTION:Trajet : marche   →  (20 min). 42e Rue vers l'ouest.\n\nBain
+DESCRIPTION:Trajet : marche   →  (19 min). 42e Rue vers l'ouest.\n\nBain
   de foule et d'écrans\, l'escalier rouge (47e Rue).\n\nPhoto : Monter en 
  haut de l'escalier rouge (TKTS\, 47e Rue) : vue plongeante sur tous les é
  crans. En pose 1 s (mode nuit)\, les taxis deviennent des traînées jaune
@@ -324,7 +324,7 @@ DESCRIPTION:Trajet : marche   →  (20 min). 42e Rue vers l'ouest.\n\nBain
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-29-0@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261229T100000
 DTEND;TZID=America/New_York:20261229T121500
 SUMMARY:New York Botanical Garden — Holiday Train Show
@@ -354,7 +354,7 @@ DESCRIPTION:Trajet : train S MNR Times Sq–42 St → Grand Central → Bo
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-29-1@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261229T131000
 DTEND;TZID=America/New_York:20261229T135500
 SUMMARY:🍽 Déjeuner à Columbus Circle + marché de Noël
@@ -374,7 +374,7 @@ DESCRIPTION:Trajet : metro B D Bedford Park Blvd → 59 St–Columbus Circ
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-29-2@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261229T140000
 DTEND;TZID=America/New_York:20261229T151500
 SUMMARY:Museum of Arts and Design (MAD)
@@ -394,7 +394,7 @@ DESCRIPTION:Trajet : marche   →  (5 min). \n\nLes expositions d'artisana
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-29-3@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261229T153500
 DTEND;TZID=America/New_York:20261229T173000
 SUMMARY:MoMA — Museum of Modern Art
@@ -416,7 +416,7 @@ DESCRIPTION:Trajet : marche   →  (16 min). Broadway puis la 53e Rue\, ~1
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-29-4@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261229T175500
 DTEND;TZID=America/New_York:20261229T183500
 SUMMARY:Macy's Herald Square : vitrines de Noël
@@ -436,7 +436,7 @@ DESCRIPTION:Trajet : metro F M 47-50 Sts–Rockefeller Ctr → 34 St–Her
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-29-5@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261229T184500
 DTEND;TZID=America/New_York:20261229T195500
 SUMMARY:🍽 Dîner à Koreatown
@@ -453,13 +453,13 @@ DESCRIPTION:Trajet : marche   →  (10 min). \n\nDîner dans l'ambiance é
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-29-6@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
-DTSTART;TZID=America/New_York:20261229T200000
-DTEND;TZID=America/New_York:20261229T211500
+DTSTAMP:20261125T092206Z
+DTSTART;TZID=America/New_York:20261229T200500
+DTEND;TZID=America/New_York:20261229T212000
 SUMMARY:Empire State Building — observatoire du 86e (de nuit)
 LOCATION:20 W 34th St (entrée observatoire)
 GEO:40.7484;-73.9857
-DESCRIPTION:Trajet : marche   →  (5 min). \n\nLa ville de nuit à 360° 
+DESCRIPTION:Trajet : marche   →  (7 min). \n\nLa ville de nuit à 360° 
  depuis la terrasse en plein air du 86e étage\, plus l'exposition sur la c
  onstruction du gratte-ciel au 2e.\n\nConseil : Réservation obligatoire av
  ec le pass (créneau de 20h).\n\nPrix : 48 $ (86e étage ≈ 44-52 $ selon
@@ -473,13 +473,13 @@ DESCRIPTION:Trajet : marche   →  (5 min). \n\nLa ville de nuit à 360°
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-29-7@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
-DTSTART;TZID=America/New_York:20261229T214000
-DTEND;TZID=America/New_York:20261229T220000
+DTSTAMP:20261125T092206Z
+DTSTART;TZID=America/New_York:20261229T214500
+DTEND;TZID=America/New_York:20261229T220500
 SUMMARY:Broadway de nuit → Times Square
 LOCATION:Broadway & 7th Ave\, 42e → 47e Rue (escalier rouge au 47e)
 GEO:40.759;-73.9851
-DESCRIPTION:Trajet : marche   →  (23 min). On remonte Broadway (Herald S
+DESCRIPTION:Trajet : marche   →  (21 min). On remonte Broadway (Herald S
  q → Times Sq).\n\nDeuxième passage pour les photos\, les théâtres de 
  Broadway qui se vident.\n\nPhoto : Monter en haut de l'escalier rouge (TKT
  S\, 47e Rue) : vue plongeante sur tous les écrans. En pose 1 s (mode nuit
@@ -492,7 +492,7 @@ DESCRIPTION:Trajet : marche   →  (23 min). On remonte Broadway (Herald S
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-30-0@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261230T095500
 DTEND;TZID=America/New_York:20261230T104500
 SUMMARY:Bushwick Collective (street art)
@@ -514,14 +514,14 @@ DESCRIPTION:Trajet : metro A L 42 St–Port Authority → Jefferson St (55
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-30-1@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261230T111000
 DTEND;TZID=America/New_York:20261230T121500
 SUMMARY:Chine à Bushwick : vintage et friperies au kilo
 LOCATION:Autour de Bogart St & Knickerbocker Ave (métro Morgan Av\, ligne
   L)
 GEO:40.7053;-73.9338
-DESCRIPTION:Trajet : marche   →  (23 min). Vers Bogart St / Knickerbocke
+DESCRIPTION:Trajet : marche   →  (22 min). Vers Bogart St / Knickerbocke
  r Ave (station Morgan Av).\n\nPremière chine : grands dépôts-ventes\, v
  intage pas cher\, friperies au kilo.\n\nPhoto : Les façades taguées de B
  ogart St\, et les portants de couleur photographiés en enfilade.\n\nAnecd
@@ -532,7 +532,7 @@ DESCRIPTION:Trajet : marche   →  (23 min). Vers Bogart St / Knickerbocke
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-30-2@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261230T123500
 DTEND;TZID=America/New_York:20261230T143500
 SUMMARY:🍽 Déjeuner à Williamsburg + fripes et concept stores
@@ -551,13 +551,13 @@ DESCRIPTION:Trajet : metro L Morgan Av → Bedford Av (18 min). L\, 4 arr
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-30-3@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261230T145000
 DTEND;TZID=America/New_York:20261230T150000
 SUMMARY:NYC Ferry — embarcadère North Williamsburg
 LOCATION:Embarcadère North Williamsburg (N 6th St & Kent Ave)
 GEO:40.7216;-73.9624
-DESCRIPTION:Trajet : marche   →  (12 min). N 6th St jusqu'au bord de l'E
+DESCRIPTION:Trajet : marche   →  (11 min). N 6th St jusqu'au bord de l'E
  ast River.\n\nAttente du NYC Ferry\, ligne East River\, vers le sud.\n\nCo
  nseil : Horaires en direct dans l'appli NYC Ferry. Billet 5 $ dans l'appli
   (le pass 2 jours à 15 $ ne vaut pas le coup pour un seul trajet).\n\nPri
@@ -570,7 +570,7 @@ DESCRIPTION:Trajet : marche   →  (12 min). N 6th St jusqu'au bord de l'E
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-30-4@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261230T152000
 DTEND;TZID=America/New_York:20261230T154500
 SUMMARY:DUMBO : Washington Street\, Jane's Carousel\, Pebble Beach
@@ -591,13 +591,13 @@ DESCRIPTION:Trajet : ferry FERRY North Williamsburg → DUMBO / Fulton Fer
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-30-5@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261230T161000
 DTEND;TZID=America/New_York:20261230T165000
 SUMMARY:Brooklyn Heights Promenade (coucher du soleil)
 LOCATION:Promenade\, au bout de Montague St
 GEO:40.6956;-73.9977
-DESCRIPTION:Trajet : marche   →  (22 min). Old Fulton St → Pier 1 → 
+DESCRIPTION:Trajet : marche   →  (21 min). Old Fulton St → Pier 1 → 
  passerelle Squibb Park → Columbia Heights → Promenade.\n\nCoucher du s
  oleil (16h37) derrière la Statue de la Liberté\, Lower Manhattan qui s'i
  llumine.\n\nPhoto : Le soleil se couche presque derrière la Statue de la 
@@ -610,14 +610,14 @@ DESCRIPTION:Trajet : marche   →  (22 min). Old Fulton St → Pier 1 →
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-30-6@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261230T170000
 DTEND;TZID=America/New_York:20261230T173000
 SUMMARY:Brooklyn Heights : brownstones décorées (Willow St\, Pierrepont 
  St)
 LOCATION:Willow St\, Pierrepont Pl\, Montague St
 GEO:40.6958;-73.9945
-DESCRIPTION:Trajet : marche   →  (8 min). \n\nLes brownstones décorées
+DESCRIPTION:Trajet : marche   →  (7 min). \n\nLes brownstones décorées
   de Willow St\, Pierrepont St et Montague St à la tombée de la nuit : co
  uronnes\, guirlandes\, fenêtres éclairées.\n\nPhoto : À la tombée de 
  la nuit\, les fenêtres éclairées et les couronnes sur les portes : se m
@@ -629,7 +629,7 @@ DESCRIPTION:Trajet : marche   →  (8 min). \n\nLes brownstones décorées
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-30-7@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261230T184500
 DTEND;TZID=America/New_York:20261230T200000
 SUMMARY:Dyker Heights Christmas Lights
@@ -651,7 +651,7 @@ DESCRIPTION:Trajet : metro 4 D Borough Hall → 79 St (72 min). 4 ou 5 jus
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-30-8@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261230T200500
 DTEND;TZID=America/New_York:20261230T211000
 SUMMARY:🍽 Dîner à Dyker Heights / Bensonhurst
@@ -670,7 +670,7 @@ DESCRIPTION:Trajet : marche   →  (5 min). Vers la 13e Avenue ou la 86e R
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-31-0@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261231T094500
 DTEND;TZID=America/New_York:20261231T113000
 SUMMARY:9/11 Memorial & Museum
@@ -693,7 +693,7 @@ DESCRIPTION:Trajet : metro E 42 St–Port Authority → World Trade Center
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-31-1@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20261231T114000
 DTEND;TZID=America/New_York:20261231T115000
 SUMMARY:Oculus (World Trade Center Transportation Hub)
@@ -711,14 +711,14 @@ DESCRIPTION:Trajet : marche   →  (7 min). \n\nLa nef blanche de Calatrav
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-31-2@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
-DTSTART;TZID=America/New_York:20261231T122000
-DTEND;TZID=America/New_York:20261231T132000
+DTSTAMP:20261125T092206Z
+DTSTART;TZID=America/New_York:20261231T121500
+DTEND;TZID=America/New_York:20261231T131500
 SUMMARY:Balade SoHo et Nolita (Routard p. 175)
 LOCATION:Départ Canal St & Greene St → Greene St → Broome → Prince 
  → Broadway → Lafayette → Houston
 GEO:40.7262;-73.9944
-DESCRIPTION:Trajet : marche   →  (26 min). Church St puis West Broadway 
+DESCRIPTION:Trajet : marche   →  (21 min). Church St puis West Broadway 
  jusqu'à Canal St & Greene St (départ du Routard).\n\nItinéraire Routard
   p. 175 : Greene St et ses façades en fonte (Queen et King of Greene Stre
  et)\, Broome St\, Prince St\, Broadway (Little Singer Building)\, Lafayett
@@ -734,14 +734,14 @@ DESCRIPTION:Trajet : marche   →  (26 min). Church St puis West Broadway
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-31-3@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
-DTSTART;TZID=America/New_York:20261231T133500
-DTEND;TZID=America/New_York:20261231T145000
+DTSTAMP:20261125T092206Z
+DTSTART;TZID=America/New_York:20261231T133000
+DTEND;TZID=America/New_York:20261231T144500
 SUMMARY:🍽 Déjeuner à Nolita / Little Italy\, puis Chinatown
 LOCATION:Mulberry St (Broome → Canal)\, puis Mott St\, Pell St\, Doyers 
  St
 GEO:40.7154;-74.0001
-DESCRIPTION:Trajet : marche   →  (13 min). \n\nDéjeuner (~45 min) sur M
+DESCRIPTION:Trajet : marche   →  (11 min). \n\nDéjeuner (~45 min) sur M
  ulberry St ou à Nolita\, puis Mott St\, Pell St\, la rue coudée de Doyer
  s St et Columbus Park.\n\nPhoto : Doyers Street\, la rue coudée : se plac
  er au milieu du virage pour avoir les enseignes des deux côtés. Mulberry
@@ -754,13 +754,13 @@ DESCRIPTION:Trajet : marche   →  (13 min). \n\nDéjeuner (~45 min) sur M
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-31-4@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
-DTSTART;TZID=America/New_York:20261231T151000
-DTEND;TZID=America/New_York:20261231T153500
+DTSTAMP:20261125T092206Z
+DTSTART;TZID=America/New_York:20261231T150500
+DTEND;TZID=America/New_York:20261231T153000
 SUMMARY:South Street Seaport (rues pavées) et Bowne & Co. Stationers
 LOCATION:Bowne & Co. : 211 Water St — Schermerhorn Row\, Fulton St
 GEO:40.7068;-74.0036
-DESCRIPTION:Trajet : marche   →  (20 min). Par Park Row et Fulton St (~1
+DESCRIPTION:Trajet : marche   →  (19 min). Par Park Row et Fulton St (~1
  \,3 km).\n\nBowne & Co. : imprimerie du XIXe siècle encore en activité\,
   acheter une carte de vœux imprimée à la main. Les pavés de Schermerho
  rn Row.\n\nConseil : Fermeture à 17h (horaires du 31 à confirmer) : on a
@@ -774,13 +774,13 @@ DESCRIPTION:Trajet : marche   →  (20 min). Par Park Row et Fulton St (~1
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-31-5@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
-DTSTART;TZID=America/New_York:20261231T155000
-DTEND;TZID=America/New_York:20261231T160000
+DTSTAMP:20261125T092206Z
+DTSTART;TZID=America/New_York:20261231T154500
+DTEND;TZID=America/New_York:20261231T155500
 SUMMARY:Wall Street\, Federal Hall\, sapin de la Bourse\, Trinity Church
 LOCATION:Wall St & Broad St
 GEO:40.7069;-74.0113
-DESCRIPTION:Trajet : marche   →  (14 min). \n\nWall Street\, le sapin de
+DESCRIPTION:Trajet : marche   →  (15 min). \n\nWall Street\, le sapin de
   la Bourse\, la statue de Washington sur les marches de Federal Hall\, pui
  s Broad St vers le sud.\n\nPhoto : Depuis les marches de Federal Hall (sta
  tue de Washington) : la façade de la Bourse avec son immense drapeau et l
@@ -792,13 +792,13 @@ DESCRIPTION:Trajet : marche   →  (14 min). \n\nWall Street\, le sapin de
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-31-6@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
-DTSTART;TZID=America/New_York:20261231T161500
-DTEND;TZID=America/New_York:20261231T172500
+DTSTAMP:20261125T092206Z
+DTSTART;TZID=America/New_York:20261231T161000
+DTEND;TZID=America/New_York:20261231T172000
 SUMMARY:Staten Island Ferry (aller-retour au coucher du soleil)
 LOCATION:4 South St\, Whitehall Terminal
 GEO:40.7013;-74.013
-DESCRIPTION:Trajet : marche   →  (14 min). Broad St → Whitehall Termin
+DESCRIPTION:Trajet : marche   →  (12 min). Broad St → Whitehall Termin
  al.\n\nAller-retour gratuit : la Statue de la Liberté au coucher du solei
  l (16h37) à l'aller\, Lower Manhattan qui s'illumine au retour.\n\nConsei
  l : Viser le bateau de ~16h15-16h30. À St George\, descendre puis reprend
@@ -812,9 +812,9 @@ DESCRIPTION:Trajet : marche   →  (14 min). Broad St → Whitehall Termin
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-31-7@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
-DTSTART;TZID=America/New_York:20261231T180000
-DTEND;TZID=America/New_York:20261231T184000
+DTSTAMP:20261125T092206Z
+DTSTART;TZID=America/New_York:20261231T175500
+DTEND;TZID=America/New_York:20261231T183500
 SUMMARY:The Museum at FIT (expo « Doll Dressing »)
 LOCATION:7th Ave & W 27th St
 GEO:40.7469;-73.9937
@@ -831,7 +831,7 @@ DESCRIPTION:Trajet : metro 1 South Ferry → 28 St (34 min). 1 direct (~18
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-01-01-0@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20270101T104500
 DTEND;TZID=America/New_York:20270101T131500
 SUMMARY:American Museum of Natural History
@@ -854,7 +854,7 @@ DESCRIPTION:Trajet : metro C 42 St–Port Authority → 81 St–Museum of
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-01-01-1@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20270101T132000
 DTEND;TZID=America/New_York:20270101T140000
 SUMMARY:🍽 Déjeuner — Upper West Side
@@ -874,7 +874,7 @@ DESCRIPTION:Trajet : marche   →  (5 min). \n\nDéjeuner sur Columbus Ave
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-01-01-2@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20270101T144000
 DTEND;TZID=America/New_York:20270101T160500
 SUMMARY:Balade Greenwich Village (Routard p. 191)
@@ -898,7 +898,7 @@ DESCRIPTION:Trajet : metro C 81 St–Museum of Natural History → W 4 St
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-01-01-3@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20270101T162500
 DTEND;TZID=America/New_York:20270101T172500
 SUMMARY:The High Line (coucher du soleil) → Hudson Yards
@@ -918,7 +918,7 @@ DESCRIPTION:Trajet : marche   →  (20 min). Hudson St → Gansevoort St (
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-01-01-4@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20270101T173000
 DTEND;TZID=America/New_York:20270101T175500
 SUMMARY:Hudson Yards : Vessel et illuminations « Shine Bright »
@@ -936,7 +936,7 @@ DESCRIPTION:Trajet : marche   →  (5 min). \n\nLes illuminations « Shine
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-01-01-5@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20270101T180000
 DTEND;TZID=America/New_York:20270101T190500
 SUMMARY:🍽 Dîner — Hudson Yards / Hell's Kitchen
@@ -953,13 +953,13 @@ DESCRIPTION:Trajet : marche   →  (5 min). \n\nDernier dîner new-yorkais
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-01-01-6@voyage-new-york-2026
-DTSTAMP:20261125T091400Z
+DTSTAMP:20261125T092206Z
 DTSTART;TZID=America/New_York:20270101T192500
 DTEND;TZID=America/New_York:20270101T194000
 SUMMARY:Récupérer les valises
 LOCATION:330 W 40th St\, New York\, NY 10018
 GEO:40.7564;-73.9915
-DESCRIPTION:Trajet : marche   →  (19 min). 10e Av. → 40e Rue (~1 km).\
+DESCRIPTION:Trajet : marche   →  (20 min). 10e Av. → 40e Rue (~1 km).\
  n\nBagagerie de l'hôtel\, on se change pour l'avion.\n\nItinéraire : htt
  ps://www.google.com/maps/dir/?api=1&origin=40.7537\,-74.0021&destination=4
  0.7564\,-73.9915&travelmode=walking
