@@ -135,5 +135,55 @@
     return map;
   }
 
-  window.Carte = { style, creer, tracer, couches, pastille, PALETTES };
+  // Pastilles au même endroit (≤ 45 m, ex. musée puis déjeuner à côté) : on les écarte
+  // côte à côte de quelques pixels, pour qu'elles restent toutes visibles à tout zoom.
+  // points : [{lat, lon}] (hôtel compris) → décalages en pixels [[dx, dy], …]
+  function decalages(points, ecart) {
+    ecart = ecart || 30;
+    const groupes = [];
+    points.forEach((p, i) => {
+      const g = groupes.find(g => Math.hypot((g.lat - p.lat) * 111000, (g.lon - p.lon) * 84000) < 45);
+      if (g) g.idx.push(i); else groupes.push({ lat: p.lat, lon: p.lon, idx: [i] });
+    });
+    const out = points.map(() => [0, 0]);
+    for (const g of groupes) {
+      const n = g.idx.length;
+      if (n < 2) continue;
+      g.idx.forEach((i, k) => {
+        if (n <= 3) out[i] = [Math.round((k - (n - 1) / 2) * ecart), 0];
+        else { const a = (2 * Math.PI * k) / n - Math.PI / 2, r = ecart * 0.75 * n / Math.PI; out[i] = [Math.round(r * Math.cos(a)), Math.round(r * Math.sin(a))]; }
+      });
+    }
+    return out;
+  }
+
+  // Écartement selon le zoom : les pastilles qui se touchent À L'ÉCRAN (< 28 px) sont
+  // disposées côte à côte autour de leur position ; recalculé à chaque fin de zoom.
+  function repartir(map, liste, ecart) {
+    ecart = ecart || 30;
+    const maj = () => {
+      const px = liste.map(x => map.project([x.lon, x.lat]));
+      const groupes = [];
+      px.forEach((p, i) => {
+        const g = groupes.find(g => Math.hypot(g.x - p.x, g.y - p.y) < ecart * 0.95);
+        if (g) { g.idx.push(i); g.x = (g.x * (g.idx.length - 1) + p.x) / g.idx.length; g.y = (g.y * (g.idx.length - 1) + p.y) / g.idx.length; }
+        else groupes.push({ x: p.x, y: p.y, idx: [i] });
+      });
+      for (const g of groupes) {
+        const n = g.idx.length;
+        g.idx.forEach((i, k) => {
+          let dx = 0, dy = 0;
+          if (n > 1 && n <= 4) dx = (k - (n - 1) / 2) * ecart;
+          else if (n > 4) { const a = (2 * Math.PI * k) / n - Math.PI / 2, r = ecart * 0.8 * n / Math.PI; dx = r * Math.cos(a); dy = r * Math.sin(a); }
+          // décalage = position du groupe + écart − position propre
+          liste[i].marker.setOffset([Math.round(g.x + dx - px[i].x), Math.round(g.y + dy - px[i].y)]);
+        });
+      }
+    };
+    maj();
+    map.on("zoomend", maj);
+    return maj;
+  }
+
+  window.Carte = { style, creer, tracer, couches, pastille, decalages, repartir, PALETTES };
 })();
