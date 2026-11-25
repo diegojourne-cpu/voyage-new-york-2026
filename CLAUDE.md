@@ -96,7 +96,7 @@ dist/                   GÉNÉRÉ, ne jamais éditer à la main (dist/site = ce 
 ### Cloudflare Pages (configuration faite par la famille, une fois)
 - Projet relié au dépôt GitHub, branche `main`, commande de build : `exit 0`, dossier de sortie : `dist/site`.
 - Liaison KV : nom de variable `ETAT` (namespace « nyc26-etat »).
-- Cloudflare Access (Zero Trust) : application auto-hébergée sur le domaine `*.pages.dev` du projet, politique « e-mails autorisés », session 1 mois.
+- Cloudflare Access (Zero Trust) : application auto-hébergée sur le domaine `voyage-new-york-2026.pages.dev`, politique « e-mails autorisés », session 1 mois.
 - Guide pas à pas pour la famille : `docs/CLOUDFLARE.md`.
 
 ## 4. Vérifications faites le 24/11/2026 (sources dans dist/programme.pdf, dernière page)
@@ -111,7 +111,7 @@ Matchs : aucun Knicks/Rangers/Devils à domicile du 28 au 31 ; Nets à l'extéri
 ## 5. Liens
 
 - Dépôt : https://github.com/diegojourne-cpu/voyage-new-york-2026
-- Appli (Cloudflare Pages) : _(adresse à noter ici après la configuration : https://<projet>.pages.dev)_
+- Appli (Cloudflare Pages, projet « voyage-new-york-2026 ») : https://voyage-new-york-2026.pages.dev (le conteneur Claude ne peut pas y accéder : vérification par captures de la famille)
 - Ancien mini-site claude.ai (remplacé par l'appli, à supprimer quand l'appli est en ligne) : https://claude.ai/artifact/JWyWEGNX5sAJz6Le2mXh19
 
 ## 6. Journal des décisions
