@@ -222,6 +222,36 @@ function suivreTheme(map, features, jour) {
   map.on("remove", () => { mq.removeEventListener("change", f); removeEventListener("nyc26-theme", f); });
 }
 
+
+/* ---------- « Ma position » : localisation ponctuelle, seulement quand on touche le bouton */
+function boutonPosition(map) {
+  let marqueur = null;
+  const txt = el("span", { text: "Ma position" });
+  const b = el("button", { class: "btn petit verre localiser", type: "button", "aria-label": "Afficher ma position sur la carte" },
+    el("svg", {}), txt);
+  b.querySelector("svg").outerHTML = '<svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M18 2L2 9.2l6.6 2.2L10.8 18z" fill="currentColor"/></svg>';
+  const message = t => { txt.textContent = t; clearTimeout(b._t); b._t = setTimeout(() => { txt.textContent = "Ma position"; }, 4500); };
+  b.addEventListener("click", ev => {
+    ev.stopPropagation();
+    if (!("geolocation" in navigator)) return message("Localisation indisponible");
+    txt.textContent = "Localisation…"; b.disabled = true;
+    navigator.geolocation.getCurrentPosition(pos => {
+      b.disabled = false;
+      const { latitude: la, longitude: lo, accuracy } = pos.coords;
+      const km = Math.round(Math.hypot((la - D.hotel[0]) * 111, (lo - D.hotel[1]) * 84));
+      if (km > 80) return message(`Vous êtes à ${km.toLocaleString("fr-FR")} km de New York`);
+      if (!marqueur) marqueur = new maplibregl.Marker({ element: el("div", { class: "moi", title: "Vous êtes ici" }) });
+      marqueur.setLngLat([lo, la]).addTo(map);
+      map.flyTo({ center: [lo, la], zoom: Math.max(map.getZoom(), 15.5), duration: 900 });
+      message(accuracy > 150 ? `Position approximative (± ${Math.round(accuracy)} m)` : "Vous êtes ici");
+    }, err => {
+      b.disabled = false;
+      message(err.code === 1 ? "Autorisez la localisation dans les réglages" : "Position introuvable, réessayez");
+    }, { enableHighAccuracy: true, timeout: 12000, maximumAge: 20000 });
+  });
+  return b;
+}
+
 /* ================================================================ vues */
 const V = {};
 
@@ -361,6 +391,7 @@ V.jour = iso => {
     const map = Carte.creer(carteDiv, { theme: themeCarte(), bounds: j.bounds, features: j.features, jour: j.iso, cooperatif: true, padding: 56,
       onload: m => marqueurs(m, [j], null, ouvrirEtape) });
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
+    carteDiv.append(boutonPosition(map));
     suivreTheme(map, j.features, j.iso);
     cartes.push(map);
   });
@@ -386,7 +417,7 @@ V.carte = () => {
     const map = Carte.creer(boite, { theme: themeCarte(), bounds: cadre(etatCarte.jour), features: tous, jour: etatCarte.jour, padding: { top: 90, bottom: 40, left: 40, right: 40 },
       onload: m => { markers = marqueurs(m, D.jours.filter(j => j.iso !== "2026-12-27"), etatCarte.jour, ouvrirEtape); } });
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
-    map.addControl(new maplibregl.GeolocateControl({ positionOptions: { enableHighAccuracy: true }, trackUserLocation: true }), "bottom-right");
+    vue.append(boutonPosition(map));
     suivreTheme(map, tous, etatCarte.jour);
     cartes.push(map);
     seg.addEventListener("click", ev => {
