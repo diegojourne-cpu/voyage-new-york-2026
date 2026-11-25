@@ -1,6 +1,6 @@
 # CLAUDE.md — Tour de contrôle « New York, Noël 2026 »
 
-Mémoire du projet. À lire en entier au début de chaque session : elle contient tout ce qu'il faut
+Mémoire du projet. À lire en entier au début de chaque session (la conversation « Guide NY » lit aussi GUIDE.md) : elle contient tout ce qu'il faut
 pour reprendre sans rien perdre. **Toujours répondre en français.**
 
 ## 1. Le voyage (faits figés)
@@ -133,3 +133,11 @@ Matchs : aucun Knicks/Rangers/Devils à domicile du 28 au 31 ; Nets à l'extéri
 - 25/11 — Appli en ligne sur https://voyage-new-york-2026.pages.dev (Cloudflare Pages + KV « ETAT » : synchro vérifiée, point vert). Ancien mini-site claude.ai supprimé. Reste à faire par la famille : installation sur les 3 téléphones.
 - 25/11 — Protection Cloudflare Access active (application « NY Noël », règle « Famille » = e-mails autorisés, connexion par code à usage unique « One-time PIN » ; équipe Zero Trust weathered-credit-4792). Session max 1 mois → rappel « se reconnecter le 26 déc. » ajouté aux réservations. Ajout du réglage Apparence (Automatique/Clair/Sombre) dans Plus.
 - 25/11 — Trajets à pied réels rue par rue sur les cartes et dans les durées (62 trajets). Dîner à Koreatown ramené à 65 min pour tenir le créneau de 20h à l'Empire State. Guide d'installation PDF (docs/, aussi dans l'appli).
+
+## 7. Rôles et file d'attente
+
+- **Chef d'orchestre** (conversation principale) : architecture, design, outils, automatisation, audits.
+- **Guide NY, le « numéro 10 »** (conversation dédiée, règles dans GUIDE.md) : conseils sur place et modifications du programme.
+- Les deux travaillent sur `main` : toujours `git pull --rebase` avant de modifier, push juste après.
+- Demandes du guide pour le chef d'orchestre (à traiter puis rayer) :
+  - _(vide)_
