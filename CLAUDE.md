@@ -129,4 +129,5 @@ Matchs : aucun Knicks/Rangers/Devils à domicile du 28 au 31 ; Nets à l'extéri
   installable hébergée sur Cloudflare Pages (gratuit, dépôt privé, accès protégé, synchro KV). Cartes OpenStreetMap
   vectorielles (Protomaps) stockées avec le site → fonctionnent hors connexion. PDF conservé, avec les vraies cartes.
   Trajets en métro tracés station par station (data/stations.yaml). Points d'intérêt allégés (style Apple Plans).
-- 25/11 — Appli en ligne sur https://voyage-new-york-2026.pages.dev (Cloudflare Pages + KV « ETAT » : synchro vérifiée, point vert). Ancien mini-site claude.ai supprimé. Reste à faire par la famille : protection Zero Trust (e-mails), installation sur les 3 téléphones.
+- 25/11 — Appli en ligne sur https://voyage-new-york-2026.pages.dev (Cloudflare Pages + KV « ETAT » : synchro vérifiée, point vert). Ancien mini-site claude.ai supprimé. Reste à faire par la famille : installation sur les 3 téléphones.
+- 25/11 — Protection Cloudflare Access active (application « NY Noël », règle « Famille » = e-mails autorisés, connexion par code à usage unique « One-time PIN » ; équipe Zero Trust weathered-credit-4792). Session max 1 mois → rappel « se reconnecter le 26 déc. » ajouté aux réservations. Ajout du réglage Apparence (Automatique/Clair/Sombre) dans Plus.
